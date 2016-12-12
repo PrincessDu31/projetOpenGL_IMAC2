@@ -1,2 +1,0 @@
-/home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/TP_template_main.dir
-/home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build/glimac/CMakeFiles/glimac.dir

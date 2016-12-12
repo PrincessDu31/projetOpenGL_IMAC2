@@ -1,5 +1,7 @@
-#ifndef ALEATOIRUS_HPP
+#pragma once
+
 #include "glimac/glm.hpp"
+#include "MainCaracter.hpp"
 
 class Aleatoirus {
 private: 
@@ -9,6 +11,6 @@ private:
 public: 
 	void doAction (MainCaracter m);
 
+	void setPosition(glm::vec2 p);
+	void setType(Type t);
 };
-
-#endif

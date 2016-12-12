@@ -1,7 +1,6 @@
 #include <glimac/SDLWindowManager.hpp>
 #include <GL/glew.h>
 #include <iostream>
-
 #include "include/Interface.hpp"
 
 

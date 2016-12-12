@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu
+CMAKE_SOURCE_DIR = /home/Desktop/projetOpenGL_IMAC2/joliJeu
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu
+CMAKE_BINARY_DIR = /home/Desktop/projetOpenGL_IMAC2/joliJeu
 
 #=============================================================================
 # Targets provided globally by CMake.

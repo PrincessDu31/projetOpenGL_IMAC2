@@ -1,4 +1,5 @@
-#ifndef WEAPON_HPP
+#pragma once
+
 #define NB_ARMES 3
 
 class Weapon {
@@ -13,4 +14,3 @@ public:
 
 };
 
-#endif 

@@ -1,3 +1,5 @@
+#pragma once
+
 #include "Caracter.hpp"
 
 class MainCaracter : public Caracter {
@@ -11,3 +13,4 @@ public:
 	void camera ();
 
 };
+

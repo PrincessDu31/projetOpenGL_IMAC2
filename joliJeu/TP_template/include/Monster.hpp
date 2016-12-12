@@ -1,4 +1,5 @@
-#ifndef MONSTER_HPP
+#pragma once
+
 #include "Caracter.hpp"
 
 class Monster : public Caracter {
@@ -9,7 +10,7 @@ public:
 	Monster();
 	Monster(glm::vec2 pos);
 	~Monster();
+	void setType(Type t);
 
 };
 
-#endif

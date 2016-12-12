@@ -1,14 +1,16 @@
-#ifndef INTERFACE_HPP
-#include "glimac/glm.hpp"
-#include "MainCaracter.hpp"
-#include "Monster.hpp"
-#include "Aleatoirus.hpp"
+#pragma once
+
 #include <vector>
 #include <string>
+#include <fstream>
+#include "Aleatoirus.hpp"
+#include "Monster.hpp"
+#include "MainCaracter.hpp"
+
 
 class Interface {
 private: 
-	glm::mat map;
+	glm::mat3 map;
 	unsigned int nbPink;
 	unsigned int nbBlue;
 	std::vector<Aleatoirus> listAleatoirus;
@@ -19,12 +21,15 @@ public:
 	~Interface();
 	void createWorld ();
 	void readMap (std::string Filename);
-	void readMonsterAndAleatoirusInfos (ifstream file);
+	void readMonsterAndAleatoirusInfos (std::ifstream &file);
+	void addMonstre(std::string line);
+	void addAleatoirus(std::string line);
+
 	void collision();
 	void showCursor ();
 
-	// getters
-	glm::mat getMap ();
+	//getters
+	glm::mat3 getMap ();
 	unsigned int getNbPink();
 	unsigned int getNbBlue();
 	std::vector<Aleatoirus> getListAleatoirus ();
@@ -32,7 +37,7 @@ public:
 	MainCaracter getPlayer ();
 
 	// setters
-	void setMap (glm::mat m);
+	void setMap (glm::mat3 m);
 	void setNbPink(unsigned int p);
 	void setNbBlue(unsigned int b);
 	void setListAleatoirus (std::vector<Aleatoirus> list);
@@ -41,4 +46,3 @@ public:
 
 };
 
-#endif 

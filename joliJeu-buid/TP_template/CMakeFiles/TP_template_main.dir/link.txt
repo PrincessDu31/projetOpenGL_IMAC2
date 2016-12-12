@@ -1,0 +1,1 @@
+/usr/bin/c++       CMakeFiles/TP_template_main.dir/main.cpp.o  -o TP_template_main -rdynamic ../glimac/libglimac.a -Wl,-Bstatic -lSDLmain -Wl,-Bdynamic -lSDL -lpthread -lGLU -lGL -lSM -lICE -lX11 -lXext -lGLEW 

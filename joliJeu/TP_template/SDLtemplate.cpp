@@ -2,15 +2,14 @@
 #include <GL/glew.h>
 #include <iostream>
 
-#include "TP_template/include/Interface.hpp"
+#include "include/Interface.hpp"
 
 
 
 using namespace glimac;
 
 int main(int argc, char** argv) {
-    Interface interface;
-
+   Interface interface;
 
     // Initialize SDL and open a window
     SDLWindowManager windowManager(800, 600, "GLImac");

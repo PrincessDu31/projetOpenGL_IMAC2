@@ -1,0 +1,3 @@
+/home/julie/Desktop/projetOpenGL_IMAC2/joliJeu-buid/TP_template/CMakeFiles/TP_template_SDLtemplate.dir
+/home/julie/Desktop/projetOpenGL_IMAC2/joliJeu-buid/TP_template/CMakeFiles/TP_template_main.dir
+/home/julie/Desktop/projetOpenGL_IMAC2/joliJeu-buid/glimac/CMakeFiles/glimac.dir

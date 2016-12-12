@@ -1,4 +1,5 @@
-#ifndef CARACTER_HPP
+#pragma once
+
 #include "glimac/glm.hpp"
 #include "Weapon.hpp"
 
@@ -36,5 +37,3 @@ public:
 	void setOrientation (glm::vec2 o);
 
 };
-
-#endif
