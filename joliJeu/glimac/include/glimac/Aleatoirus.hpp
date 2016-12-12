@@ -3,6 +3,7 @@
 
 #include "glimac/glm.hpp"
 #include <glimac/MainCaracter.hpp>
+#include <string>
 
 class Aleatoirus {
 	enum Type {a1, a2, a3 }; 
@@ -15,7 +16,7 @@ public:
 	~Aleatoirus();
 	void doAction (MainCaracter m);
 	void setPosition(glm::vec2 p);
-	void setType(Type t);
+	void setType(std::string t);
 
 };
 

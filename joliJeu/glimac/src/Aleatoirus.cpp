@@ -8,4 +8,4 @@ void Aleatoirus::doAction (MainCaracter m) { }
 
 void Aleatoirus::setPosition(glm::vec2 p){ position = p; }
 
-void Aleatoirus::setType(Type t){ typeAlea = t; }
+void Aleatoirus::setType(std::string t){ /*typeAlea = t; */}

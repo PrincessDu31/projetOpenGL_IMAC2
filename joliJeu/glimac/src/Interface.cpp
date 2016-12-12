@@ -1,4 +1,6 @@
 #include <glimac/Interface.hpp>
+#include <glimac/Monster.hpp>
+#include <glimac/Weapon.hpp>
 #include <vector>
 #include <fstream>
 #include <iostream>
@@ -12,9 +14,15 @@ Interface::Interface(){}
 Interface::~Interface(){}
 
 void Interface::createWorld (){
+
 	string line;
-	ifstream myfile("./config.txt");
+	ifstream myfile("../src/config.txt");
 	myfile.is_open();
+	if (myfile.fail())
+	{
+		cout << " Error!";
+		myfile.clear( );
+	}
 	int count = 0;
 	while (!myfile.eof()) {
 		getline(myfile, line);
@@ -35,6 +43,7 @@ void Interface::createWorld (){
 }
 
 void Interface::readMap (string mapFile) {
+
 	map.loadMapFromPPM(mapFile);
 }
 
@@ -58,29 +67,30 @@ void Interface::readMonsterAndAleatoirusInfos (ifstream &file) {
 }
 
 void Interface::addMonster(std::string line){
-	// std::vector<std::string> elems;
-	// std::stringstream line_stream;
-	// line_stream.str(line);
-	// std::string item;
-	// Monster monster;
-	// while (std::getline(line_stream, item, ':')) {
-	// 	elems.push_back(item);
-	// }
+	std::vector<std::string> elems;
+	std::stringstream line_stream;
+	line_stream.str(line);
+	std::string item;
+	Monster monster;
+	while (std::getline(line_stream, item, ':')) {
+		elems.push_back(item);
+	}
 
-	// long int positionX = strtol (elems.at(1).c_str(),NULL,10);
-	// long int positionY = strtol (elems.at(2).c_str(),NULL,10);
-	// long int id_weapon = strtol (elems.at(4).c_str(),NULL,10);
-	// long int attack = strtol (elems.at(5).c_str(),NULL,10);
-	// long int defense= strtol (elems.at(6).c_str(),NULL,10);
-	// long int life = strtod (elems.at(7).c_str(),NULL);
+	long int positionX = strtol (elems.at(1).c_str(),NULL,10);
+	long int positionY = strtol (elems.at(2).c_str(),NULL,10);
+	long int id_weapon = strtol (elems.at(4).c_str(),NULL,10);
+	long int attack = strtol (elems.at(5).c_str(),NULL,10);
+	long int defense= strtol (elems.at(6).c_str(),NULL,10);
+	long int life = strtod (elems.at(7).c_str(),NULL);
 
-	// monster.setPosition(glm::vec2(positionX,positionY));
-	// monster.setType(elems.at(3));
-	// monster.setWeapon(Weapon myweapon(id_weapon));
-	// monster.setAttack(attack);
-	// monster.setDefense(defense);
-	// monster.setLife(life);
-	// listMonsters.push_back(monster);
+	monster.setPosition(glm::vec2(positionX,positionY));
+	monster.setType(elems.at(3));
+	Weapon myweapon = Weapon(id_weapon);
+	monster.setWeapon(myweapon);
+	monster.setAttack(attack);
+	monster.setDefense(defense);
+	monster.setLife(life);
+	listMonsters.push_back(monster);
 
 	//id:X:Y:type:id_arme:attack:defense:lifespan:?
 }
@@ -95,12 +105,12 @@ void Interface::addAleatoirus(string line){
        	elems.push_back(item);
    	}
 
-	// long int positionX = strtol (elems.at(1).c_str(),&ptr,10);
-	// long int positionY = strtol (elems.at(2).c_str(),&ptr,10);
-	// alea.setPosition(glm::vec2(positionX, positionY));
-	// alea.setType(elems.at(3));
+	long int positionX = strtol (elems.at(1).c_str(),NULL,10);
+	long int positionY = strtol (elems.at(2).c_str(),NULL,10);
+	alea.setPosition(glm::vec2(positionX, positionY));
+	alea.setType(elems.at(3));
 
-//	listAleatoirus.push_back(alea);
+	listAleatoirus.push_back(alea);
 }
 
 void Interface::collision() {

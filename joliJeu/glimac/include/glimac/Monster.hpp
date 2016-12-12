@@ -2,6 +2,7 @@
 #define MONSTER_HPP
 
 #include <glimac/Character.hpp>
+#include <string>
 
 
 class Monster : public Character {
@@ -14,7 +15,7 @@ public:
 	Monster();
 	Monster(glm::vec2 pos);
 	~Monster();
-	void setType(Type t);
+	void setType(std::string t);
 
 
 };

@@ -29,7 +29,9 @@ using namespace std;
     				count ++;
     			}
       			if (count == 1){
-      				readMap(line);
+      				cout << " path : " << line << endl;
+      				Map map;
+      				map.loadMapFromPPM(line);
       				getline(myfile, line);
     				count ++;
       			} else {
@@ -67,7 +69,7 @@ using namespace std;
 		std::stringstream line_stream;
     	line_stream.str(line);
     	std::string item;
-    	//Monster monster;
+    	Monster monster;
     	while (std::getline(line_stream, item, ':')) {
         	elems.push_back(item);
      	}
@@ -79,13 +81,13 @@ using namespace std;
 		long int defense= strtol (elems.at(6).c_str(),NULL,10);
 		long int life = strtod (elems.at(7).c_str(),NULL);
 
-       	// monster.setPosition(glm::vec2(positionX,positionY)):
-       	// monster.setType(elems.at(3));
-       	// monster.setWeapon(Weapon myweapon(id_weapon));
-       	// monster.setAttack(attack);
-       	// monster.setDefense(defense);
-       	// monster.setLife();
-		// listMonsters.push_back(monster);
+       	monster.setPosition(glm::vec2(positionX,positionY)):
+       	monster.setType(elems.at(3));
+       	monster.setWeapon(Weapon myweapon(id_weapon));
+       	monster.setAttack(attack);
+       	monster.setDefense(defense);
+       	monster.setLife();
+		listMonsters.push_back(monster);
 
 
        	//id:X:Y:type:id_arme:attack:defense:lifespan:?

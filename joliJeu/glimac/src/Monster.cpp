@@ -1,8 +1,11 @@
 
 #include <glimac/Monster.hpp>
 
+Monster::Monster(){
+
+}
+
 Monster::Monster(glm::vec2 pos) {
-//	speed = 1.5;
 	setAttack(3);
 	setDefense(2);
 	setPosition(pos);
@@ -14,8 +17,7 @@ Monster::~Monster() {
 
 }
 
-void Monster::setType(Type t){
-	
-	monsterType = t;
-
+void Monster::setType(std::string t){	
+	//TODO check type
+	// monsterType = t;
 }
