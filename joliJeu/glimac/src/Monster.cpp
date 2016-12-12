@@ -13,3 +13,9 @@ Monster::Monster(glm::vec2 pos) {
 Monster::~Monster() {
 
 }
+
+void Monster::setType(Type t){
+	
+	monsterType = t;
+
+}

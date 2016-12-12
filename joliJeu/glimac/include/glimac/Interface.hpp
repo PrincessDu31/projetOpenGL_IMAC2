@@ -11,6 +11,7 @@
 #include <string>
 #include <fstream>
 
+class Interface {
 
 private: 
 
@@ -29,16 +30,15 @@ public:
 	void readMap (std::string mapFile);
 
 
-	// getters
-	Map getMap ();
 	void readMonsterAndAleatoirusInfos (std::ifstream &file);
-	void addMonstre(std::string line);
+	void addMonster(std::string line);
 	void addAleatoirus(std::string line);
 
 	void collision();
 	void showCursor ();
 
-	//getters
+
+	// getters
 	Map getMap ();
 	unsigned int getNbPink();
 	unsigned int getNbBlue();
@@ -56,3 +56,4 @@ public:
 
 };
 
+#endif

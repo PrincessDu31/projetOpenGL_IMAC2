@@ -52,35 +52,35 @@ void Interface::readMonsterAndAleatoirusInfos (ifstream &file) {
 	long int numberMonster = strtol (line.c_str(),NULL,10);
 	for (i=0; i < numberMonster ; i++){
 		getline(file, line);
-		addMonstre(line);
+		addMonster(line);
 		cout << "monstre "<< i << ": " << line << endl;
 	}
 }
 
-void Interface::addMonstre(string line){
-	std::vector<std::string> elems;
-	std::stringstream line_stream;
-	line_stream.str(line);
-	std::string item;
-	Monster monster;
-	while (std::getline(line_stream, item, ':')) {
-		elems.push_back(item);
-	}
+void Interface::addMonster(std::string line){
+	// std::vector<std::string> elems;
+	// std::stringstream line_stream;
+	// line_stream.str(line);
+	// std::string item;
+	// Monster monster;
+	// while (std::getline(line_stream, item, ':')) {
+	// 	elems.push_back(item);
+	// }
 
-	long int positionX = strtol (elems.at(1).c_str(),NULL,10);
-	long int positionY = strtol (elems.at(2).c_str(),NULL,10);
-	long int id_weapon = strtol (elems.at(4).c_str(),NULL,10);
-	long int attack = strtol (elems.at(5).c_str(),NULL,10);
-	long int defense= strtol (elems.at(6).c_str(),NULL,10);
-	long int life = strtod (elems.at(7).c_str(),NULL);
+	// long int positionX = strtol (elems.at(1).c_str(),NULL,10);
+	// long int positionY = strtol (elems.at(2).c_str(),NULL,10);
+	// long int id_weapon = strtol (elems.at(4).c_str(),NULL,10);
+	// long int attack = strtol (elems.at(5).c_str(),NULL,10);
+	// long int defense= strtol (elems.at(6).c_str(),NULL,10);
+	// long int life = strtod (elems.at(7).c_str(),NULL);
 
-	monster.setPosition(glm::vec2(positionX,positionY)):
-	monster.setType(elems.at(3));
-	monster.setWeapon(Weapon myweapon(id_weapon));
-	monster.setAttack(attack);
-	monster.setDefense(defense);
-	monster.setLife();
-	listMonsters.push_back(monster);
+	// monster.setPosition(glm::vec2(positionX,positionY));
+	// monster.setType(elems.at(3));
+	// monster.setWeapon(Weapon myweapon(id_weapon));
+	// monster.setAttack(attack);
+	// monster.setDefense(defense);
+	// monster.setLife(life);
+	// listMonsters.push_back(monster);
 
 	//id:X:Y:type:id_arme:attack:defense:lifespan:?
 }
@@ -95,12 +95,12 @@ void Interface::addAleatoirus(string line){
        	elems.push_back(item);
    	}
 
-	long int positionX = strtol (elems.at(1).c_str(),&ptr,10);
-	long int positionY = strtol (elems.at(2).c_str(),&ptr,10);
-	alea.setPosition(glm::vec2(positionX, positionY));
-	alea.setType(elems.at(3));
+	// long int positionX = strtol (elems.at(1).c_str(),&ptr,10);
+	// long int positionY = strtol (elems.at(2).c_str(),&ptr,10);
+	// alea.setPosition(glm::vec2(positionX, positionY));
+	// alea.setType(elems.at(3));
 
-	listAleatoirus.push_back(alea);
+//	listAleatoirus.push_back(alea);
 }
 
 void Interface::collision() {
@@ -113,7 +113,7 @@ void Interface::showCursor () {
 
 
 // getters
-glm::mat Interface::getMap () {return map;}
+Map Interface::getMap () {return map;}
 unsigned int Interface::getNbPink() {return nbPink;}
 unsigned int Interface::getNbBlue() {return nbBlue;}
 std::vector<Aleatoirus> Interface::getListAleatoirus () {return listAleatoirus;}
@@ -122,7 +122,7 @@ MainCaracter Interface::getPlayer () {return player;}
 
 
 // setters
-void Interface::setMap (glm::mat m) { map = m; }
+void Interface::setMap (Map m) { map = m; }
 void Interface::setNbPink(unsigned int p){ nbPink = p; }	
 void Interface::setNbBlue(unsigned int b) { nbBlue = b; }
 void Interface::setListAleatoirus (std::vector<Aleatoirus> list) { listAleatoirus = list; }

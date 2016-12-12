@@ -5,10 +5,11 @@
 #include <glimac/MainCaracter.hpp>
 
 class Aleatoirus {
-private: 
 	enum Type {a1, a2, a3 }; 
-	glm::vec2 position;
 
+private: 
+	glm::vec2 position;
+	Type typeAlea;
 public: 
 	Aleatoirus();
 	~Aleatoirus();
