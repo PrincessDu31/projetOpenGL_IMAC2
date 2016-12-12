@@ -74,7 +74,7 @@ glimac/preinstall:
 glimac/CMakeFiles/glimac.dir/all:
 	$(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/depend
 	$(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles  2 3 4 5 6 7 8 9
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles  2 3 4 5 6 7 8 9 10 11 12 13 14 15 16
 	@echo "Built target glimac"
 .PHONY : glimac/CMakeFiles/glimac.dir/all
 
@@ -84,7 +84,7 @@ all: glimac/CMakeFiles/glimac.dir/all
 
 # Build rule for subdir invocation for target.
 glimac/CMakeFiles/glimac.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles 15
 	$(MAKE) -f CMakeFiles/Makefile2 glimac/CMakeFiles/glimac.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles 0
 .PHONY : glimac/CMakeFiles/glimac.dir/rule
@@ -103,14 +103,64 @@ clean: glimac/CMakeFiles/glimac.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Directory level rules for directory jeu
+
+# Convenience name for "all" pass in the directory.
+jeu/all: jeu/CMakeFiles/jeu.dir/all
+.PHONY : jeu/all
+
+# Convenience name for "clean" pass in the directory.
+jeu/clean: jeu/CMakeFiles/jeu.dir/clean
+.PHONY : jeu/clean
+
+# Convenience name for "preinstall" pass in the directory.
+jeu/preinstall:
+.PHONY : jeu/preinstall
+
+#=============================================================================
+# Target rules for target jeu/CMakeFiles/jeu.dir
+
+# All Build rule for target.
+jeu/CMakeFiles/jeu.dir/all:
+	$(MAKE) -f jeu/CMakeFiles/jeu.dir/build.make jeu/CMakeFiles/jeu.dir/depend
+	$(MAKE) -f jeu/CMakeFiles/jeu.dir/build.make jeu/CMakeFiles/jeu.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles  17 18 19 20 21 22 23 24
+	@echo "Built target jeu"
+.PHONY : jeu/CMakeFiles/jeu.dir/all
+
+# Include target in all.
+all: jeu/CMakeFiles/jeu.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+jeu/CMakeFiles/jeu.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles 8
+	$(MAKE) -f CMakeFiles/Makefile2 jeu/CMakeFiles/jeu.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles 0
+.PHONY : jeu/CMakeFiles/jeu.dir/rule
+
+# Convenience name for target.
+jeu: jeu/CMakeFiles/jeu.dir/rule
+.PHONY : jeu
+
+# clean rule for target.
+jeu/CMakeFiles/jeu.dir/clean:
+	$(MAKE) -f jeu/CMakeFiles/jeu.dir/build.make jeu/CMakeFiles/jeu.dir/clean
+.PHONY : jeu/CMakeFiles/jeu.dir/clean
+
+# clean rule for target.
+clean: jeu/CMakeFiles/jeu.dir/clean
+.PHONY : clean
+
+#=============================================================================
 # Directory level rules for directory TP_template
 
 # Convenience name for "all" pass in the directory.
-TP_template/all: TP_template/CMakeFiles/TP_template_main.dir/all
+TP_template/all: TP_template/CMakeFiles/TP_template_SDLtemplate.dir/all
 .PHONY : TP_template/all
 
 # Convenience name for "clean" pass in the directory.
-TP_template/clean: TP_template/CMakeFiles/TP_template_main.dir/clean
+TP_template/clean: TP_template/CMakeFiles/TP_template_SDLtemplate.dir/clean
 .PHONY : TP_template/clean
 
 # Convenience name for "preinstall" pass in the directory.
@@ -118,38 +168,38 @@ TP_template/preinstall:
 .PHONY : TP_template/preinstall
 
 #=============================================================================
-# Target rules for target TP_template/CMakeFiles/TP_template_main.dir
+# Target rules for target TP_template/CMakeFiles/TP_template_SDLtemplate.dir
 
 # All Build rule for target.
-TP_template/CMakeFiles/TP_template_main.dir/all: glimac/CMakeFiles/glimac.dir/all
-	$(MAKE) -f TP_template/CMakeFiles/TP_template_main.dir/build.make TP_template/CMakeFiles/TP_template_main.dir/depend
-	$(MAKE) -f TP_template/CMakeFiles/TP_template_main.dir/build.make TP_template/CMakeFiles/TP_template_main.dir/build
+TP_template/CMakeFiles/TP_template_SDLtemplate.dir/all: glimac/CMakeFiles/glimac.dir/all
+	$(MAKE) -f TP_template/CMakeFiles/TP_template_SDLtemplate.dir/build.make TP_template/CMakeFiles/TP_template_SDLtemplate.dir/depend
+	$(MAKE) -f TP_template/CMakeFiles/TP_template_SDLtemplate.dir/build.make TP_template/CMakeFiles/TP_template_SDLtemplate.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles  1
-	@echo "Built target TP_template_main"
-.PHONY : TP_template/CMakeFiles/TP_template_main.dir/all
+	@echo "Built target TP_template_SDLtemplate"
+.PHONY : TP_template/CMakeFiles/TP_template_SDLtemplate.dir/all
 
 # Include target in all.
-all: TP_template/CMakeFiles/TP_template_main.dir/all
+all: TP_template/CMakeFiles/TP_template_SDLtemplate.dir/all
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-TP_template/CMakeFiles/TP_template_main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles 9
-	$(MAKE) -f CMakeFiles/Makefile2 TP_template/CMakeFiles/TP_template_main.dir/all
+TP_template/CMakeFiles/TP_template_SDLtemplate.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles 16
+	$(MAKE) -f CMakeFiles/Makefile2 TP_template/CMakeFiles/TP_template_SDLtemplate.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles 0
-.PHONY : TP_template/CMakeFiles/TP_template_main.dir/rule
+.PHONY : TP_template/CMakeFiles/TP_template_SDLtemplate.dir/rule
 
 # Convenience name for target.
-TP_template_main: TP_template/CMakeFiles/TP_template_main.dir/rule
-.PHONY : TP_template_main
+TP_template_SDLtemplate: TP_template/CMakeFiles/TP_template_SDLtemplate.dir/rule
+.PHONY : TP_template_SDLtemplate
 
 # clean rule for target.
-TP_template/CMakeFiles/TP_template_main.dir/clean:
-	$(MAKE) -f TP_template/CMakeFiles/TP_template_main.dir/build.make TP_template/CMakeFiles/TP_template_main.dir/clean
-.PHONY : TP_template/CMakeFiles/TP_template_main.dir/clean
+TP_template/CMakeFiles/TP_template_SDLtemplate.dir/clean:
+	$(MAKE) -f TP_template/CMakeFiles/TP_template_SDLtemplate.dir/build.make TP_template/CMakeFiles/TP_template_SDLtemplate.dir/clean
+.PHONY : TP_template/CMakeFiles/TP_template_SDLtemplate.dir/clean
 
 # clean rule for target.
-clean: TP_template/CMakeFiles/TP_template_main.dir/clean
+clean: TP_template/CMakeFiles/TP_template_SDLtemplate.dir/clean
 .PHONY : clean
 
 #=============================================================================

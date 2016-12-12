@@ -116,17 +116,30 @@ glimac/fast:
 .PHONY : glimac/fast
 
 #=============================================================================
-# Target rules for targets named TP_template_main
+# Target rules for targets named jeu
 
 # Build rule for target.
-TP_template_main: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 TP_template_main
-.PHONY : TP_template_main
+jeu: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 jeu
+.PHONY : jeu
 
 # fast build rule for target.
-TP_template_main/fast:
-	$(MAKE) -f TP_template/CMakeFiles/TP_template_main.dir/build.make TP_template/CMakeFiles/TP_template_main.dir/build
-.PHONY : TP_template_main/fast
+jeu/fast:
+	$(MAKE) -f jeu/CMakeFiles/jeu.dir/build.make jeu/CMakeFiles/jeu.dir/build
+.PHONY : jeu/fast
+
+#=============================================================================
+# Target rules for targets named TP_template_SDLtemplate
+
+# Build rule for target.
+TP_template_SDLtemplate: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 TP_template_SDLtemplate
+.PHONY : TP_template_SDLtemplate
+
+# fast build rule for target.
+TP_template_SDLtemplate/fast:
+	$(MAKE) -f TP_template/CMakeFiles/TP_template_SDLtemplate.dir/build.make TP_template/CMakeFiles/TP_template_SDLtemplate.dir/build
+.PHONY : TP_template_SDLtemplate/fast
 
 # Help Target
 help:
@@ -137,7 +150,8 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... glimac"
-	@echo "... TP_template_main"
+	@echo "... jeu"
+	@echo "... TP_template_SDLtemplate"
 .PHONY : help
 
 

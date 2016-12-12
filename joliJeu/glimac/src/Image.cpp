@@ -44,4 +44,3 @@ const Image* ImageManager::loadImage(const FilePath& filepath) {
 }
 
 }
-

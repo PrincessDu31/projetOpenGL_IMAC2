@@ -103,42 +103,42 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-TP_template/CMakeFiles/TP_template_main.dir/rule:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f CMakeFiles/Makefile2 TP_template/CMakeFiles/TP_template_main.dir/rule
-.PHONY : TP_template/CMakeFiles/TP_template_main.dir/rule
+TP_template/CMakeFiles/TP_template_SDLtemplate.dir/rule:
+	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f CMakeFiles/Makefile2 TP_template/CMakeFiles/TP_template_SDLtemplate.dir/rule
+.PHONY : TP_template/CMakeFiles/TP_template_SDLtemplate.dir/rule
 
 # Convenience name for target.
-TP_template_main: TP_template/CMakeFiles/TP_template_main.dir/rule
-.PHONY : TP_template_main
+TP_template_SDLtemplate: TP_template/CMakeFiles/TP_template_SDLtemplate.dir/rule
+.PHONY : TP_template_SDLtemplate
 
 # fast build rule for target.
-TP_template_main/fast:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f TP_template/CMakeFiles/TP_template_main.dir/build.make TP_template/CMakeFiles/TP_template_main.dir/build
-.PHONY : TP_template_main/fast
+TP_template_SDLtemplate/fast:
+	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f TP_template/CMakeFiles/TP_template_SDLtemplate.dir/build.make TP_template/CMakeFiles/TP_template_SDLtemplate.dir/build
+.PHONY : TP_template_SDLtemplate/fast
 
-main.o: main.cpp.o
-.PHONY : main.o
+SDLtemplate.o: SDLtemplate.cpp.o
+.PHONY : SDLtemplate.o
 
 # target to build an object file
-main.cpp.o:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f TP_template/CMakeFiles/TP_template_main.dir/build.make TP_template/CMakeFiles/TP_template_main.dir/main.cpp.o
-.PHONY : main.cpp.o
+SDLtemplate.cpp.o:
+	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f TP_template/CMakeFiles/TP_template_SDLtemplate.dir/build.make TP_template/CMakeFiles/TP_template_SDLtemplate.dir/SDLtemplate.cpp.o
+.PHONY : SDLtemplate.cpp.o
 
-main.i: main.cpp.i
-.PHONY : main.i
+SDLtemplate.i: SDLtemplate.cpp.i
+.PHONY : SDLtemplate.i
 
 # target to preprocess a source file
-main.cpp.i:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f TP_template/CMakeFiles/TP_template_main.dir/build.make TP_template/CMakeFiles/TP_template_main.dir/main.cpp.i
-.PHONY : main.cpp.i
+SDLtemplate.cpp.i:
+	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f TP_template/CMakeFiles/TP_template_SDLtemplate.dir/build.make TP_template/CMakeFiles/TP_template_SDLtemplate.dir/SDLtemplate.cpp.i
+.PHONY : SDLtemplate.cpp.i
 
-main.s: main.cpp.s
-.PHONY : main.s
+SDLtemplate.s: SDLtemplate.cpp.s
+.PHONY : SDLtemplate.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f TP_template/CMakeFiles/TP_template_main.dir/build.make TP_template/CMakeFiles/TP_template_main.dir/main.cpp.s
-.PHONY : main.cpp.s
+SDLtemplate.cpp.s:
+	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f TP_template/CMakeFiles/TP_template_SDLtemplate.dir/build.make TP_template/CMakeFiles/TP_template_SDLtemplate.dir/SDLtemplate.cpp.s
+.PHONY : SDLtemplate.cpp.s
 
 # Help Target
 help:
@@ -146,12 +146,12 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... TP_template_main"
+	@echo "... TP_template_SDLtemplate"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... SDLtemplate.o"
+	@echo "... SDLtemplate.i"
+	@echo "... SDLtemplate.s"
 .PHONY : help
 
 

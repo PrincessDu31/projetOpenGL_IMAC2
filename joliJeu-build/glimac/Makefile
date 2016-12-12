@@ -116,6 +116,54 @@ glimac/fast:
 	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/build
 .PHONY : glimac/fast
 
+src/Aleatoirus.o: src/Aleatoirus.cpp.o
+.PHONY : src/Aleatoirus.o
+
+# target to build an object file
+src/Aleatoirus.cpp.o:
+	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Aleatoirus.cpp.o
+.PHONY : src/Aleatoirus.cpp.o
+
+src/Aleatoirus.i: src/Aleatoirus.cpp.i
+.PHONY : src/Aleatoirus.i
+
+# target to preprocess a source file
+src/Aleatoirus.cpp.i:
+	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Aleatoirus.cpp.i
+.PHONY : src/Aleatoirus.cpp.i
+
+src/Aleatoirus.s: src/Aleatoirus.cpp.s
+.PHONY : src/Aleatoirus.s
+
+# target to generate assembly for a file
+src/Aleatoirus.cpp.s:
+	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Aleatoirus.cpp.s
+.PHONY : src/Aleatoirus.cpp.s
+
+src/Character.o: src/Character.cpp.o
+.PHONY : src/Character.o
+
+# target to build an object file
+src/Character.cpp.o:
+	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Character.cpp.o
+.PHONY : src/Character.cpp.o
+
+src/Character.i: src/Character.cpp.i
+.PHONY : src/Character.i
+
+# target to preprocess a source file
+src/Character.cpp.i:
+	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Character.cpp.i
+.PHONY : src/Character.cpp.i
+
+src/Character.s: src/Character.cpp.s
+.PHONY : src/Character.s
+
+# target to generate assembly for a file
+src/Character.cpp.s:
+	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Character.cpp.s
+.PHONY : src/Character.cpp.s
+
 src/Cone.o: src/Cone.cpp.o
 .PHONY : src/Cone.o
 
@@ -187,6 +235,102 @@ src/Image.s: src/Image.cpp.s
 src/Image.cpp.s:
 	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Image.cpp.s
 .PHONY : src/Image.cpp.s
+
+src/Interface.o: src/Interface.cpp.o
+.PHONY : src/Interface.o
+
+# target to build an object file
+src/Interface.cpp.o:
+	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Interface.cpp.o
+.PHONY : src/Interface.cpp.o
+
+src/Interface.i: src/Interface.cpp.i
+.PHONY : src/Interface.i
+
+# target to preprocess a source file
+src/Interface.cpp.i:
+	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Interface.cpp.i
+.PHONY : src/Interface.cpp.i
+
+src/Interface.s: src/Interface.cpp.s
+.PHONY : src/Interface.s
+
+# target to generate assembly for a file
+src/Interface.cpp.s:
+	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Interface.cpp.s
+.PHONY : src/Interface.cpp.s
+
+src/MainCaracter.o: src/MainCaracter.cpp.o
+.PHONY : src/MainCaracter.o
+
+# target to build an object file
+src/MainCaracter.cpp.o:
+	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/MainCaracter.cpp.o
+.PHONY : src/MainCaracter.cpp.o
+
+src/MainCaracter.i: src/MainCaracter.cpp.i
+.PHONY : src/MainCaracter.i
+
+# target to preprocess a source file
+src/MainCaracter.cpp.i:
+	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/MainCaracter.cpp.i
+.PHONY : src/MainCaracter.cpp.i
+
+src/MainCaracter.s: src/MainCaracter.cpp.s
+.PHONY : src/MainCaracter.s
+
+# target to generate assembly for a file
+src/MainCaracter.cpp.s:
+	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/MainCaracter.cpp.s
+.PHONY : src/MainCaracter.cpp.s
+
+src/Map.o: src/Map.cpp.o
+.PHONY : src/Map.o
+
+# target to build an object file
+src/Map.cpp.o:
+	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Map.cpp.o
+.PHONY : src/Map.cpp.o
+
+src/Map.i: src/Map.cpp.i
+.PHONY : src/Map.i
+
+# target to preprocess a source file
+src/Map.cpp.i:
+	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Map.cpp.i
+.PHONY : src/Map.cpp.i
+
+src/Map.s: src/Map.cpp.s
+.PHONY : src/Map.s
+
+# target to generate assembly for a file
+src/Map.cpp.s:
+	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Map.cpp.s
+.PHONY : src/Map.cpp.s
+
+src/Monster.o: src/Monster.cpp.o
+.PHONY : src/Monster.o
+
+# target to build an object file
+src/Monster.cpp.o:
+	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Monster.cpp.o
+.PHONY : src/Monster.cpp.o
+
+src/Monster.i: src/Monster.cpp.i
+.PHONY : src/Monster.i
+
+# target to preprocess a source file
+src/Monster.cpp.i:
+	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Monster.cpp.i
+.PHONY : src/Monster.cpp.i
+
+src/Monster.s: src/Monster.cpp.s
+.PHONY : src/Monster.s
+
+# target to generate assembly for a file
+src/Monster.cpp.s:
+	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Monster.cpp.s
+.PHONY : src/Monster.cpp.s
 
 src/Program.o: src/Program.cpp.o
 .PHONY : src/Program.o
@@ -284,6 +428,30 @@ src/Sphere.cpp.s:
 	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Sphere.cpp.s
 .PHONY : src/Sphere.cpp.s
 
+src/Weapon.o: src/Weapon.cpp.o
+.PHONY : src/Weapon.o
+
+# target to build an object file
+src/Weapon.cpp.o:
+	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Weapon.cpp.o
+.PHONY : src/Weapon.cpp.o
+
+src/Weapon.i: src/Weapon.cpp.i
+.PHONY : src/Weapon.i
+
+# target to preprocess a source file
+src/Weapon.cpp.i:
+	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Weapon.cpp.i
+.PHONY : src/Weapon.cpp.i
+
+src/Weapon.s: src/Weapon.cpp.s
+.PHONY : src/Weapon.s
+
+# target to generate assembly for a file
+src/Weapon.cpp.s:
+	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Weapon.cpp.s
+.PHONY : src/Weapon.cpp.s
+
 src/tiny_obj_loader.o: src/tiny_obj_loader.cpp.o
 .PHONY : src/tiny_obj_loader.o
 
@@ -317,6 +485,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... glimac"
 	@echo "... rebuild_cache"
+	@echo "... src/Aleatoirus.o"
+	@echo "... src/Aleatoirus.i"
+	@echo "... src/Aleatoirus.s"
+	@echo "... src/Character.o"
+	@echo "... src/Character.i"
+	@echo "... src/Character.s"
 	@echo "... src/Cone.o"
 	@echo "... src/Cone.i"
 	@echo "... src/Cone.s"
@@ -326,6 +500,18 @@ help:
 	@echo "... src/Image.o"
 	@echo "... src/Image.i"
 	@echo "... src/Image.s"
+	@echo "... src/Interface.o"
+	@echo "... src/Interface.i"
+	@echo "... src/Interface.s"
+	@echo "... src/MainCaracter.o"
+	@echo "... src/MainCaracter.i"
+	@echo "... src/MainCaracter.s"
+	@echo "... src/Map.o"
+	@echo "... src/Map.i"
+	@echo "... src/Map.s"
+	@echo "... src/Monster.o"
+	@echo "... src/Monster.i"
+	@echo "... src/Monster.s"
 	@echo "... src/Program.o"
 	@echo "... src/Program.i"
 	@echo "... src/Program.s"
@@ -338,6 +524,9 @@ help:
 	@echo "... src/Sphere.o"
 	@echo "... src/Sphere.i"
 	@echo "... src/Sphere.s"
+	@echo "... src/Weapon.o"
+	@echo "... src/Weapon.i"
+	@echo "... src/Weapon.s"
 	@echo "... src/tiny_obj_loader.o"
 	@echo "... src/tiny_obj_loader.i"
 	@echo "... src/tiny_obj_loader.s"
