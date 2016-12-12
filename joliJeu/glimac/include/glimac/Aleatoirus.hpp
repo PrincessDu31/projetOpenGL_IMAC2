@@ -13,6 +13,8 @@ public:
 	Aleatoirus();
 	~Aleatoirus();
 	void doAction (MainCaracter m);
+	void setPosition(glm::vec2 p);
+	void setType(Type t);
 
 };
 
