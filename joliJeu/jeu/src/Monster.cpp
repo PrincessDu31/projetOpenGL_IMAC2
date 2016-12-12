@@ -13,3 +13,7 @@ Monster::Monster(vec2 pos) {
 Monster::~Monster() {
 
 }
+
+void Monster::setType(Type t){
+	Type = t;
+}

@@ -2,7 +2,11 @@
 #include <GL/glew.h>
 #include <iostream>
 
+<<<<<<< HEAD
 #include <glimac/Interface.hpp>
+=======
+#include "include/Interface.hpp"
+>>>>>>> 1512b7c381901b1d88539924358c4280d7133751
 
 // //#include "glimac/glm.hpp"
 // #include "include/MainCaracter.hpp"
@@ -283,9 +287,13 @@ using namespace std;
 
 
 int main(int argc, char** argv) {
+<<<<<<< HEAD
 
 	Interface interface;
 	cout << "okiki" << endl;
+=======
+   Interface interface;
+>>>>>>> 1512b7c381901b1d88539924358c4280d7133751
 
 
 	// Initialize SDL and open a window

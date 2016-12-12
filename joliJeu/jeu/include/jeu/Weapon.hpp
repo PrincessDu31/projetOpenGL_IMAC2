@@ -1,5 +1,9 @@
+<<<<<<< HEAD:joliJeu/jeu/include/jeu/Weapon.hpp
 #ifndef WEAPON_HPP
 #define WEAPON_HPP
+=======
+#pragma once
+>>>>>>> 1512b7c381901b1d88539924358c4280d7133751:joliJeu/TP_template/include/Weapon.hpp
 
 #define NB_ARMES 3
 
@@ -15,4 +19,3 @@ public:
 
 };
 
-#endif 

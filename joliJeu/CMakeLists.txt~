@@ -10,19 +10,14 @@ find_package(SDL REQUIRED)
 find_package(OpenGL REQUIRED)
 find_package(GLEW REQUIRED)
 
-<<<<<<< HEAD
 # Pour gérer un bug a la fac, a supprimer sur machine perso:
 set(OPENGL_LIBRARIES /usr/lib/x86_64-linux-gnu/libGL.so.1)
 
-include_directories(${SDL_INCLUDE_DIR} ${OPENGL_INCLUDE_DIR} ${GLEW_INCLUDE_DIR} glimac/include jeu/include third-party/include)
-=======
 include_directories(${SDL_INCLUDE_DIR} ${OPENGL_INCLUDE_DIR} ${GLEW_INCLUDE_DIR} glimac/include third-party/include)
->>>>>>> 1512b7c381901b1d88539924358c4280d7133751
 
 set(ALL_LIBRARIES glimac ${SDL_LIBRARY} ${OPENGL_LIBRARIES} ${GLEW_LIBRARY})
 
 add_subdirectory(glimac)
-add_subdirectory(jeu)
 
 file(GLOB TP_DIRECTORIES "TP*")
 
