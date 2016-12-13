@@ -116,19 +116,6 @@ glimac/fast:
 .PHONY : glimac/fast
 
 #=============================================================================
-# Target rules for targets named jeu
-
-# Build rule for target.
-jeu: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 jeu
-.PHONY : jeu
-
-# fast build rule for target.
-jeu/fast:
-	$(MAKE) -f jeu/CMakeFiles/jeu.dir/build.make jeu/CMakeFiles/jeu.dir/build
-.PHONY : jeu/fast
-
-#=============================================================================
 # Target rules for targets named TP_template_Jeu
 
 # Build rule for target.
@@ -141,6 +128,19 @@ TP_template_Jeu/fast:
 	$(MAKE) -f TP_template/CMakeFiles/TP_template_Jeu.dir/build.make TP_template/CMakeFiles/TP_template_Jeu.dir/build
 .PHONY : TP_template_Jeu/fast
 
+#=============================================================================
+# Target rules for targets named TP_template_Jeu_cube
+
+# Build rule for target.
+TP_template_Jeu_cube: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 TP_template_Jeu_cube
+.PHONY : TP_template_Jeu_cube
+
+# fast build rule for target.
+TP_template_Jeu_cube/fast:
+	$(MAKE) -f TP_template/CMakeFiles/TP_template_Jeu_cube.dir/build.make TP_template/CMakeFiles/TP_template_Jeu_cube.dir/build
+.PHONY : TP_template_Jeu_cube/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -150,8 +150,8 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... glimac"
-	@echo "... jeu"
 	@echo "... TP_template_Jeu"
+	@echo "... TP_template_Jeu_cube"
 .PHONY : help
 
 

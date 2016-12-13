@@ -116,6 +116,20 @@ TP_template_Jeu/fast:
 	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f TP_template/CMakeFiles/TP_template_Jeu.dir/build.make TP_template/CMakeFiles/TP_template_Jeu.dir/build
 .PHONY : TP_template_Jeu/fast
 
+# Convenience name for target.
+TP_template/CMakeFiles/TP_template_Jeu_cube.dir/rule:
+	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f CMakeFiles/Makefile2 TP_template/CMakeFiles/TP_template_Jeu_cube.dir/rule
+.PHONY : TP_template/CMakeFiles/TP_template_Jeu_cube.dir/rule
+
+# Convenience name for target.
+TP_template_Jeu_cube: TP_template/CMakeFiles/TP_template_Jeu_cube.dir/rule
+.PHONY : TP_template_Jeu_cube
+
+# fast build rule for target.
+TP_template_Jeu_cube/fast:
+	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f TP_template/CMakeFiles/TP_template_Jeu_cube.dir/build.make TP_template/CMakeFiles/TP_template_Jeu_cube.dir/build
+.PHONY : TP_template_Jeu_cube/fast
+
 Jeu.o: Jeu.cpp.o
 .PHONY : Jeu.o
 
@@ -140,6 +154,30 @@ Jeu.cpp.s:
 	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f TP_template/CMakeFiles/TP_template_Jeu.dir/build.make TP_template/CMakeFiles/TP_template_Jeu.dir/Jeu.cpp.s
 .PHONY : Jeu.cpp.s
 
+Jeu_cube.o: Jeu_cube.cpp.o
+.PHONY : Jeu_cube.o
+
+# target to build an object file
+Jeu_cube.cpp.o:
+	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f TP_template/CMakeFiles/TP_template_Jeu_cube.dir/build.make TP_template/CMakeFiles/TP_template_Jeu_cube.dir/Jeu_cube.cpp.o
+.PHONY : Jeu_cube.cpp.o
+
+Jeu_cube.i: Jeu_cube.cpp.i
+.PHONY : Jeu_cube.i
+
+# target to preprocess a source file
+Jeu_cube.cpp.i:
+	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f TP_template/CMakeFiles/TP_template_Jeu_cube.dir/build.make TP_template/CMakeFiles/TP_template_Jeu_cube.dir/Jeu_cube.cpp.i
+.PHONY : Jeu_cube.cpp.i
+
+Jeu_cube.s: Jeu_cube.cpp.s
+.PHONY : Jeu_cube.s
+
+# target to generate assembly for a file
+Jeu_cube.cpp.s:
+	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f TP_template/CMakeFiles/TP_template_Jeu_cube.dir/build.make TP_template/CMakeFiles/TP_template_Jeu_cube.dir/Jeu_cube.cpp.s
+.PHONY : Jeu_cube.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -147,11 +185,15 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... TP_template_Jeu"
+	@echo "... TP_template_Jeu_cube"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Jeu.o"
 	@echo "... Jeu.i"
 	@echo "... Jeu.s"
+	@echo "... Jeu_cube.o"
+	@echo "... Jeu_cube.i"
+	@echo "... Jeu_cube.s"
 .PHONY : help
 
 

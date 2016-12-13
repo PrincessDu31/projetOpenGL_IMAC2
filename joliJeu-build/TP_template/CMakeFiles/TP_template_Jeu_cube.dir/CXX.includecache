@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu/TP_template/Jeu.cpp
+/home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu/TP_template/Jeu_cube.cpp
 glimac/SDLWindowManager.hpp
 -
 GL/glew.h
@@ -18,8 +18,6 @@ glimac/Program.hpp
 iostream
 -
 glimac/Interface.hpp
--
-glimac/FreeflyCamera.hpp
 -
 glimac/Sphere.hpp
 -
@@ -42,10 +40,6 @@ Weapon.hpp
 
 /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu/glimac/include/glimac/FilePath.hpp
 string
--
-
-/home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu/glimac/include/glimac/FreeflyCamera.hpp
-math.h
 -
 
 /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu/glimac/include/glimac/Image.hpp

@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu/TP_template/Jeu.cpp" "/home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/TP_template_Jeu.dir/Jeu.cpp.o"
+  "/home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu/TP_template/Jeu_cube.cpp" "/home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/TP_template_Jeu_cube.dir/Jeu_cube.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
