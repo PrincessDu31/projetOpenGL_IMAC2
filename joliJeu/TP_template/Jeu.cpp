@@ -253,6 +253,7 @@ int main(int argc, char** argv) {
 		glBindVertexArray(0);
 
 
+		globalMVMatrix = camera.getViewMatrix();
 
 		cubeProgram.m_Program.use();
 
@@ -273,7 +274,7 @@ int main(int argc, char** argv) {
 
 		if (movingFront == true) {
 			// if (abs(camera.getPosition().x) < interface.getMap().getWidth() * 0.5 )
-			 	camera.moveFront(0.2);
+			 	camera.moveFront(0.05);
 			// else
 			// 	camera.moveFront(-0.2);
 			// cout << "cam : " << abs(camera.getPosition().x) << endl;
