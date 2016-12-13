@@ -13,27 +13,27 @@ void Interface::createWorld (){
 	string line;
 	ifstream myfile("./config.txt");
 	int count = 0;
-	if (myfile.is_open()) {
-   		//while (!myfile.eof()){
-   			if (line == '#'){
-   				getLine(myfile, line);
-   				count ++;
-   			}
-   			if (count == 2){
-   				// readMap(line);
-   				readMap("../map/test3.ppm");
-   				getLine(myfile, line);
-   				count ++;
-   			} else {
-   				readMonsterAndAleatoirusInfos(& myfile);
-   			}
-   		//} 
-   		myfile.close();
-	}
+	// if (myfile.is_open()) {
+ //   		//while (!myfile.eof()){
+ //   			if (line == '#'){
+ //   				getLine(myfile, line);
+ //   				count ++;
+ //   			}
+ //   			if (count == 2){
+ //   				// readMap(line);
+    				readMap("../map/test3.ppm");
+ //   				getLine(myfile, line);
+ //   				count ++;
+ //   			} else {
+ //   				readMonsterAndAleatoirusInfos(& myfile);
+ //   			}
+ //   		//} 
+ //   		myfile.close();
+	// }
 }
 
 void Interface::readMap (std::string mapFile) {
-	Map = loadMapFromPPM(mapFile)
+	map.loadMapFromPPM(mapFile);
 }
 
 void Interface::readMonsterAndAleatoirusInfos (ifstream file) {

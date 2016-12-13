@@ -2,8 +2,8 @@
 #define MAP_HPP
 
 
-#define SOL 0
-#define MONTAGNE 255
+#define SOL 255
+#define MONTAGNE 0
 #define MARGE_ERREUR 127
 #define ZERO 48
 #define ASCII_SPACE 32
@@ -67,7 +67,7 @@ public:
 
 
 	void loadMapFromPPM (std::string mapFile);
-	void testMapLoading (Map m);
+	void testMapLoading ();
 	 
 };
 

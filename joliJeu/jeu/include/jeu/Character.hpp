@@ -1,9 +1,5 @@
-<<<<<<< HEAD:joliJeu/jeu/include/jeu/Character.hpp
 #ifndef CHARACTER_HPP
 #define CHARACTER_HPP
-=======
-#pragma once
->>>>>>> 1512b7c381901b1d88539924358c4280d7133751:joliJeu/TP_template/include/Caracter.hpp
 
 #include "glimac/glm.hpp"
 #include "Weapon.hpp"
@@ -43,3 +39,5 @@ public:
 	void setOrientation (glm::vec2 o);
 
 };
+
+#endif

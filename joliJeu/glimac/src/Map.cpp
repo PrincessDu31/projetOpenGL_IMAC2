@@ -2,6 +2,9 @@
 #include <iostream>
 #include <fstream>
 #include <glimac/Map.hpp>
+#include <cstdlib>
+#include <sstream>
+#include <string>
 
 using namespace std;
 
@@ -61,18 +64,28 @@ int Map::getHeight () { return height; }
 void Map::loadMapFromPPM (std::string mapFile) {
 
 
-	ifstream file (mapFile);
 	
-	if(file == NULL){
-		printf("Erreur dans l'image\n");
+	string line;
+	ifstream file (mapFile);
+
+	if (file.fail())
+	{
+		cout << "Erreur dans l'image\n";
+		file.clear( );
 	}
-	else{
 
-		char tmpChar;
 
-		file.get(tmpChar);
-		file.get(tmpChar);
-		file.get(tmpChar);
+	getline(file, line);
+	getline(file, line);
+   
+   	// while (line[0] == '#')
+   	// 	getline(file, line);
+
+		// char tmpChar;
+
+		// file.get(tmpChar);
+		// file.get(tmpChar);
+		// file.get(tmpChar);
 
 		int width = 0, height = 0, valMax = 0;
 		char widthTmp = ZERO, heightTmp = ZERO, valMaxTmp = ZERO;
@@ -88,39 +101,118 @@ void Map::loadMapFromPPM (std::string mapFile) {
 			file.get(heightTmp);
 		}
 
-		while (valMaxTmp != ASCII_NEW_LINE){
-			valMax = valMax*10 + (valMaxTmp - ZERO);
-			file.get(valMaxTmp);
-		}	
+
+		// while (valMaxTmp != ASCII_NEW_LINE){
+		// 	valMax = valMax*10 + (valMaxTmp - ZERO);
+		// 	file.get(valMaxTmp);
+		// }	
 
 		setWidth(width);
-		setWidth(height);
+		setHeight(height);
 			
 		unsigned char rUnsigned;
 		unsigned char gUnsigned;
 		unsigned char bUnsigned;
 		
 		Pixel tmp;
-		char r,g,b;
+		unsigned char r,g,b;
+		char tmpChar = ZERO;
 
 		while (!file.eof()) {
-			file.get(r);
-			rUnsigned = (int)r;
+			r = 0;
+			g = 0;
+			b = 0;
 
-			file.get(g);
-			gUnsigned = (int) g;
+			while (file.get(tmpChar) && tmpChar != ASCII_NEW_LINE && !file.eof()) {
+				r = r*10 + (tmpChar - ZERO);
+			}
+			// getline(file,r);
+			// rUnsigned = (int) r;
+			while (file.get(tmpChar) && tmpChar != ASCII_NEW_LINE && !file.eof()) {
+				g = g*10 + (tmpChar - ZERO);
+			}
+			// getline(file, g);
+			// gUnsigned = (int) g;
+			while (file.get(tmpChar) && tmpChar != ASCII_NEW_LINE && !file.eof()) {
+				b = b*10 + (tmpChar - ZERO);
+			}
+			// getline(file, b);
+			// bUnsigned = (int)b;
 
-			file.get(b);
-			bUnsigned = (int) b;
-
-			addValueTab((Pixel(rUnsigned,gUnsigned,bUnsigned)));
-			addElementMap(Pixel(rUnsigned,gUnsigned,bUnsigned).moyennePixels());
+			addValueTab((Pixel(r,g,b)));
+			addElementMap(Pixel(r,g,b).moyennePixels());
 		}
 
 		file.close();
 	}
 
-}
+
+
+
+// void Map::loadMapFromPPM (std::string mapFile) {
+
+
+// 	ifstream file (mapFile);
+	
+// 	if(file == NULL){
+// 		printf("Erreur dans l'image\n");
+// 	}
+// 	else{
+
+// 		char tmpChar;
+
+// 		file.get(tmpChar);
+// 		file.get(tmpChar);
+// 		file.get(tmpChar);
+
+// 		int width = 0, height = 0, valMax = 0;
+// 		char widthTmp = ZERO, heightTmp = ZERO, valMaxTmp = ZERO;
+
+
+// 		while (widthTmp != ASCII_SPACE){
+// 			width = width*10 + (widthTmp - ZERO);
+// 			file.get(widthTmp);
+// 			cout << widthTmp << endl;
+// 		}
+
+// 		while (heightTmp != ASCII_NEW_LINE){
+// 			height = height*10 + (heightTmp - ZERO);
+// 			file.get(heightTmp);
+// 		}
+
+// 		while (valMaxTmp != ASCII_NEW_LINE){
+// 			valMax = valMax*10 + (valMaxTmp - ZERO);
+// 			file.get(valMaxTmp);
+// 		}	
+
+// 		setWidth(width);
+// 		setWidth(height);
+			
+// 		unsigned char rUnsigned;
+// 		unsigned char gUnsigned;
+// 		unsigned char bUnsigned;
+		
+// 		Pixel tmp;
+// 		char r,g,b;
+
+// 		while (!file.eof()) {
+// 			file.get(r);
+// 			rUnsigned = (int)r;
+
+// 			file.get(g);
+// 			gUnsigned = (int) g;
+
+// 			file.get(b);
+// 			bUnsigned = (int) b;
+
+// 			addValueTab((Pixel(rUnsigned,gUnsigned,bUnsigned)));
+// 			addElementMap(Pixel(rUnsigned,gUnsigned,bUnsigned).moyennePixels());
+// 		}
+
+// 		file.close();
+// 	}
+
+// }
 
 
 void Map::addElementMap (unsigned char val) {
@@ -135,40 +227,51 @@ void Map::addElementMap (unsigned char val) {
 }
 
 
-void Map::testMapLoading (Map m) {
-	int w = m.getWidth();
-	int h = m.getWidth();
-	cout << "width : " << w << endl;
-	cout << "height : " << h << endl;
-	
-	int rowToTest = 1, colToTest = 12;
-	Pixel val = m.getValueMap(rowToTest,colToTest);
-	cout << "pixel row " << rowToTest << " col " << colToTest << " : ";
-	val.printPixel();
-	cout << "moyenne des pixels : " << (int) val.moyennePixels() << endl;
-	m.printElement (rowToTest,colToTest);
-	cout << endl;
-
-	rowToTest = 1;
-	colToTest = 199;
-	val = m.getValueMap(rowToTest,colToTest);
-	cout << "pixel row " << rowToTest << " col " << colToTest << " : ";
-	val.printPixel();
-	cout <<  "moyenne des pixels : " << (int) val.moyennePixels() << endl;
-	m.printElement (rowToTest,colToTest);
-	cout << endl;
+void Map::testMapLoading () {
 
 
 	int i, j;
 
 
-	for (i = 1; i <= w; i++) {
+	for (i = 1; i <= width; i++) {
 		cout << endl;
-		for (j = 1; j <= h; j++) {
-			m.printElement (i,j);
+		for (j = 1; j <= height; j++) {
+			printElement (i,j);
 		}
 
 	}
+
+	cout << endl; 
+	cout << "width : " << width << endl;
+	cout << "height : " << height << endl;
+	
+	int rowToTest = 1, colToTest = 12;
+	Pixel val = getValueMap(rowToTest,colToTest);
+	cout << "pixel row " << rowToTest << " col " << colToTest << " : ";
+	val.printPixel();
+	cout << "moyenne des pixels : " << (int) val.moyennePixels() << endl;
+	printElement (rowToTest,colToTest);
+	cout << endl;
+
+	rowToTest = 1;
+	colToTest = 29;
+	val = getValueMap(rowToTest,colToTest);
+	cout << "pixel row " << rowToTest << " col " << colToTest << " : ";
+	val.printPixel();
+	cout <<  "moyenne des pixels : " << (int) val.moyennePixels() << endl;
+	printElement (rowToTest,colToTest);
+	cout << endl;
+
+	rowToTest = 1;
+	colToTest = 1;
+	val = getValueMap(rowToTest,colToTest);
+	cout << "pixel row " << rowToTest << " col " << colToTest << " : ";
+	val.printPixel();
+	cout <<  "moyenne des pixels : " << (int) val.moyennePixels() << endl;
+	printElement (rowToTest,colToTest);
+	cout << endl;
+
+
 
 }
 

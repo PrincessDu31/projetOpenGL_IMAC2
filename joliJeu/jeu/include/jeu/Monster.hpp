@@ -1,11 +1,5 @@
-<<<<<<< HEAD:joliJeu/jeu/include/jeu/Monster.hpp
 #ifndef MONSTER_HPP
 #define MONSTER_HPP
-=======
-#pragma once
-
-#include "Caracter.hpp"
->>>>>>> 1512b7c381901b1d88539924358c4280d7133751:joliJeu/TP_template/include/Monster.hpp
 
 #include "Character.hpp"
 
@@ -21,3 +15,4 @@ public:
 
 };
 
+#endif

@@ -1,9 +1,5 @@
-<<<<<<< HEAD:joliJeu/jeu/include/jeu/Aleatoirus.hpp
 #ifndef ALEATOIRUS_HPP
 #define ALEATOIRUS_HPP
-=======
-#pragma once
->>>>>>> 1512b7c381901b1d88539924358c4280d7133751:joliJeu/TP_template/include/Aleatoirus.hpp
 
 #include "glimac/glm.hpp"
 #include "MainCaracter.hpp"
@@ -21,3 +17,5 @@ public:
 	void setPosition(glm::vec2 p);
 	void setType(Type t);
 };
+
+#endif

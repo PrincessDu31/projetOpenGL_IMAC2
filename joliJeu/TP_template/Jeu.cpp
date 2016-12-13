@@ -13,7 +13,9 @@ using namespace std;
 int main(int argc, char** argv) {
 
    Interface interface;
-   
+   interface.createWorld();
+
+	interface.getMap().testMapLoading();
 
 	// Initialize SDL and open a window
 	SDLWindowManager windowManager(800, 600, "GLImac");

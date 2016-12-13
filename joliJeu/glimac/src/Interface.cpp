@@ -16,34 +16,29 @@ Interface::~Interface(){}
 void Interface::createWorld (){
 
 	string line;
-	ifstream myfile("../src/config.txt");
+	ifstream myfile("../../joliJeu/TP_template/config.txt");
 	myfile.is_open();
 	if (myfile.fail())
 	{
 		cout << " Error!";
 		myfile.clear( );
-	}
-	int count = 0;
-	while (!myfile.eof()) {
-		getline(myfile, line);
-   		count ++;
-   		if (line[0] == '#'){
-   			getline(myfile, line);
-   			count ++;
-   		}
-   		if (count == 1){
-   			readMap(line);
-   			getline(myfile, line);
-   			count ++;
-   		} else {
-   			readMonsterAndAleatoirusInfos(myfile);
-   		} 
-   	myfile.close();
+	} else {
+
+		while (!myfile.eof()) {
+			getline(myfile, line);
+	   		while (line[0] == '#'){
+	   			getline(myfile, line);
+	   		}
+	   		readMap(line);
+	   		readMonsterAndAleatoirusInfos(myfile);
+
+	   	myfile.close();
+		}
 	}
 }
 
 void Interface::readMap (string mapFile) {
-
+	cout << mapFile << endl;
 	map.loadMapFromPPM(mapFile);
 }
 
@@ -52,6 +47,7 @@ void Interface::readMonsterAndAleatoirusInfos (ifstream &file) {
 	getline(file, line);
 	int i = 0;
 	long int numberAlea = strtol (line.c_str(),NULL,10);
+
 	for (i=0; i < numberAlea ; i++){
 		getline(file, line);
 		addAleatoirus(line);
@@ -64,7 +60,7 @@ void Interface::readMonsterAndAleatoirusInfos (ifstream &file) {
 		addMonster(line);
 		cout << "monstre "<< i << ": " << line << endl;
 	}
-}
+} 
 
 void Interface::addMonster(std::string line){
 	std::vector<std::string> elems;
