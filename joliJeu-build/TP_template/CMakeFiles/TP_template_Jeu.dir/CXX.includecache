@@ -15,6 +15,8 @@ iostream
 -
 glimac/Interface.hpp
 -
+glimac/FreeflyCamera.hpp
+-
 
 /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu/glimac/include/glimac/Aleatoirus.hpp
 glimac/glm.hpp
@@ -29,6 +31,10 @@ glimac/glm.hpp
 /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu/glimac/include/glimac/glimac/glm.hpp
 Weapon.hpp
 /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu/glimac/include/glimac/Weapon.hpp
+
+/home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu/glimac/include/glimac/FreeflyCamera.hpp
+math.h
+-
 
 /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu/glimac/include/glimac/Interface.hpp
 glimac/glm.hpp

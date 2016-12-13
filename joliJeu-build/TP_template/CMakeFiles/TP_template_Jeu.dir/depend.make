@@ -4,6 +4,7 @@
 TP_template/CMakeFiles/TP_template_Jeu.dir/Jeu.cpp.o: /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu/TP_template/Jeu.cpp
 TP_template/CMakeFiles/TP_template_Jeu.dir/Jeu.cpp.o: /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu/glimac/include/glimac/Aleatoirus.hpp
 TP_template/CMakeFiles/TP_template_Jeu.dir/Jeu.cpp.o: /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu/glimac/include/glimac/Character.hpp
+TP_template/CMakeFiles/TP_template_Jeu.dir/Jeu.cpp.o: /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu/glimac/include/glimac/FreeflyCamera.hpp
 TP_template/CMakeFiles/TP_template_Jeu.dir/Jeu.cpp.o: /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu/glimac/include/glimac/Interface.hpp
 TP_template/CMakeFiles/TP_template_Jeu.dir/Jeu.cpp.o: /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu/glimac/include/glimac/MainCaracter.hpp
 TP_template/CMakeFiles/TP_template_Jeu.dir/Jeu.cpp.o: /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu/glimac/include/glimac/Map.hpp

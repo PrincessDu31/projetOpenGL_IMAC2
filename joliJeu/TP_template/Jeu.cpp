@@ -2,6 +2,7 @@
 #include <GL/glew.h>
 #include <iostream>
 #include <glimac/Interface.hpp>
+#include <glimac/FreeflyCamera.hpp>
 
 
 using namespace glimac;
@@ -35,15 +36,70 @@ int main(int argc, char** argv) {
      *********************************/
 
     // Application loop:
+	FreeflyCamera camera;
+    glm::mat4 viewMatrix;
+
+	bool movingFront = false;
+	bool movingBack = false;
+	bool turningLeft = false;
+	bool turningRight = false;
+
 	bool done = false;
 	while(!done) {
-		// Event loop:
-		SDL_Event e;
-		while(windowManager.pollEvent(e)) {
-			if(e.type == SDL_QUIT) {
-				done = true; // Leave the loop after this iteration
-			}
-		}
+
+
+
+
+		if (movingFront == true) camera.moveFront(0.5);
+		if (movingBack == true) camera.moveFront(-0.5);
+		if (turningLeft == true) camera.rotateLeft(0.5);
+		if (turningRight == true) camera.rotateLeft(-0.5);
+
+
+	 	SDL_Event e;
+     	while(windowManager.pollEvent(e)) {
+            if(e.type == SDL_QUIT) {
+                done = true; // Leave the loop after this iteration
+            }
+
+            switch(e.type) {
+
+            case SDL_KEYDOWN:
+
+				if(e.key.keysym.sym == SDLK_SPACE || e.key.keysym.sym == SDLK_UP) {
+					movingFront = true;
+				}
+				else if(e.key.keysym.sym == SDLK_RIGHT) {
+					turningRight = true;
+                }
+				else if(e.key.keysym.sym == SDLK_LEFT) {
+					turningLeft = true;
+				}
+				else if(e.key.keysym.sym == SDLK_DOWN) {
+					movingBack = true;
+				}
+				break;
+
+			
+			case SDL_KEYUP:
+
+				if(e.key.keysym.sym == SDLK_SPACE || e.key.keysym.sym == SDLK_UP) {
+					movingFront = false;
+				}
+				else if(e.key.keysym.sym == SDLK_RIGHT) {
+					turningRight = false;
+                }
+				else if(e.key.keysym.sym == SDLK_LEFT) {
+					turningLeft = false;
+				}
+				else if(e.key.keysym.sym == SDLK_DOWN) {
+					movingBack = false;
+				}
+                break;
+
+            }
+                  
+        }
 
         /*********************************
          * HERE SHOULD COME THE RENDERING CODE
