@@ -6,17 +6,19 @@
 #include <string>
 
 class Aleatoirus {
-	enum Type {a1, a2, a3 }; 
+	enum Type {BONUS, MALUS, WEAPON_UPGRADE, WEAPON_DOWNGRADE }; 
 
 private: 
 	glm::vec2 position;
 	Type typeAlea;
+
 public: 
 	Aleatoirus();
 	~Aleatoirus();
 	void doAction (MainCaracter m);
 	void setPosition(glm::vec2 p);
 	void setType(std::string t);
+	void draw();
 
 };
 
