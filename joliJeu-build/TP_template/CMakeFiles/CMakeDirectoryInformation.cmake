@@ -3,7 +3,7 @@
 
 # Relative path conversion top directories.
 set(CMAKE_RELATIVE_PATH_TOP_SOURCE "/home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu")
-set(CMAKE_RELATIVE_PATH_TOP_BINARY "/home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template")
+set(CMAKE_RELATIVE_PATH_TOP_BINARY "/home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build")
 
 # Force unix paths in dependencies.
 set(CMAKE_FORCE_UNIX_PATHS 1)

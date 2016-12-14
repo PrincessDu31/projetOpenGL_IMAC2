@@ -20,6 +20,8 @@ struct MapProgram {
     GLint uMVMatrix;
     GLint uNormalMatrix;
     GLint uTextureMap;
+    GLint uSizeMap;
+
     // GLint uTextureOtherTextureIfWeWant;
 
     MapProgram(const FilePath& applicationPath):
@@ -28,6 +30,8 @@ struct MapProgram {
         uMVPMatrix = glGetUniformLocation(m_Program.getGLId(), "uMVPMatrix");
         uMVMatrix = glGetUniformLocation(m_Program.getGLId(), "uMVMatrix");
         uNormalMatrix = glGetUniformLocation(m_Program.getGLId(), "uNormalMatrix");
+        uSizeMap = glGetUniformLocation(m_Program.getGLId(), "uSizeMap");
+
         // uTextureMap = glGetUniformLocation(m_Program.getGLId(), "uTextureMap");
         // uTextureOtherTextureIfWeWant = glGetUniformLocation(m_Program.getGLId(), "uTextureCloud");
     }
@@ -51,7 +55,6 @@ struct CubeProgram {
     }
 };
 
-
 struct AleatoirusProgram {
     Program m_Program;
 
@@ -71,8 +74,6 @@ struct AleatoirusProgram {
 };
 
 
-
-
 int main(int argc, char** argv) {
 
 
@@ -81,7 +82,7 @@ int main(int argc, char** argv) {
     interface.createWorld();
 
 	interface.getMap().testMapLoading();
-
+   
     // Initialize SDL and open a window
     unsigned int windowWidth = 800;
     unsigned int windowHeight = 600;
@@ -107,6 +108,7 @@ int main(int argc, char** argv) {
     AleatoirusProgram aleatoirusProgram(applicationPath);
 
 
+
     glEnable(GL_DEPTH_TEST);
 
     glm::mat4 projMatrix, MVMatrix, NormalMatrix;
@@ -130,40 +132,9 @@ int main(int argc, char** argv) {
         Vertex3DColor(glm::vec3(0.5, 0.5, 0.5), glm::vec3(0,0,1), glm::vec3(0, 0, 1)), // Sommet 2 - 2
         Vertex3DColor(glm::vec3(-0.5, 0.5, 0.5), glm::vec3(0,0,1), glm::vec3(1, 1, 1)), // Sommet 3 - 3 
 
-        //face arrière
-        Vertex3DColor(glm::vec3(-0.5, -0.5, -0.5), glm::vec3(0,0,-1), glm::vec3(1, 0, 0)), // Sommet 4 - 4
-        Vertex3DColor(glm::vec3(0.5, -0.5, -0.5), glm::vec3(0,0,-1), glm::vec3(0, 1, 0)), // Sommet 5 - 5
-        Vertex3DColor(glm::vec3(0.5, 0.5, -0.5), glm::vec3(0,0,-1), glm::vec3(0, 0, 1)), // Sommet 6 - 6
-        Vertex3DColor(glm::vec3(-0.5, 0.5, -0.5), glm::vec3(0,0,-1), glm::vec3(1, 1, 1)), // Sommet 7 - 7
-
-        //face haut
-        Vertex3DColor(glm::vec3(0.5, 0.5, 0.5), glm::vec3(0,1,0), glm::vec3(0, 0, 1)), // Sommet 2 - 8
-        Vertex3DColor(glm::vec3(-0.5, 0.5, 0.5), glm::vec3(0,1,0), glm::vec3(1, 1, 1)), // Sommet 3 - 9
-        Vertex3DColor(glm::vec3(0.5, 0.5, -0.5), glm::vec3(0,1,0), glm::vec3(0, 0, 1)), // Sommet 6 - 10
-        Vertex3DColor(glm::vec3(-0.5, 0.5, -0.5), glm::vec3(0,1,0), glm::vec3(1, 1, 1)), // Sommet 7 - 11
-
-        //face bas
-        Vertex3DColor(glm::vec3(-0.5, -0.5, 0.5), glm::vec3(0,-1, 0), glm::vec3(1, 0, 0)), // Sommet 0 - 12
-        Vertex3DColor(glm::vec3(0.5, -0.5, 0.5), glm::vec3(0,-1, 0), glm::vec3(0, 1, 0)), // Sommet 1 - 13
-        Vertex3DColor(glm::vec3(-0.5, -0.5, -0.5), glm::vec3(0,-1, 0), glm::vec3(1, 0, 0)), // Sommet 4 - 14
-        Vertex3DColor(glm::vec3(0.5, -0.5, -0.5), glm::vec3(0,-1, 0), glm::vec3(0, 1, 0)), // Sommet 5 - 15
-
-        //face gauche
-        Vertex3DColor(glm::vec3(-0.5, -0.5, 0.5), glm::vec3(-1,0,0), glm::vec3(1, 0, 0)), // Sommet 0 - 16 
-        Vertex3DColor(glm::vec3(-0.5, -0.5, -0.5), glm::vec3(-1,0,0), glm::vec3(1, 0, 0)), // Sommet 4 -17
-        Vertex3DColor(glm::vec3(-0.5, 0.5, -0.5), glm::vec3(-1,0,0), glm::vec3(1, 1, 1)), // Sommet 7 - 18 
-        Vertex3DColor(glm::vec3(-0.5, 0.5, 0.5), glm::vec3(-1,0,0), glm::vec3(1, 1, 1)), // Sommet 3 - 19
-
-        //face droite
-        Vertex3DColor(glm::vec3(0.5, -0.5, 0.5), glm::vec3(1,0,0), glm::vec3(0, 1, 0)), // Sommet 1 - 20
-        Vertex3DColor(glm::vec3(0.5, 0.5, 0.5), glm::vec3(1,0,0), glm::vec3(0, 0, 1)), // Sommet 2 - 21
-        Vertex3DColor(glm::vec3(0.5, -0.5, -0.5),glm::vec3(1,0,0), glm::vec3(0, 1, 0)), // Sommet 5 - 22
-        Vertex3DColor(glm::vec3(0.5, 0.5, -0.5), glm::vec3(1,0,0), glm::vec3(0, 0, 1)) // Sommet 6 - 23
-
     };
 
-   	GLint nbTriangles = 12;
-    //GLint nbTriangles = 4;
+   	GLint nbTriangles = 2;
     glBufferData(GL_ARRAY_BUFFER, nbTriangles*3 * sizeof(Vertex3DColor), vertices, GL_STATIC_DRAW);
 
     glBindBuffer(GL_ARRAY_BUFFER, 0);
@@ -173,13 +144,8 @@ int main(int argc, char** argv) {
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibo);
     uint32_t indices[] = {
         0, 1, 2, 0, 2, 3,
-        5, 6, 7, 5, 7, 4, 
-        9, 8, 10, 9, 10, 11, 
-        12, 13, 15, 12, 13, 14, 
-        16, 17, 18, 16, 18, 19,
-        20, 22, 23, 20, 23, 21
     };
-    GLuint nbIndices = 36;
+    GLuint nbIndices = 6;
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, nbIndices * sizeof(uint32_t), indices, GL_STATIC_DRAW);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 
@@ -228,6 +194,7 @@ int main(int argc, char** argv) {
 
         globalMVMatrix = camera.getViewMatrix();
 
+        //MAP DRAWING
         glBindVertexArray(1);   
 
         mapProgram.m_Program.use();
@@ -243,16 +210,17 @@ int main(int argc, char** argv) {
         glUniformMatrix4fv(mapProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(mapMVMatrix))));
         glUniformMatrix4fv(mapProgram.uMVPMatrix, 1, GL_FALSE, glm::value_ptr(projMatrix * mapMVMatrix));    
 
-      	glDrawElements(GL_TRIANGLES, 2*3, GL_UNSIGNED_INT, 0);
+        glm::vec2 sizeMap = glm::vec2(interface.getMap().getWidth(), interface.getMap().getHeight());
+        glUniform2f(mapProgram.uSizeMap, sizeMap.x, sizeMap.y);
+      	
+        glDrawElements(GL_TRIANGLES, 2*3, GL_UNSIGNED_INT, 0);
       
 
 		glBindVertexArray(0);
 
-		glBindVertexArray(0);
-
-
 		globalMVMatrix = camera.getViewMatrix();
 
+        //WALL DRAWING
 		cubeProgram.m_Program.use();
 
 		glBindVertexArray(1);   
@@ -267,7 +235,21 @@ int main(int argc, char** argv) {
       	glDrawElements(GL_TRIANGLES, nbTriangles*3, GL_UNSIGNED_INT, 0);
         glBindVertexArray(0);
 
+        //ALEATOIRUS DRAWING
 
+        glBindVertexArray(1);
+        aleatoirusProgram.m_Program.use();
+
+        glm::mat4 aleaMVMatrix = glm::translate(globalMVMatrix, glm::vec3(0.5, 0, 0));
+       
+
+        projMatrix = projMatrix;
+        glUniformMatrix4fv(aleatoirusProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(aleaMVMatrix));
+        glUniformMatrix4fv(aleatoirusProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(aleaMVMatrix))));
+        glUniformMatrix4fv(aleatoirusProgram.uMVPMatrix, 1, GL_FALSE, glm::value_ptr(projMatrix * aleaMVMatrix));    
+
+        glDrawElements(GL_TRIANGLES, 2*3, GL_UNSIGNED_INT, 0);
+        glBindVertexArray(0);
 
 
 		if (movingFront == true) {
