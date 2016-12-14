@@ -10,7 +10,7 @@ The output was:
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
 
-The C compiler identification is GNU, found in "/home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/3.0.2/CompilerIdC/a.out"
+The C compiler identification is GNU, found in "/home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/3.0.2/CompilerIdC/a.out"
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
 Compiler: /usr/bin/c++ 
@@ -23,35 +23,38 @@ The output was:
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
 
-The CXX compiler identification is GNU, found in "/home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/3.0.2/CompilerIdCXX/a.out"
+The CXX compiler identification is GNU, found in "/home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/3.0.2/CompilerIdCXX/a.out"
 
 Determining if the C compiler works passed with the following output:
-Change Dir: /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp
+Change Dir: /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec2958382055/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec2958382055.dir/build.make CMakeFiles/cmTryCompileExec2958382055.dir/build
-make[1]: Entering directory '/home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec2958382055.dir/testCCompiler.c.o
-/usr/bin/cc    -o CMakeFiles/cmTryCompileExec2958382055.dir/testCCompiler.c.o   -c /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTryCompileExec2958382055
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2958382055.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTryCompileExec2958382055.dir/testCCompiler.c.o  -o cmTryCompileExec2958382055 -rdynamic 
-make[1]: Leaving directory '/home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTryCompileExec226708598/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec226708598.dir/build.make CMakeFiles/cmTryCompileExec226708598.dir/build
+make[1]: Entering directory '/home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp'
+make[1]: Warning: File 'CMakeFiles/cmTryCompileExec226708598.dir/progress.make' has modification time 0,02 s in the future
+/usr/bin/cmake -E cmake_progress_report /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec226708598.dir/testCCompiler.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec226708598.dir/testCCompiler.c.o   -c /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTryCompileExec226708598
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec226708598.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTryCompileExec226708598.dir/testCCompiler.c.o  -o cmTryCompileExec226708598 -rdynamic 
+make[1]: Leaving directory '/home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp'
+make[1]: AVERTISSEMENT : décalage d'horloge détecté. La construction peut être incomplète.
 
 
 Detecting C compiler ABI info compiled with the following output:
-Change Dir: /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp
+Change Dir: /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec909542172/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec909542172.dir/build.make CMakeFiles/cmTryCompileExec909542172.dir/build
-make[1]: Entering directory '/home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec909542172.dir/CMakeCCompilerABI.c.o
-/usr/bin/cc    -o CMakeFiles/cmTryCompileExec909542172.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.0/Modules/CMakeCCompilerABI.c
-Linking C executable cmTryCompileExec909542172
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec909542172.dir/link.txt --verbose=1
-/usr/bin/cc     -v CMakeFiles/cmTryCompileExec909542172.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec909542172 -rdynamic  
+Run Build Command:"/usr/bin/make" "cmTryCompileExec2164334384/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2164334384.dir/build.make CMakeFiles/cmTryCompileExec2164334384.dir/build
+make[1]: Entering directory '/home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp'
+make[1]: Warning: File 'CMakeFiles/cmTryCompileExec2164334384.dir/progress.make' has modification time 0,013 s in the future
+/usr/bin/cmake -E cmake_progress_report /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2164334384.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec2164334384.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.0/Modules/CMakeCCompilerABI.c
+Linking C executable cmTryCompileExec2164334384
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2164334384.dir/link.txt --verbose=1
+/usr/bin/cc     -v CMakeFiles/cmTryCompileExec2164334384.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec2164334384 -rdynamic  
 Using built-in specs.
 COLLECT_GCC=/usr/bin/cc
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/4.9/lto-wrapper
@@ -61,24 +64,26 @@ Thread model: posix
 gcc version 4.9.2 (Debian 4.9.2-10) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.9/:/usr/lib/gcc/x86_64-linux-gnu/4.9/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.9/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.9/:/usr/lib/gcc/x86_64-linux-gnu/4.9/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.9/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.9/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec909542172' '-rdynamic' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/4.9/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/4.9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/4.9/lto-wrapper -plugin-opt=-fresolution=/tmp/cckj94YI.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTryCompileExec909542172 /usr/lib/gcc/x86_64-linux-gnu/4.9/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.9/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.9 -L/usr/lib/gcc/x86_64-linux-gnu/4.9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.9/../../.. CMakeFiles/cmTryCompileExec909542172.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/4.9/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.9/../../../x86_64-linux-gnu/crtn.o
-make[1]: Leaving directory '/home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec2164334384' '-rdynamic' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/4.9/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/4.9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/4.9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccLdtlQj.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTryCompileExec2164334384 /usr/lib/gcc/x86_64-linux-gnu/4.9/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.9/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.9 -L/usr/lib/gcc/x86_64-linux-gnu/4.9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.9/../../.. CMakeFiles/cmTryCompileExec2164334384.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/4.9/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.9/../../../x86_64-linux-gnu/crtn.o
+make[1]: Leaving directory '/home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp'
+make[1]: AVERTISSEMENT : décalage d'horloge détecté. La construction peut être incomplète.
 
 
 Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTryCompileExec909542172/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTryCompileExec909542172.dir/build.make CMakeFiles/cmTryCompileExec909542172.dir/build]
-  ignore line: [make[1]: Entering directory '/home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp']
-  ignore line: [/usr/bin/cmake -E cmake_progress_report /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp/CMakeFiles 1]
-  ignore line: [Building C object CMakeFiles/cmTryCompileExec909542172.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTryCompileExec909542172.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.0/Modules/CMakeCCompilerABI.c]
-  ignore line: [Linking C executable cmTryCompileExec909542172]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec909542172.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/cc     -v CMakeFiles/cmTryCompileExec909542172.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec909542172 -rdynamic  ]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTryCompileExec2164334384/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTryCompileExec2164334384.dir/build.make CMakeFiles/cmTryCompileExec2164334384.dir/build]
+  ignore line: [make[1]: Entering directory '/home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp']
+  ignore line: [make[1]: Warning: File 'CMakeFiles/cmTryCompileExec2164334384.dir/progress.make' has modification time 0,013 s in the future]
+  ignore line: [/usr/bin/cmake -E cmake_progress_report /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp/CMakeFiles 1]
+  ignore line: [Building C object CMakeFiles/cmTryCompileExec2164334384.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTryCompileExec2164334384.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.0/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTryCompileExec2164334384]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2164334384.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc     -v CMakeFiles/cmTryCompileExec2164334384.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec2164334384 -rdynamic  ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/4.9/lto-wrapper]
@@ -88,13 +93,13 @@ Parsed C implicit link information from above output:
   ignore line: [gcc version 4.9.2 (Debian 4.9.2-10) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.9/:/usr/lib/gcc/x86_64-linux-gnu/4.9/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.9/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.9/:/usr/lib/gcc/x86_64-linux-gnu/4.9/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.9/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.9/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec909542172' '-rdynamic' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/4.9/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/4.9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/4.9/lto-wrapper -plugin-opt=-fresolution=/tmp/cckj94YI.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTryCompileExec909542172 /usr/lib/gcc/x86_64-linux-gnu/4.9/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.9/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.9 -L/usr/lib/gcc/x86_64-linux-gnu/4.9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.9/../../.. CMakeFiles/cmTryCompileExec909542172.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/4.9/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.9/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec2164334384' '-rdynamic' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/4.9/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/4.9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/4.9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccLdtlQj.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTryCompileExec2164334384 /usr/lib/gcc/x86_64-linux-gnu/4.9/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.9/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.9 -L/usr/lib/gcc/x86_64-linux-gnu/4.9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.9/../../.. CMakeFiles/cmTryCompileExec2164334384.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/4.9/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.9/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.9/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.9/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/4.9/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/cckj94YI.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccLdtlQj.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -110,7 +115,7 @@ Parsed C implicit link information from above output:
     arg [-dynamic-linker] ==> ignore
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTryCompileExec909542172] ==> ignore
+    arg [cmTryCompileExec2164334384] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.9/../../../x86_64-linux-gnu/crt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.9/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.9/crtbegin.o] ==> ignore
@@ -122,7 +127,7 @@ Parsed C implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.9/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.9/../../..]
-    arg [CMakeFiles/cmTryCompileExec909542172.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTryCompileExec2164334384.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [--as-needed] ==> ignore
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -152,32 +157,35 @@ Parsed C implicit link information from above output:
 
 
 Determining if the CXX compiler works passed with the following output:
-Change Dir: /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp
+Change Dir: /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec4192271588/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec4192271588.dir/build.make CMakeFiles/cmTryCompileExec4192271588.dir/build
-make[1]: Entering directory '/home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building CXX object CMakeFiles/cmTryCompileExec4192271588.dir/testCXXCompiler.cxx.o
-/usr/bin/c++     -o CMakeFiles/cmTryCompileExec4192271588.dir/testCXXCompiler.cxx.o -c /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTryCompileExec4192271588
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec4192271588.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTryCompileExec4192271588.dir/testCXXCompiler.cxx.o  -o cmTryCompileExec4192271588 -rdynamic 
-make[1]: Leaving directory '/home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTryCompileExec3580327234/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3580327234.dir/build.make CMakeFiles/cmTryCompileExec3580327234.dir/build
+make[1]: Entering directory '/home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp'
+make[1]: Warning: File 'CMakeFiles/cmTryCompileExec3580327234.dir/progress.make' has modification time 0,014 s in the future
+/usr/bin/cmake -E cmake_progress_report /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec3580327234.dir/testCXXCompiler.cxx.o
+/usr/bin/c++     -o CMakeFiles/cmTryCompileExec3580327234.dir/testCXXCompiler.cxx.o -c /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTryCompileExec3580327234
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3580327234.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTryCompileExec3580327234.dir/testCXXCompiler.cxx.o  -o cmTryCompileExec3580327234 -rdynamic 
+make[1]: Leaving directory '/home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp'
+make[1]: AVERTISSEMENT : décalage d'horloge détecté. La construction peut être incomplète.
 
 
 Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp
+Change Dir: /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec1894056532/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec1894056532.dir/build.make CMakeFiles/cmTryCompileExec1894056532.dir/build
-make[1]: Entering directory '/home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building CXX object CMakeFiles/cmTryCompileExec1894056532.dir/CMakeCXXCompilerABI.cpp.o
-/usr/bin/c++     -o CMakeFiles/cmTryCompileExec1894056532.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.0/Modules/CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTryCompileExec1894056532
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1894056532.dir/link.txt --verbose=1
-/usr/bin/c++      -v CMakeFiles/cmTryCompileExec1894056532.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec1894056532 -rdynamic  
+Run Build Command:"/usr/bin/make" "cmTryCompileExec407113775/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec407113775.dir/build.make CMakeFiles/cmTryCompileExec407113775.dir/build
+make[1]: Entering directory '/home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp'
+make[1]: Warning: File 'CMakeFiles/cmTryCompileExec407113775.dir/progress.make' has modification time 0,015 s in the future
+/usr/bin/cmake -E cmake_progress_report /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec407113775.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++     -o CMakeFiles/cmTryCompileExec407113775.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.0/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTryCompileExec407113775
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec407113775.dir/link.txt --verbose=1
+/usr/bin/c++      -v CMakeFiles/cmTryCompileExec407113775.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec407113775 -rdynamic  
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/4.9/lto-wrapper
@@ -187,24 +195,26 @@ Thread model: posix
 gcc version 4.9.2 (Debian 4.9.2-10) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.9/:/usr/lib/gcc/x86_64-linux-gnu/4.9/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.9/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.9/:/usr/lib/gcc/x86_64-linux-gnu/4.9/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.9/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.9/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec1894056532' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/4.9/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/4.9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/4.9/lto-wrapper -plugin-opt=-fresolution=/tmp/cccMmPZe.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTryCompileExec1894056532 /usr/lib/gcc/x86_64-linux-gnu/4.9/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.9/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.9 -L/usr/lib/gcc/x86_64-linux-gnu/4.9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.9/../../.. CMakeFiles/cmTryCompileExec1894056532.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/4.9/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.9/../../../x86_64-linux-gnu/crtn.o
-make[1]: Leaving directory '/home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec407113775' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/4.9/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/4.9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/4.9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccu9IOJP.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTryCompileExec407113775 /usr/lib/gcc/x86_64-linux-gnu/4.9/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.9/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.9 -L/usr/lib/gcc/x86_64-linux-gnu/4.9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.9/../../.. CMakeFiles/cmTryCompileExec407113775.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/4.9/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.9/../../../x86_64-linux-gnu/crtn.o
+make[1]: Leaving directory '/home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp'
+make[1]: AVERTISSEMENT : décalage d'horloge détecté. La construction peut être incomplète.
 
 
 Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTryCompileExec1894056532/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTryCompileExec1894056532.dir/build.make CMakeFiles/cmTryCompileExec1894056532.dir/build]
-  ignore line: [make[1]: Entering directory '/home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp']
-  ignore line: [/usr/bin/cmake -E cmake_progress_report /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp/CMakeFiles 1]
-  ignore line: [Building CXX object CMakeFiles/cmTryCompileExec1894056532.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTryCompileExec1894056532.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.0/Modules/CMakeCXXCompilerABI.cpp]
-  ignore line: [Linking CXX executable cmTryCompileExec1894056532]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1894056532.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/c++      -v CMakeFiles/cmTryCompileExec1894056532.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec1894056532 -rdynamic  ]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTryCompileExec407113775/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTryCompileExec407113775.dir/build.make CMakeFiles/cmTryCompileExec407113775.dir/build]
+  ignore line: [make[1]: Entering directory '/home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp']
+  ignore line: [make[1]: Warning: File 'CMakeFiles/cmTryCompileExec407113775.dir/progress.make' has modification time 0,015 s in the future]
+  ignore line: [/usr/bin/cmake -E cmake_progress_report /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp/CMakeFiles 1]
+  ignore line: [Building CXX object CMakeFiles/cmTryCompileExec407113775.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTryCompileExec407113775.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.0/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTryCompileExec407113775]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec407113775.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++      -v CMakeFiles/cmTryCompileExec407113775.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec407113775 -rdynamic  ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/4.9/lto-wrapper]
@@ -214,13 +224,13 @@ Parsed CXX implicit link information from above output:
   ignore line: [gcc version 4.9.2 (Debian 4.9.2-10) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.9/:/usr/lib/gcc/x86_64-linux-gnu/4.9/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.9/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.9/:/usr/lib/gcc/x86_64-linux-gnu/4.9/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.9/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.9/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec1894056532' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/4.9/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/4.9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/4.9/lto-wrapper -plugin-opt=-fresolution=/tmp/cccMmPZe.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTryCompileExec1894056532 /usr/lib/gcc/x86_64-linux-gnu/4.9/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.9/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.9 -L/usr/lib/gcc/x86_64-linux-gnu/4.9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.9/../../.. CMakeFiles/cmTryCompileExec1894056532.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/4.9/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.9/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec407113775' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/4.9/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/4.9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/4.9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccu9IOJP.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTryCompileExec407113775 /usr/lib/gcc/x86_64-linux-gnu/4.9/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.9/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.9 -L/usr/lib/gcc/x86_64-linux-gnu/4.9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.9/../../.. CMakeFiles/cmTryCompileExec407113775.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/4.9/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.9/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.9/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.9/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/4.9/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/cccMmPZe.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccu9IOJP.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -236,7 +246,7 @@ Parsed CXX implicit link information from above output:
     arg [-dynamic-linker] ==> ignore
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTryCompileExec1894056532] ==> ignore
+    arg [cmTryCompileExec407113775] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.9/../../../x86_64-linux-gnu/crt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.9/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.9/crtbegin.o] ==> ignore
@@ -248,7 +258,7 @@ Parsed CXX implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.9/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.9/../../..]
-    arg [CMakeFiles/cmTryCompileExec1894056532.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTryCompileExec407113775.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -276,122 +286,138 @@ Parsed CXX implicit link information from above output:
 
 
 Determining if files pthread.h exist passed with the following output:
-Change Dir: /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp
+Change Dir: /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec2971831569/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec2971831569.dir/build.make CMakeFiles/cmTryCompileExec2971831569.dir/build
-make[1]: Entering directory '/home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec2971831569.dir/CheckIncludeFiles.c.o
-/usr/bin/cc    -o CMakeFiles/cmTryCompileExec2971831569.dir/CheckIncludeFiles.c.o   -c /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
-Linking C executable cmTryCompileExec2971831569
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2971831569.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTryCompileExec2971831569.dir/CheckIncludeFiles.c.o  -o cmTryCompileExec2971831569 -rdynamic 
-make[1]: Leaving directory '/home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTryCompileExec3296777173/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3296777173.dir/build.make CMakeFiles/cmTryCompileExec3296777173.dir/build
+make[1]: Entering directory '/home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp'
+make[1]: Warning: File 'CMakeFiles/cmTryCompileExec3296777173.dir/progress.make' has modification time 0,0095 s in the future
+/usr/bin/cmake -E cmake_progress_report /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3296777173.dir/CheckIncludeFiles.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec3296777173.dir/CheckIncludeFiles.c.o   -c /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+Linking C executable cmTryCompileExec3296777173
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3296777173.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTryCompileExec3296777173.dir/CheckIncludeFiles.c.o  -o cmTryCompileExec3296777173 -rdynamic 
+make[1]: Leaving directory '/home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp'
+make[1]: AVERTISSEMENT : décalage d'horloge détecté. La construction peut être incomplète.
 
 
 Determining if the function pthread_create exists in the pthread passed with the following output:
-Change Dir: /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp
+Change Dir: /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec2409235382/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec2409235382.dir/build.make CMakeFiles/cmTryCompileExec2409235382.dir/build
-make[1]: Entering directory '/home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec2409235382.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec2409235382.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.0/Modules/CheckFunctionExists.c
-Linking C executable cmTryCompileExec2409235382
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2409235382.dir/link.txt --verbose=1
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec2409235382.dir/CheckFunctionExists.c.o  -o cmTryCompileExec2409235382 -rdynamic -lpthread 
-make[1]: Leaving directory '/home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTryCompileExec1511824400/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1511824400.dir/build.make CMakeFiles/cmTryCompileExec1511824400.dir/build
+make[1]: Entering directory '/home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp'
+make[1]: Warning: File 'CMakeFiles/cmTryCompileExec1511824400.dir/progress.make' has modification time 0,016 s in the future
+/usr/bin/cmake -E cmake_progress_report /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1511824400.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec1511824400.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.0/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec1511824400
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1511824400.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec1511824400.dir/CheckFunctionExists.c.o  -o cmTryCompileExec1511824400 -rdynamic -lpthread 
+make[1]: Leaving directory '/home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp'
+make[1]: AVERTISSEMENT : décalage d'horloge détecté. La construction peut être incomplète.
 
 
 Determining if the function XOpenDisplay exists in the /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so passed with the following output:
-Change Dir: /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp
+Change Dir: /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec2154657675/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec2154657675.dir/build.make CMakeFiles/cmTryCompileExec2154657675.dir/build
-make[1]: Entering directory '/home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec2154657675.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=XOpenDisplay   -o CMakeFiles/cmTryCompileExec2154657675.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.0/Modules/CheckFunctionExists.c
-Linking C executable cmTryCompileExec2154657675
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2154657675.dir/link.txt --verbose=1
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=XOpenDisplay    CMakeFiles/cmTryCompileExec2154657675.dir/CheckFunctionExists.c.o  -o cmTryCompileExec2154657675 -rdynamic -lX11 -lXext 
-make[1]: Leaving directory '/home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTryCompileExec3022464490/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3022464490.dir/build.make CMakeFiles/cmTryCompileExec3022464490.dir/build
+make[1]: Entering directory '/home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp'
+make[1]: Warning: File 'CMakeFiles/cmTryCompileExec3022464490.dir/progress.make' has modification time 0,016 s in the future
+/usr/bin/cmake -E cmake_progress_report /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3022464490.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=XOpenDisplay   -o CMakeFiles/cmTryCompileExec3022464490.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.0/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec3022464490
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3022464490.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=XOpenDisplay    CMakeFiles/cmTryCompileExec3022464490.dir/CheckFunctionExists.c.o  -o cmTryCompileExec3022464490 -rdynamic -lX11 -lXext 
+make[1]: Leaving directory '/home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp'
+make[1]: AVERTISSEMENT : décalage d'horloge détecté. La construction peut être incomplète.
 
 
 Determining if the function gethostbyname exists passed with the following output:
-Change Dir: /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp
+Change Dir: /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec2117636727/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec2117636727.dir/build.make CMakeFiles/cmTryCompileExec2117636727.dir/build
-make[1]: Entering directory '/home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec2117636727.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=gethostbyname   -o CMakeFiles/cmTryCompileExec2117636727.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.0/Modules/CheckFunctionExists.c
-Linking C executable cmTryCompileExec2117636727
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2117636727.dir/link.txt --verbose=1
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=gethostbyname    CMakeFiles/cmTryCompileExec2117636727.dir/CheckFunctionExists.c.o  -o cmTryCompileExec2117636727 -rdynamic 
-make[1]: Leaving directory '/home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTryCompileExec2539851599/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2539851599.dir/build.make CMakeFiles/cmTryCompileExec2539851599.dir/build
+make[1]: Entering directory '/home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp'
+make[1]: Warning: File 'CMakeFiles/cmTryCompileExec2539851599.dir/progress.make' has modification time 0,016 s in the future
+/usr/bin/cmake -E cmake_progress_report /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2539851599.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=gethostbyname   -o CMakeFiles/cmTryCompileExec2539851599.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.0/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec2539851599
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2539851599.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=gethostbyname    CMakeFiles/cmTryCompileExec2539851599.dir/CheckFunctionExists.c.o  -o cmTryCompileExec2539851599 -rdynamic 
+make[1]: Leaving directory '/home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp'
+make[1]: AVERTISSEMENT : décalage d'horloge détecté. La construction peut être incomplète.
 
 
 Determining if the function connect exists passed with the following output:
-Change Dir: /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp
+Change Dir: /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec691381342/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec691381342.dir/build.make CMakeFiles/cmTryCompileExec691381342.dir/build
-make[1]: Entering directory '/home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec691381342.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=connect   -o CMakeFiles/cmTryCompileExec691381342.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.0/Modules/CheckFunctionExists.c
-Linking C executable cmTryCompileExec691381342
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec691381342.dir/link.txt --verbose=1
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=connect    CMakeFiles/cmTryCompileExec691381342.dir/CheckFunctionExists.c.o  -o cmTryCompileExec691381342 -rdynamic 
-make[1]: Leaving directory '/home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTryCompileExec1205751514/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1205751514.dir/build.make CMakeFiles/cmTryCompileExec1205751514.dir/build
+make[1]: Entering directory '/home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp'
+make[1]: Warning: File 'CMakeFiles/cmTryCompileExec1205751514.dir/progress.make' has modification time 0,011 s in the future
+/usr/bin/cmake -E cmake_progress_report /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1205751514.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=connect   -o CMakeFiles/cmTryCompileExec1205751514.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.0/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec1205751514
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1205751514.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=connect    CMakeFiles/cmTryCompileExec1205751514.dir/CheckFunctionExists.c.o  -o cmTryCompileExec1205751514 -rdynamic 
+make[1]: Leaving directory '/home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp'
+make[1]: AVERTISSEMENT : décalage d'horloge détecté. La construction peut être incomplète.
 
 
 Determining if the function remove exists passed with the following output:
-Change Dir: /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp
+Change Dir: /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec150475466/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec150475466.dir/build.make CMakeFiles/cmTryCompileExec150475466.dir/build
-make[1]: Entering directory '/home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec150475466.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=remove   -o CMakeFiles/cmTryCompileExec150475466.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.0/Modules/CheckFunctionExists.c
-Linking C executable cmTryCompileExec150475466
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec150475466.dir/link.txt --verbose=1
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=remove    CMakeFiles/cmTryCompileExec150475466.dir/CheckFunctionExists.c.o  -o cmTryCompileExec150475466 -rdynamic 
-make[1]: Leaving directory '/home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTryCompileExec2942998836/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2942998836.dir/build.make CMakeFiles/cmTryCompileExec2942998836.dir/build
+make[1]: Entering directory '/home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp'
+make[1]: Warning: File 'CMakeFiles/cmTryCompileExec2942998836.dir/progress.make' has modification time 0,015 s in the future
+/usr/bin/cmake -E cmake_progress_report /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2942998836.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=remove   -o CMakeFiles/cmTryCompileExec2942998836.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.0/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec2942998836
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2942998836.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=remove    CMakeFiles/cmTryCompileExec2942998836.dir/CheckFunctionExists.c.o  -o cmTryCompileExec2942998836 -rdynamic 
+make[1]: Leaving directory '/home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp'
+make[1]: AVERTISSEMENT : décalage d'horloge détecté. La construction peut être incomplète.
 
 
 Determining if the function shmat exists passed with the following output:
-Change Dir: /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp
+Change Dir: /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec2127193416/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec2127193416.dir/build.make CMakeFiles/cmTryCompileExec2127193416.dir/build
-make[1]: Entering directory '/home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec2127193416.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=shmat   -o CMakeFiles/cmTryCompileExec2127193416.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.0/Modules/CheckFunctionExists.c
-Linking C executable cmTryCompileExec2127193416
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2127193416.dir/link.txt --verbose=1
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=shmat    CMakeFiles/cmTryCompileExec2127193416.dir/CheckFunctionExists.c.o  -o cmTryCompileExec2127193416 -rdynamic 
-make[1]: Leaving directory '/home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTryCompileExec2145265873/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2145265873.dir/build.make CMakeFiles/cmTryCompileExec2145265873.dir/build
+make[1]: Entering directory '/home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp'
+make[1]: Warning: File 'CMakeFiles/cmTryCompileExec2145265873.dir/progress.make' has modification time 0,014 s in the future
+/usr/bin/cmake -E cmake_progress_report /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2145265873.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=shmat   -o CMakeFiles/cmTryCompileExec2145265873.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.0/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec2145265873
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2145265873.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=shmat    CMakeFiles/cmTryCompileExec2145265873.dir/CheckFunctionExists.c.o  -o cmTryCompileExec2145265873 -rdynamic 
+make[1]: Leaving directory '/home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp'
+make[1]: AVERTISSEMENT : décalage d'horloge détecté. La construction peut être incomplète.
 
 
 Determining if the function IceConnectionNumber exists in the ICE passed with the following output:
-Change Dir: /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp
+Change Dir: /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec506986055/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec506986055.dir/build.make CMakeFiles/cmTryCompileExec506986055.dir/build
-make[1]: Entering directory '/home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec506986055.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=IceConnectionNumber   -o CMakeFiles/cmTryCompileExec506986055.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.0/Modules/CheckFunctionExists.c
-Linking C executable cmTryCompileExec506986055
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec506986055.dir/link.txt --verbose=1
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=IceConnectionNumber    CMakeFiles/cmTryCompileExec506986055.dir/CheckFunctionExists.c.o  -o cmTryCompileExec506986055 -rdynamic -lICE 
-make[1]: Leaving directory '/home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTryCompileExec3447759057/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3447759057.dir/build.make CMakeFiles/cmTryCompileExec3447759057.dir/build
+make[1]: Entering directory '/home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp'
+make[1]: Warning: File 'CMakeFiles/cmTryCompileExec3447759057.dir/progress.make' has modification time 0,014 s in the future
+/usr/bin/cmake -E cmake_progress_report /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3447759057.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=IceConnectionNumber   -o CMakeFiles/cmTryCompileExec3447759057.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.0/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec3447759057
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3447759057.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=IceConnectionNumber    CMakeFiles/cmTryCompileExec3447759057.dir/CheckFunctionExists.c.o  -o cmTryCompileExec3447759057 -rdynamic -lICE 
+make[1]: Leaving directory '/home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/CMakeTmp'
+make[1]: AVERTISSEMENT : décalage d'horloge détecté. La construction peut être incomplète.
 
 

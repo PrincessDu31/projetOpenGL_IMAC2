@@ -1,4 +1,4 @@
-# Install script for directory: /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/TP_template
+# Install script for directory: /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/TP_template
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

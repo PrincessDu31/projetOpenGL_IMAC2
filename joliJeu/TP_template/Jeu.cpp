@@ -182,6 +182,9 @@ int main(int argc, char** argv) {
 	bool turningLeft = false;
 	bool turningRight = false;
 
+    std::vector<Aleatoirus> aleatoirusList = interface.getListAleatoirus();
+    int i = 0;
+    
 	bool done = false;
 	while(!done) {
 
@@ -239,22 +242,29 @@ int main(int argc, char** argv) {
 
         glBindVertexArray(1);
         aleatoirusProgram.m_Program.use();
+        for (i=0; i < aleatoirusList.size(); i++){
 
-        glm::mat4 aleaMVMatrix = glm::translate(globalMVMatrix, glm::vec3(0.5, 0, 0));
+            //AMELIORER PLACEMENT ALEA Z
+            glm::mat4 aleaMVMatrix = glm::translate(globalMVMatrix, glm::vec3((-0.5 + aleatoirusList.at(i).getPosition().x*0.01)*interface.getMap().getWidth() - 0.45, -0.49, (-0.5 + aleatoirusList.at(i).getPosition().y*0.03)*interface.getMap().getHeight() - 0.1 ) );
+            aleaMVMatrix = glm::rotate(aleaMVMatrix, angle, glm::vec3(1, 0, 0));
+            aleaMVMatrix = glm::scale(aleaMVMatrix, glm::vec3(0.01*interface.getMap().getWidth(), 0.03*interface.getMap().getHeight(), 0));
+
+
+            projMatrix = projMatrix;
+            glUniformMatrix4fv(aleatoirusProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(aleaMVMatrix));
+            glUniformMatrix4fv(aleatoirusProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(aleaMVMatrix))));
+            glUniformMatrix4fv(aleatoirusProgram.uMVPMatrix, 1, GL_FALSE, glm::value_ptr(projMatrix * aleaMVMatrix));    
+
+            glDrawElements(GL_TRIANGLES, 2*3, GL_UNSIGNED_INT, 0);
+        }
+        
        
-
-        projMatrix = projMatrix;
-        glUniformMatrix4fv(aleatoirusProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(aleaMVMatrix));
-        glUniformMatrix4fv(aleatoirusProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(aleaMVMatrix))));
-        glUniformMatrix4fv(aleatoirusProgram.uMVPMatrix, 1, GL_FALSE, glm::value_ptr(projMatrix * aleaMVMatrix));    
-
-        glDrawElements(GL_TRIANGLES, 2*3, GL_UNSIGNED_INT, 0);
         glBindVertexArray(0);
 
 
 		if (movingFront == true) {
 			// if (abs(camera.getPosition().x) < interface.getMap().getWidth() * 0.5 )
-			 	camera.moveFront(0.05);
+			 	camera.moveFront(0.5);
 			// else
 			// 	camera.moveFront(-0.2);
 			// cout << "cam : " << abs(camera.getPosition().x) << endl;

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu
+CMAKE_SOURCE_DIR = /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build
+CMAKE_BINARY_DIR = /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -73,9 +73,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

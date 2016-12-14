@@ -1,25 +1,26 @@
 Determining if the pthread_create exist failed with the following output:
-Change Dir: /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles/CMakeTmp
+Change Dir: /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec2186216066/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec2186216066.dir/build.make CMakeFiles/cmTryCompileExec2186216066.dir/build
-make[1]: Entering directory '/home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec2186216066.dir/CheckSymbolExists.c.o
-/usr/bin/cc    -o CMakeFiles/cmTryCompileExec2186216066.dir/CheckSymbolExists.c.o   -c /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTryCompileExec2186216066
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2186216066.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTryCompileExec2186216066.dir/CheckSymbolExists.c.o  -o cmTryCompileExec2186216066 -rdynamic 
-CMakeFiles/cmTryCompileExec2186216066.dir/CheckSymbolExists.c.o: dans la fonction « main »:
+Run Build Command:"/usr/bin/make" "cmTryCompileExec1685213399/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1685213399.dir/build.make CMakeFiles/cmTryCompileExec1685213399.dir/build
+make[1]: Entering directory '/home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles/CMakeTmp'
+make[1]: Warning: File 'CMakeFiles/cmTryCompileExec1685213399.dir/progress.make' has modification time 0,006 s in the future
+/usr/bin/cmake -E cmake_progress_report /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1685213399.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec1685213399.dir/CheckSymbolExists.c.o   -c /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec1685213399
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1685213399.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTryCompileExec1685213399.dir/CheckSymbolExists.c.o  -o cmTryCompileExec1685213399 -rdynamic 
+CMakeFiles/cmTryCompileExec1685213399.dir/CheckSymbolExists.c.o: dans la fonction « main »:
 CheckSymbolExists.c:(.text+0x16): référence indéfinie vers « pthread_create »
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTryCompileExec2186216066.dir/build.make:88: recipe for target 'cmTryCompileExec2186216066' failed
-make[1]: Leaving directory '/home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles/CMakeTmp'
-make[1]: *** [cmTryCompileExec2186216066] Error 1
-Makefile:118: recipe for target 'cmTryCompileExec2186216066/fast' failed
-make: *** [cmTryCompileExec2186216066/fast] Error 2
+CMakeFiles/cmTryCompileExec1685213399.dir/build.make:88: recipe for target 'cmTryCompileExec1685213399' failed
+make[1]: Leaving directory '/home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles/CMakeTmp'
+make[1]: *** [cmTryCompileExec1685213399] Error 1
+Makefile:118: recipe for target 'cmTryCompileExec1685213399/fast' failed
+make: *** [cmTryCompileExec1685213399/fast] Error 2
 
-File /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+File /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
 #include <pthread.h>
 
@@ -35,23 +36,24 @@ int main(int argc, char** argv)
 }
 
 Determining if the function pthread_create exists in the pthreads failed with the following output:
-Change Dir: /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles/CMakeTmp
+Change Dir: /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec582041282/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec582041282.dir/build.make CMakeFiles/cmTryCompileExec582041282.dir/build
-make[1]: Entering directory '/home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec582041282.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec582041282.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.0/Modules/CheckFunctionExists.c
-Linking C executable cmTryCompileExec582041282
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec582041282.dir/link.txt --verbose=1
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec582041282.dir/CheckFunctionExists.c.o  -o cmTryCompileExec582041282 -rdynamic -lpthreads 
+Run Build Command:"/usr/bin/make" "cmTryCompileExec1226788277/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1226788277.dir/build.make CMakeFiles/cmTryCompileExec1226788277.dir/build
+make[1]: Entering directory '/home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles/CMakeTmp'
+make[1]: Warning: File 'CMakeFiles/cmTryCompileExec1226788277.dir/progress.make' has modification time 0,007 s in the future
+/usr/bin/cmake -E cmake_progress_report /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1226788277.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec1226788277.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.0/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec1226788277
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1226788277.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec1226788277.dir/CheckFunctionExists.c.o  -o cmTryCompileExec1226788277 -rdynamic -lpthreads 
 /usr/bin/ld: ne peut trouver -lpthreads
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTryCompileExec582041282.dir/build.make:88: recipe for target 'cmTryCompileExec582041282' failed
-make[1]: *** [cmTryCompileExec582041282] Error 1
-make[1]: Leaving directory '/home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles/CMakeTmp'
-Makefile:118: recipe for target 'cmTryCompileExec582041282/fast' failed
-make: *** [cmTryCompileExec582041282/fast] Error 2
+CMakeFiles/cmTryCompileExec1226788277.dir/build.make:88: recipe for target 'cmTryCompileExec1226788277' failed
+make[1]: *** [cmTryCompileExec1226788277] Error 1
+make[1]: Leaving directory '/home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles/CMakeTmp'
+Makefile:118: recipe for target 'cmTryCompileExec1226788277/fast' failed
+make: *** [cmTryCompileExec1226788277/fast] Error 2
 
 

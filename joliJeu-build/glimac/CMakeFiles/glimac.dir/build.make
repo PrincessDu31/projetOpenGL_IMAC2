@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu
+CMAKE_SOURCE_DIR = /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build
+CMAKE_BINARY_DIR = /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build
 
 # Include any dependencies generated for this target.
 include glimac/CMakeFiles/glimac.dir/depend.make
@@ -50,18 +50,18 @@ include glimac/CMakeFiles/glimac.dir/progress.make
 include glimac/CMakeFiles/glimac.dir/flags.make
 
 glimac/CMakeFiles/glimac.dir/src/Interface.cpp.o: glimac/CMakeFiles/glimac.dir/flags.make
-glimac/CMakeFiles/glimac.dir/src/Interface.cpp.o: /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/Interface.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles $(CMAKE_PROGRESS_1)
+glimac/CMakeFiles/glimac.dir/src/Interface.cpp.o: /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/Interface.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object glimac/CMakeFiles/glimac.dir/src/Interface.cpp.o"
-	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/Interface.cpp.o -c /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/Interface.cpp
+	cd /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/Interface.cpp.o -c /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/Interface.cpp
 
 glimac/CMakeFiles/glimac.dir/src/Interface.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/glimac.dir/src/Interface.cpp.i"
-	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/Interface.cpp > CMakeFiles/glimac.dir/src/Interface.cpp.i
+	cd /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/Interface.cpp > CMakeFiles/glimac.dir/src/Interface.cpp.i
 
 glimac/CMakeFiles/glimac.dir/src/Interface.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/glimac.dir/src/Interface.cpp.s"
-	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/Interface.cpp -o CMakeFiles/glimac.dir/src/Interface.cpp.s
+	cd /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/Interface.cpp -o CMakeFiles/glimac.dir/src/Interface.cpp.s
 
 glimac/CMakeFiles/glimac.dir/src/Interface.cpp.o.requires:
 .PHONY : glimac/CMakeFiles/glimac.dir/src/Interface.cpp.o.requires
@@ -73,18 +73,18 @@ glimac/CMakeFiles/glimac.dir/src/Interface.cpp.o.provides: glimac/CMakeFiles/gli
 glimac/CMakeFiles/glimac.dir/src/Interface.cpp.o.provides.build: glimac/CMakeFiles/glimac.dir/src/Interface.cpp.o
 
 glimac/CMakeFiles/glimac.dir/src/Sphere.cpp.o: glimac/CMakeFiles/glimac.dir/flags.make
-glimac/CMakeFiles/glimac.dir/src/Sphere.cpp.o: /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/Sphere.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles $(CMAKE_PROGRESS_2)
+glimac/CMakeFiles/glimac.dir/src/Sphere.cpp.o: /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/Sphere.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object glimac/CMakeFiles/glimac.dir/src/Sphere.cpp.o"
-	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/Sphere.cpp.o -c /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/Sphere.cpp
+	cd /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/Sphere.cpp.o -c /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/Sphere.cpp
 
 glimac/CMakeFiles/glimac.dir/src/Sphere.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/glimac.dir/src/Sphere.cpp.i"
-	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/Sphere.cpp > CMakeFiles/glimac.dir/src/Sphere.cpp.i
+	cd /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/Sphere.cpp > CMakeFiles/glimac.dir/src/Sphere.cpp.i
 
 glimac/CMakeFiles/glimac.dir/src/Sphere.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/glimac.dir/src/Sphere.cpp.s"
-	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/Sphere.cpp -o CMakeFiles/glimac.dir/src/Sphere.cpp.s
+	cd /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/Sphere.cpp -o CMakeFiles/glimac.dir/src/Sphere.cpp.s
 
 glimac/CMakeFiles/glimac.dir/src/Sphere.cpp.o.requires:
 .PHONY : glimac/CMakeFiles/glimac.dir/src/Sphere.cpp.o.requires
@@ -96,18 +96,18 @@ glimac/CMakeFiles/glimac.dir/src/Sphere.cpp.o.provides: glimac/CMakeFiles/glimac
 glimac/CMakeFiles/glimac.dir/src/Sphere.cpp.o.provides.build: glimac/CMakeFiles/glimac.dir/src/Sphere.cpp.o
 
 glimac/CMakeFiles/glimac.dir/src/Geometry.cpp.o: glimac/CMakeFiles/glimac.dir/flags.make
-glimac/CMakeFiles/glimac.dir/src/Geometry.cpp.o: /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/Geometry.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles $(CMAKE_PROGRESS_3)
+glimac/CMakeFiles/glimac.dir/src/Geometry.cpp.o: /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/Geometry.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object glimac/CMakeFiles/glimac.dir/src/Geometry.cpp.o"
-	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/Geometry.cpp.o -c /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/Geometry.cpp
+	cd /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/Geometry.cpp.o -c /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/Geometry.cpp
 
 glimac/CMakeFiles/glimac.dir/src/Geometry.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/glimac.dir/src/Geometry.cpp.i"
-	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/Geometry.cpp > CMakeFiles/glimac.dir/src/Geometry.cpp.i
+	cd /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/Geometry.cpp > CMakeFiles/glimac.dir/src/Geometry.cpp.i
 
 glimac/CMakeFiles/glimac.dir/src/Geometry.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/glimac.dir/src/Geometry.cpp.s"
-	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/Geometry.cpp -o CMakeFiles/glimac.dir/src/Geometry.cpp.s
+	cd /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/Geometry.cpp -o CMakeFiles/glimac.dir/src/Geometry.cpp.s
 
 glimac/CMakeFiles/glimac.dir/src/Geometry.cpp.o.requires:
 .PHONY : glimac/CMakeFiles/glimac.dir/src/Geometry.cpp.o.requires
@@ -119,18 +119,18 @@ glimac/CMakeFiles/glimac.dir/src/Geometry.cpp.o.provides: glimac/CMakeFiles/glim
 glimac/CMakeFiles/glimac.dir/src/Geometry.cpp.o.provides.build: glimac/CMakeFiles/glimac.dir/src/Geometry.cpp.o
 
 glimac/CMakeFiles/glimac.dir/src/Image.cpp.o: glimac/CMakeFiles/glimac.dir/flags.make
-glimac/CMakeFiles/glimac.dir/src/Image.cpp.o: /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/Image.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles $(CMAKE_PROGRESS_4)
+glimac/CMakeFiles/glimac.dir/src/Image.cpp.o: /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/Image.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object glimac/CMakeFiles/glimac.dir/src/Image.cpp.o"
-	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/Image.cpp.o -c /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/Image.cpp
+	cd /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/Image.cpp.o -c /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/Image.cpp
 
 glimac/CMakeFiles/glimac.dir/src/Image.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/glimac.dir/src/Image.cpp.i"
-	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/Image.cpp > CMakeFiles/glimac.dir/src/Image.cpp.i
+	cd /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/Image.cpp > CMakeFiles/glimac.dir/src/Image.cpp.i
 
 glimac/CMakeFiles/glimac.dir/src/Image.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/glimac.dir/src/Image.cpp.s"
-	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/Image.cpp -o CMakeFiles/glimac.dir/src/Image.cpp.s
+	cd /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/Image.cpp -o CMakeFiles/glimac.dir/src/Image.cpp.s
 
 glimac/CMakeFiles/glimac.dir/src/Image.cpp.o.requires:
 .PHONY : glimac/CMakeFiles/glimac.dir/src/Image.cpp.o.requires
@@ -142,18 +142,18 @@ glimac/CMakeFiles/glimac.dir/src/Image.cpp.o.provides: glimac/CMakeFiles/glimac.
 glimac/CMakeFiles/glimac.dir/src/Image.cpp.o.provides.build: glimac/CMakeFiles/glimac.dir/src/Image.cpp.o
 
 glimac/CMakeFiles/glimac.dir/src/Weapon.cpp.o: glimac/CMakeFiles/glimac.dir/flags.make
-glimac/CMakeFiles/glimac.dir/src/Weapon.cpp.o: /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/Weapon.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles $(CMAKE_PROGRESS_5)
+glimac/CMakeFiles/glimac.dir/src/Weapon.cpp.o: /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/Weapon.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles $(CMAKE_PROGRESS_5)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object glimac/CMakeFiles/glimac.dir/src/Weapon.cpp.o"
-	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/Weapon.cpp.o -c /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/Weapon.cpp
+	cd /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/Weapon.cpp.o -c /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/Weapon.cpp
 
 glimac/CMakeFiles/glimac.dir/src/Weapon.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/glimac.dir/src/Weapon.cpp.i"
-	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/Weapon.cpp > CMakeFiles/glimac.dir/src/Weapon.cpp.i
+	cd /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/Weapon.cpp > CMakeFiles/glimac.dir/src/Weapon.cpp.i
 
 glimac/CMakeFiles/glimac.dir/src/Weapon.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/glimac.dir/src/Weapon.cpp.s"
-	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/Weapon.cpp -o CMakeFiles/glimac.dir/src/Weapon.cpp.s
+	cd /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/Weapon.cpp -o CMakeFiles/glimac.dir/src/Weapon.cpp.s
 
 glimac/CMakeFiles/glimac.dir/src/Weapon.cpp.o.requires:
 .PHONY : glimac/CMakeFiles/glimac.dir/src/Weapon.cpp.o.requires
@@ -165,18 +165,18 @@ glimac/CMakeFiles/glimac.dir/src/Weapon.cpp.o.provides: glimac/CMakeFiles/glimac
 glimac/CMakeFiles/glimac.dir/src/Weapon.cpp.o.provides.build: glimac/CMakeFiles/glimac.dir/src/Weapon.cpp.o
 
 glimac/CMakeFiles/glimac.dir/src/Cone.cpp.o: glimac/CMakeFiles/glimac.dir/flags.make
-glimac/CMakeFiles/glimac.dir/src/Cone.cpp.o: /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/Cone.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles $(CMAKE_PROGRESS_6)
+glimac/CMakeFiles/glimac.dir/src/Cone.cpp.o: /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/Cone.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles $(CMAKE_PROGRESS_6)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object glimac/CMakeFiles/glimac.dir/src/Cone.cpp.o"
-	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/Cone.cpp.o -c /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/Cone.cpp
+	cd /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/Cone.cpp.o -c /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/Cone.cpp
 
 glimac/CMakeFiles/glimac.dir/src/Cone.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/glimac.dir/src/Cone.cpp.i"
-	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/Cone.cpp > CMakeFiles/glimac.dir/src/Cone.cpp.i
+	cd /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/Cone.cpp > CMakeFiles/glimac.dir/src/Cone.cpp.i
 
 glimac/CMakeFiles/glimac.dir/src/Cone.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/glimac.dir/src/Cone.cpp.s"
-	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/Cone.cpp -o CMakeFiles/glimac.dir/src/Cone.cpp.s
+	cd /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/Cone.cpp -o CMakeFiles/glimac.dir/src/Cone.cpp.s
 
 glimac/CMakeFiles/glimac.dir/src/Cone.cpp.o.requires:
 .PHONY : glimac/CMakeFiles/glimac.dir/src/Cone.cpp.o.requires
@@ -188,18 +188,18 @@ glimac/CMakeFiles/glimac.dir/src/Cone.cpp.o.provides: glimac/CMakeFiles/glimac.d
 glimac/CMakeFiles/glimac.dir/src/Cone.cpp.o.provides.build: glimac/CMakeFiles/glimac.dir/src/Cone.cpp.o
 
 glimac/CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.o: glimac/CMakeFiles/glimac.dir/flags.make
-glimac/CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.o: /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/SDLWindowManager.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles $(CMAKE_PROGRESS_7)
+glimac/CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.o: /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/SDLWindowManager.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles $(CMAKE_PROGRESS_7)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object glimac/CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.o"
-	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.o -c /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/SDLWindowManager.cpp
+	cd /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.o -c /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/SDLWindowManager.cpp
 
 glimac/CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.i"
-	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/SDLWindowManager.cpp > CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.i
+	cd /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/SDLWindowManager.cpp > CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.i
 
 glimac/CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.s"
-	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/SDLWindowManager.cpp -o CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.s
+	cd /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/SDLWindowManager.cpp -o CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.s
 
 glimac/CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.o.requires:
 .PHONY : glimac/CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.o.requires
@@ -211,18 +211,18 @@ glimac/CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.o.provides: glimac/CMakeFi
 glimac/CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.o.provides.build: glimac/CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.o
 
 glimac/CMakeFiles/glimac.dir/src/Program.cpp.o: glimac/CMakeFiles/glimac.dir/flags.make
-glimac/CMakeFiles/glimac.dir/src/Program.cpp.o: /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/Program.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles $(CMAKE_PROGRESS_8)
+glimac/CMakeFiles/glimac.dir/src/Program.cpp.o: /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/Program.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles $(CMAKE_PROGRESS_8)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object glimac/CMakeFiles/glimac.dir/src/Program.cpp.o"
-	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/Program.cpp.o -c /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/Program.cpp
+	cd /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/Program.cpp.o -c /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/Program.cpp
 
 glimac/CMakeFiles/glimac.dir/src/Program.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/glimac.dir/src/Program.cpp.i"
-	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/Program.cpp > CMakeFiles/glimac.dir/src/Program.cpp.i
+	cd /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/Program.cpp > CMakeFiles/glimac.dir/src/Program.cpp.i
 
 glimac/CMakeFiles/glimac.dir/src/Program.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/glimac.dir/src/Program.cpp.s"
-	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/Program.cpp -o CMakeFiles/glimac.dir/src/Program.cpp.s
+	cd /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/Program.cpp -o CMakeFiles/glimac.dir/src/Program.cpp.s
 
 glimac/CMakeFiles/glimac.dir/src/Program.cpp.o.requires:
 .PHONY : glimac/CMakeFiles/glimac.dir/src/Program.cpp.o.requires
@@ -234,18 +234,18 @@ glimac/CMakeFiles/glimac.dir/src/Program.cpp.o.provides: glimac/CMakeFiles/glima
 glimac/CMakeFiles/glimac.dir/src/Program.cpp.o.provides.build: glimac/CMakeFiles/glimac.dir/src/Program.cpp.o
 
 glimac/CMakeFiles/glimac.dir/src/Aleatoirus.cpp.o: glimac/CMakeFiles/glimac.dir/flags.make
-glimac/CMakeFiles/glimac.dir/src/Aleatoirus.cpp.o: /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/Aleatoirus.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles $(CMAKE_PROGRESS_9)
+glimac/CMakeFiles/glimac.dir/src/Aleatoirus.cpp.o: /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/Aleatoirus.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles $(CMAKE_PROGRESS_9)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object glimac/CMakeFiles/glimac.dir/src/Aleatoirus.cpp.o"
-	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/Aleatoirus.cpp.o -c /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/Aleatoirus.cpp
+	cd /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/Aleatoirus.cpp.o -c /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/Aleatoirus.cpp
 
 glimac/CMakeFiles/glimac.dir/src/Aleatoirus.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/glimac.dir/src/Aleatoirus.cpp.i"
-	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/Aleatoirus.cpp > CMakeFiles/glimac.dir/src/Aleatoirus.cpp.i
+	cd /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/Aleatoirus.cpp > CMakeFiles/glimac.dir/src/Aleatoirus.cpp.i
 
 glimac/CMakeFiles/glimac.dir/src/Aleatoirus.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/glimac.dir/src/Aleatoirus.cpp.s"
-	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/Aleatoirus.cpp -o CMakeFiles/glimac.dir/src/Aleatoirus.cpp.s
+	cd /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/Aleatoirus.cpp -o CMakeFiles/glimac.dir/src/Aleatoirus.cpp.s
 
 glimac/CMakeFiles/glimac.dir/src/Aleatoirus.cpp.o.requires:
 .PHONY : glimac/CMakeFiles/glimac.dir/src/Aleatoirus.cpp.o.requires
@@ -257,18 +257,18 @@ glimac/CMakeFiles/glimac.dir/src/Aleatoirus.cpp.o.provides: glimac/CMakeFiles/gl
 glimac/CMakeFiles/glimac.dir/src/Aleatoirus.cpp.o.provides.build: glimac/CMakeFiles/glimac.dir/src/Aleatoirus.cpp.o
 
 glimac/CMakeFiles/glimac.dir/src/Shader.cpp.o: glimac/CMakeFiles/glimac.dir/flags.make
-glimac/CMakeFiles/glimac.dir/src/Shader.cpp.o: /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/Shader.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles $(CMAKE_PROGRESS_10)
+glimac/CMakeFiles/glimac.dir/src/Shader.cpp.o: /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/Shader.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles $(CMAKE_PROGRESS_10)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object glimac/CMakeFiles/glimac.dir/src/Shader.cpp.o"
-	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/Shader.cpp.o -c /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/Shader.cpp
+	cd /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/Shader.cpp.o -c /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/Shader.cpp
 
 glimac/CMakeFiles/glimac.dir/src/Shader.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/glimac.dir/src/Shader.cpp.i"
-	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/Shader.cpp > CMakeFiles/glimac.dir/src/Shader.cpp.i
+	cd /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/Shader.cpp > CMakeFiles/glimac.dir/src/Shader.cpp.i
 
 glimac/CMakeFiles/glimac.dir/src/Shader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/glimac.dir/src/Shader.cpp.s"
-	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/Shader.cpp -o CMakeFiles/glimac.dir/src/Shader.cpp.s
+	cd /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/Shader.cpp -o CMakeFiles/glimac.dir/src/Shader.cpp.s
 
 glimac/CMakeFiles/glimac.dir/src/Shader.cpp.o.requires:
 .PHONY : glimac/CMakeFiles/glimac.dir/src/Shader.cpp.o.requires
@@ -280,18 +280,18 @@ glimac/CMakeFiles/glimac.dir/src/Shader.cpp.o.provides: glimac/CMakeFiles/glimac
 glimac/CMakeFiles/glimac.dir/src/Shader.cpp.o.provides.build: glimac/CMakeFiles/glimac.dir/src/Shader.cpp.o
 
 glimac/CMakeFiles/glimac.dir/src/tiny_obj_loader.cpp.o: glimac/CMakeFiles/glimac.dir/flags.make
-glimac/CMakeFiles/glimac.dir/src/tiny_obj_loader.cpp.o: /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/tiny_obj_loader.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles $(CMAKE_PROGRESS_11)
+glimac/CMakeFiles/glimac.dir/src/tiny_obj_loader.cpp.o: /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/tiny_obj_loader.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles $(CMAKE_PROGRESS_11)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object glimac/CMakeFiles/glimac.dir/src/tiny_obj_loader.cpp.o"
-	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/tiny_obj_loader.cpp.o -c /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/tiny_obj_loader.cpp
+	cd /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/tiny_obj_loader.cpp.o -c /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/tiny_obj_loader.cpp
 
 glimac/CMakeFiles/glimac.dir/src/tiny_obj_loader.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/glimac.dir/src/tiny_obj_loader.cpp.i"
-	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/tiny_obj_loader.cpp > CMakeFiles/glimac.dir/src/tiny_obj_loader.cpp.i
+	cd /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/tiny_obj_loader.cpp > CMakeFiles/glimac.dir/src/tiny_obj_loader.cpp.i
 
 glimac/CMakeFiles/glimac.dir/src/tiny_obj_loader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/glimac.dir/src/tiny_obj_loader.cpp.s"
-	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/tiny_obj_loader.cpp -o CMakeFiles/glimac.dir/src/tiny_obj_loader.cpp.s
+	cd /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/tiny_obj_loader.cpp -o CMakeFiles/glimac.dir/src/tiny_obj_loader.cpp.s
 
 glimac/CMakeFiles/glimac.dir/src/tiny_obj_loader.cpp.o.requires:
 .PHONY : glimac/CMakeFiles/glimac.dir/src/tiny_obj_loader.cpp.o.requires
@@ -303,18 +303,18 @@ glimac/CMakeFiles/glimac.dir/src/tiny_obj_loader.cpp.o.provides: glimac/CMakeFil
 glimac/CMakeFiles/glimac.dir/src/tiny_obj_loader.cpp.o.provides.build: glimac/CMakeFiles/glimac.dir/src/tiny_obj_loader.cpp.o
 
 glimac/CMakeFiles/glimac.dir/src/Map.cpp.o: glimac/CMakeFiles/glimac.dir/flags.make
-glimac/CMakeFiles/glimac.dir/src/Map.cpp.o: /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/Map.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles $(CMAKE_PROGRESS_12)
+glimac/CMakeFiles/glimac.dir/src/Map.cpp.o: /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/Map.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles $(CMAKE_PROGRESS_12)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object glimac/CMakeFiles/glimac.dir/src/Map.cpp.o"
-	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/Map.cpp.o -c /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/Map.cpp
+	cd /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/Map.cpp.o -c /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/Map.cpp
 
 glimac/CMakeFiles/glimac.dir/src/Map.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/glimac.dir/src/Map.cpp.i"
-	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/Map.cpp > CMakeFiles/glimac.dir/src/Map.cpp.i
+	cd /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/Map.cpp > CMakeFiles/glimac.dir/src/Map.cpp.i
 
 glimac/CMakeFiles/glimac.dir/src/Map.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/glimac.dir/src/Map.cpp.s"
-	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/Map.cpp -o CMakeFiles/glimac.dir/src/Map.cpp.s
+	cd /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/Map.cpp -o CMakeFiles/glimac.dir/src/Map.cpp.s
 
 glimac/CMakeFiles/glimac.dir/src/Map.cpp.o.requires:
 .PHONY : glimac/CMakeFiles/glimac.dir/src/Map.cpp.o.requires
@@ -326,18 +326,18 @@ glimac/CMakeFiles/glimac.dir/src/Map.cpp.o.provides: glimac/CMakeFiles/glimac.di
 glimac/CMakeFiles/glimac.dir/src/Map.cpp.o.provides.build: glimac/CMakeFiles/glimac.dir/src/Map.cpp.o
 
 glimac/CMakeFiles/glimac.dir/src/Character.cpp.o: glimac/CMakeFiles/glimac.dir/flags.make
-glimac/CMakeFiles/glimac.dir/src/Character.cpp.o: /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/Character.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles $(CMAKE_PROGRESS_13)
+glimac/CMakeFiles/glimac.dir/src/Character.cpp.o: /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/Character.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles $(CMAKE_PROGRESS_13)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object glimac/CMakeFiles/glimac.dir/src/Character.cpp.o"
-	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/Character.cpp.o -c /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/Character.cpp
+	cd /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/Character.cpp.o -c /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/Character.cpp
 
 glimac/CMakeFiles/glimac.dir/src/Character.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/glimac.dir/src/Character.cpp.i"
-	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/Character.cpp > CMakeFiles/glimac.dir/src/Character.cpp.i
+	cd /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/Character.cpp > CMakeFiles/glimac.dir/src/Character.cpp.i
 
 glimac/CMakeFiles/glimac.dir/src/Character.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/glimac.dir/src/Character.cpp.s"
-	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/Character.cpp -o CMakeFiles/glimac.dir/src/Character.cpp.s
+	cd /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/Character.cpp -o CMakeFiles/glimac.dir/src/Character.cpp.s
 
 glimac/CMakeFiles/glimac.dir/src/Character.cpp.o.requires:
 .PHONY : glimac/CMakeFiles/glimac.dir/src/Character.cpp.o.requires
@@ -349,18 +349,18 @@ glimac/CMakeFiles/glimac.dir/src/Character.cpp.o.provides: glimac/CMakeFiles/gli
 glimac/CMakeFiles/glimac.dir/src/Character.cpp.o.provides.build: glimac/CMakeFiles/glimac.dir/src/Character.cpp.o
 
 glimac/CMakeFiles/glimac.dir/src/Monster.cpp.o: glimac/CMakeFiles/glimac.dir/flags.make
-glimac/CMakeFiles/glimac.dir/src/Monster.cpp.o: /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/Monster.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles $(CMAKE_PROGRESS_14)
+glimac/CMakeFiles/glimac.dir/src/Monster.cpp.o: /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/Monster.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles $(CMAKE_PROGRESS_14)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object glimac/CMakeFiles/glimac.dir/src/Monster.cpp.o"
-	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/Monster.cpp.o -c /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/Monster.cpp
+	cd /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/Monster.cpp.o -c /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/Monster.cpp
 
 glimac/CMakeFiles/glimac.dir/src/Monster.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/glimac.dir/src/Monster.cpp.i"
-	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/Monster.cpp > CMakeFiles/glimac.dir/src/Monster.cpp.i
+	cd /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/Monster.cpp > CMakeFiles/glimac.dir/src/Monster.cpp.i
 
 glimac/CMakeFiles/glimac.dir/src/Monster.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/glimac.dir/src/Monster.cpp.s"
-	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/Monster.cpp -o CMakeFiles/glimac.dir/src/Monster.cpp.s
+	cd /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/Monster.cpp -o CMakeFiles/glimac.dir/src/Monster.cpp.s
 
 glimac/CMakeFiles/glimac.dir/src/Monster.cpp.o.requires:
 .PHONY : glimac/CMakeFiles/glimac.dir/src/Monster.cpp.o.requires
@@ -372,18 +372,18 @@ glimac/CMakeFiles/glimac.dir/src/Monster.cpp.o.provides: glimac/CMakeFiles/glima
 glimac/CMakeFiles/glimac.dir/src/Monster.cpp.o.provides.build: glimac/CMakeFiles/glimac.dir/src/Monster.cpp.o
 
 glimac/CMakeFiles/glimac.dir/src/MainCaracter.cpp.o: glimac/CMakeFiles/glimac.dir/flags.make
-glimac/CMakeFiles/glimac.dir/src/MainCaracter.cpp.o: /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/MainCaracter.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles $(CMAKE_PROGRESS_15)
+glimac/CMakeFiles/glimac.dir/src/MainCaracter.cpp.o: /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/MainCaracter.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles $(CMAKE_PROGRESS_15)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object glimac/CMakeFiles/glimac.dir/src/MainCaracter.cpp.o"
-	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/MainCaracter.cpp.o -c /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/MainCaracter.cpp
+	cd /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/glimac.dir/src/MainCaracter.cpp.o -c /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/MainCaracter.cpp
 
 glimac/CMakeFiles/glimac.dir/src/MainCaracter.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/glimac.dir/src/MainCaracter.cpp.i"
-	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/MainCaracter.cpp > CMakeFiles/glimac.dir/src/MainCaracter.cpp.i
+	cd /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/MainCaracter.cpp > CMakeFiles/glimac.dir/src/MainCaracter.cpp.i
 
 glimac/CMakeFiles/glimac.dir/src/MainCaracter.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/glimac.dir/src/MainCaracter.cpp.s"
-	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac/src/MainCaracter.cpp -o CMakeFiles/glimac.dir/src/MainCaracter.cpp.s
+	cd /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/glimac && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac/src/MainCaracter.cpp -o CMakeFiles/glimac.dir/src/MainCaracter.cpp.s
 
 glimac/CMakeFiles/glimac.dir/src/MainCaracter.cpp.o.requires:
 .PHONY : glimac/CMakeFiles/glimac.dir/src/MainCaracter.cpp.o.requires
@@ -433,8 +433,8 @@ glimac/libglimac.a: glimac/CMakeFiles/glimac.dir/src/MainCaracter.cpp.o
 glimac/libglimac.a: glimac/CMakeFiles/glimac.dir/build.make
 glimac/libglimac.a: glimac/CMakeFiles/glimac.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX static library libglimac.a"
-	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/glimac && $(CMAKE_COMMAND) -P CMakeFiles/glimac.dir/cmake_clean_target.cmake
-	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/glimac && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/glimac.dir/link.txt --verbose=$(VERBOSE)
+	cd /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/glimac && $(CMAKE_COMMAND) -P CMakeFiles/glimac.dir/cmake_clean_target.cmake
+	cd /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/glimac && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/glimac.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 glimac/CMakeFiles/glimac.dir/build: glimac/libglimac.a
@@ -458,10 +458,10 @@ glimac/CMakeFiles/glimac.dir/requires: glimac/CMakeFiles/glimac.dir/src/MainCara
 .PHONY : glimac/CMakeFiles/glimac.dir/requires
 
 glimac/CMakeFiles/glimac.dir/clean:
-	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/glimac && $(CMAKE_COMMAND) -P CMakeFiles/glimac.dir/cmake_clean.cmake
+	cd /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/glimac && $(CMAKE_COMMAND) -P CMakeFiles/glimac.dir/cmake_clean.cmake
 .PHONY : glimac/CMakeFiles/glimac.dir/clean
 
 glimac/CMakeFiles/glimac.dir/depend:
-	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/glimac /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/glimac/CMakeFiles/glimac.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu/glimac /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/glimac /home/6im2/jpuech/Bureau/jeu/projetOpenGL_IMAC2/joliJeu-build/glimac/CMakeFiles/glimac.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : glimac/CMakeFiles/glimac.dir/depend
 
