@@ -17,9 +17,9 @@ Pixel::Pixel( char red,  char green,  char blue){
 	b = blue;
 }
 Pixel::~Pixel(){}
-unsigned char Pixel::getR () { return r;}
-unsigned char Pixel::getG () { return g;}
-unsigned char Pixel::getB () { return b;}
+unsigned char Pixel::getR () { return r; }
+unsigned char Pixel::getG () { return g; }
+unsigned char Pixel::getB () { return b; }
 
 void Pixel::printPixel () {
 	cout << (int)r << " " << (int)g << " " << (int)b << endl;
@@ -34,10 +34,25 @@ Map::Map(){}
 Map::Map(int w, int h){
 	width = w;
 	height = h;
+	int i;
+	for (i = 0; i < width*height; i++)
+		mapTrouve.push_back(false);
 }
 Map::~Map(){}
 	
 Pixel Map::getValueMap ( int row,  int col) { return tabMap[(row-1)*width + col]; }
+
+
+
+MapType Map::getType(int row,  int col) { 
+	if (abs(row) < width && abs(col) < height)
+		return mapElements[((row+width*0.5)-1)*width + (col + height *0.5)]; 
+	return OTHER;
+}
+
+
+
+
 Pixel Map::getValueMap (int numVal) { return tabMap[numVal]; }
 
 void Map::addValueTab (Pixel p) { tabMap.push_back(p); }
@@ -141,6 +156,7 @@ void Map::loadMapFromPPM (std::string mapFile) {
 
 			addValueTab((Pixel(r,g,b)));
 			addElementMap(Pixel(r,g,b).moyennePixels());
+			mapTrouve.push_back(false);
 		}
 
 		file.close();
@@ -216,16 +232,22 @@ void Map::loadMapFromPPM (std::string mapFile) {
 
 
 void Map::addElementMap (unsigned char val) {
-	if (val > SOL - MARGE_ERREUR && val < SOL + MARGE_ERREUR) {
+	if (val > VAL_SOL - MARGE_ERREUR && val < VAL_SOL + MARGE_ERREUR) {
 		mapElements.push_back(SOL);
-	} else if (val > MONTAGNE - MARGE_ERREUR && val < MONTAGNE + MARGE_ERREUR) {
+	} else if (val > VAL_MONTAGNE - MARGE_ERREUR && val < VAL_MONTAGNE + MARGE_ERREUR) {
 		mapElements.push_back(MONTAGNE);
 
 	} else {
-		mapElements.push_back(3);
+		mapElements.push_back(OTHER);
 	}
 }
 
+string Map::fromEnumToString(MapType t) {
+	if (t == SOL) return "SOL";
+	else if (t == MONTAGNE) return "MONTAGNE";
+	return "OTHER";
+
+}
 
 void Map::testMapLoading () {
 

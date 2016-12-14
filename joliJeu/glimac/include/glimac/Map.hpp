@@ -2,8 +2,8 @@
 #define MAP_HPP
 
 
-#define SOL 255
-#define MONTAGNE 0
+#define VAL_SOL 255
+#define VAL_MONTAGNE 0
 #define MARGE_ERREUR 127
 #define ZERO 48
 #define ASCII_SPACE 32
@@ -14,6 +14,10 @@
 #include <fstream>
 
 using namespace std;
+
+
+enum MapType {SOL, MONTAGNE, OTHER }; 
+
 
 class Pixel {
 friend class Map;
@@ -41,7 +45,8 @@ private:
 	vector <Pixel> tabMap;
 	int width;
 	int height;
-	vector <unsigned short> mapElements;
+	vector <MapType> mapElements;
+	vector <bool> mapTrouve;
 	
 public:
 	friend class Interface;
@@ -64,10 +69,13 @@ public:
 	int getWidth ();
 	int getHeight ();
 
-
+	MapType getType(int row,  int col);
 
 	void loadMapFromPPM (std::string mapFile);
 	void testMapLoading ();
+
+	string fromEnumToString(MapType t);
+
 	 
 };
 

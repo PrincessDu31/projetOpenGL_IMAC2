@@ -9,8 +9,13 @@
 #include <glimac/Image.hpp>
 #include <glimac/Vector.hpp>
 
+
+
 using namespace glimac;
 using namespace std;
+
+
+
 
 
 struct MapProgram {
@@ -20,6 +25,10 @@ struct MapProgram {
     GLint uMVMatrix;
     GLint uNormalMatrix;
     GLint uTextureMap;
+    GLint uSizeMap;
+    GLint uFind;
+
+    GLint uniformArrayOfMapInfos;
     // GLint uTextureOtherTextureIfWeWant;
 
     MapProgram(const FilePath& applicationPath):
@@ -28,6 +37,11 @@ struct MapProgram {
         uMVPMatrix = glGetUniformLocation(m_Program.getGLId(), "uMVPMatrix");
         uMVMatrix = glGetUniformLocation(m_Program.getGLId(), "uMVMatrix");
         uNormalMatrix = glGetUniformLocation(m_Program.getGLId(), "uNormalMatrix");
+        uSizeMap = glGetUniformLocation(m_Program.getGLId(), "uSizeMap");
+   
+   		uFind = glGetUniformLocation(m_Program.getGLId(), "uFind");
+   		uniformArrayOfMapInfos = glGetUniformLocation(m_Program.getGLId(), "uniformArrayOfMapInfos");
+
         // uTextureMap = glGetUniformLocation(m_Program.getGLId(), "uTextureMap");
         // uTextureOtherTextureIfWeWant = glGetUniformLocation(m_Program.getGLId(), "uTextureCloud");
     }
@@ -51,26 +65,23 @@ struct CubeProgram {
     }
 };
 
+struct AleatoirusProgram {
+    Program m_Program;
 
-// struct AleatoirusProgram {
-//     Program m_Program;
+    GLint uMVPMatrix;
+    GLint uMVMatrix;
+    GLint uNormalMatrix;
+    // GLint uTextureOtherTextureIfWeWant;
 
-//     GLint uMVPMatrix;
-//     GLint uMVMatrix;
-//     GLint uNormalMatrix;
-//     // GLint uTextureOtherTextureIfWeWant;
-
-//     AleatoirusProgram(const FilePath& applicationPath):
-//         m_Program(loadProgram(applicationPath.dirPath() + "shaders/alea.vs.glsl",
-//                               applicationPath.dirPath() + "shaders/alea.fs.glsl")) {    //if mutlitexturing mutli3D.fs.glsl
-//         uMVPMatrix = glGetUniformLocation(m_Program.getGLId(), "uMVPMatrix");
-//         uMVMatrix = glGetUniformLocation(m_Program.getGLId(), "uMVMatrix");
-//         uNormalMatrix = glGetUniformLocation(m_Program.getGLId(), "uNormalMatrix");
-//         // uTextureOtherTextureIfWeWant = glGetUniformLocation(m_Program.getGLId(), "uTextureCloud");
-//     }
-// };
-
-
+    AleatoirusProgram(const FilePath& applicationPath):
+        m_Program(loadProgram(applicationPath.dirPath() + "shaders/alea.vs.glsl",
+                              applicationPath.dirPath() + "shaders/alea.fs.glsl")) {    //if mutlitexturing mutli3D.fs.glsl
+        uMVPMatrix = glGetUniformLocation(m_Program.getGLId(), "uMVPMatrix");
+        uMVMatrix = glGetUniformLocation(m_Program.getGLId(), "uMVMatrix");
+        uNormalMatrix = glGetUniformLocation(m_Program.getGLId(), "uNormalMatrix");
+        // uTextureOtherTextureIfWeWant = glGetUniformLocation(m_Program.getGLId(), "uTextureCloud");
+    }
+};
 
 
 int main(int argc, char** argv) {
@@ -81,7 +92,7 @@ int main(int argc, char** argv) {
     interface.createWorld();
 
 	interface.getMap().testMapLoading();
-
+   
     // Initialize SDL and open a window
     unsigned int windowWidth = 800;
     unsigned int windowHeight = 600;
@@ -104,7 +115,8 @@ int main(int argc, char** argv) {
     FilePath applicationPath(argv[0]);
     MapProgram mapProgram(applicationPath);
 	CubeProgram cubeProgram(applicationPath);
-  //  AleatoirusProgram aleatoirusProgram(applicationPath);
+    AleatoirusProgram aleatoirusProgram(applicationPath);
+
 
 
     glEnable(GL_DEPTH_TEST);
@@ -130,40 +142,9 @@ int main(int argc, char** argv) {
         Vertex3DColor(glm::vec3(0.5, 0.5, 0.5), glm::vec3(0,0,1), glm::vec3(0, 0, 1)), // Sommet 2 - 2
         Vertex3DColor(glm::vec3(-0.5, 0.5, 0.5), glm::vec3(0,0,1), glm::vec3(1, 1, 1)), // Sommet 3 - 3 
 
-        //face arrière
-        Vertex3DColor(glm::vec3(-0.5, -0.5, -0.5), glm::vec3(0,0,-1), glm::vec3(1, 0, 0)), // Sommet 4 - 4
-        Vertex3DColor(glm::vec3(0.5, -0.5, -0.5), glm::vec3(0,0,-1), glm::vec3(0, 1, 0)), // Sommet 5 - 5
-        Vertex3DColor(glm::vec3(0.5, 0.5, -0.5), glm::vec3(0,0,-1), glm::vec3(0, 0, 1)), // Sommet 6 - 6
-        Vertex3DColor(glm::vec3(-0.5, 0.5, -0.5), glm::vec3(0,0,-1), glm::vec3(1, 1, 1)), // Sommet 7 - 7
-
-        //face haut
-        Vertex3DColor(glm::vec3(0.5, 0.5, 0.5), glm::vec3(0,1,0), glm::vec3(0, 0, 1)), // Sommet 2 - 8
-        Vertex3DColor(glm::vec3(-0.5, 0.5, 0.5), glm::vec3(0,1,0), glm::vec3(1, 1, 1)), // Sommet 3 - 9
-        Vertex3DColor(glm::vec3(0.5, 0.5, -0.5), glm::vec3(0,1,0), glm::vec3(0, 0, 1)), // Sommet 6 - 10
-        Vertex3DColor(glm::vec3(-0.5, 0.5, -0.5), glm::vec3(0,1,0), glm::vec3(1, 1, 1)), // Sommet 7 - 11
-
-        //face bas
-        Vertex3DColor(glm::vec3(-0.5, -0.5, 0.5), glm::vec3(0,-1, 0), glm::vec3(1, 0, 0)), // Sommet 0 - 12
-        Vertex3DColor(glm::vec3(0.5, -0.5, 0.5), glm::vec3(0,-1, 0), glm::vec3(0, 1, 0)), // Sommet 1 - 13
-        Vertex3DColor(glm::vec3(-0.5, -0.5, -0.5), glm::vec3(0,-1, 0), glm::vec3(1, 0, 0)), // Sommet 4 - 14
-        Vertex3DColor(glm::vec3(0.5, -0.5, -0.5), glm::vec3(0,-1, 0), glm::vec3(0, 1, 0)), // Sommet 5 - 15
-
-        //face gauche
-        Vertex3DColor(glm::vec3(-0.5, -0.5, 0.5), glm::vec3(-1,0,0), glm::vec3(1, 0, 0)), // Sommet 0 - 16 
-        Vertex3DColor(glm::vec3(-0.5, -0.5, -0.5), glm::vec3(-1,0,0), glm::vec3(1, 0, 0)), // Sommet 4 -17
-        Vertex3DColor(glm::vec3(-0.5, 0.5, -0.5), glm::vec3(-1,0,0), glm::vec3(1, 1, 1)), // Sommet 7 - 18 
-        Vertex3DColor(glm::vec3(-0.5, 0.5, 0.5), glm::vec3(-1,0,0), glm::vec3(1, 1, 1)), // Sommet 3 - 19
-
-        //face droite
-        Vertex3DColor(glm::vec3(0.5, -0.5, 0.5), glm::vec3(1,0,0), glm::vec3(0, 1, 0)), // Sommet 1 - 20
-        Vertex3DColor(glm::vec3(0.5, 0.5, 0.5), glm::vec3(1,0,0), glm::vec3(0, 0, 1)), // Sommet 2 - 21
-        Vertex3DColor(glm::vec3(0.5, -0.5, -0.5),glm::vec3(1,0,0), glm::vec3(0, 1, 0)), // Sommet 5 - 22
-        Vertex3DColor(glm::vec3(0.5, 0.5, -0.5), glm::vec3(1,0,0), glm::vec3(0, 0, 1)) // Sommet 6 - 23
-
     };
 
-   	GLint nbTriangles = 12;
-    //GLint nbTriangles = 4;
+   	GLint nbTriangles = 2;
     glBufferData(GL_ARRAY_BUFFER, nbTriangles*3 * sizeof(Vertex3DColor), vertices, GL_STATIC_DRAW);
 
     glBindBuffer(GL_ARRAY_BUFFER, 0);
@@ -173,13 +154,8 @@ int main(int argc, char** argv) {
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibo);
     uint32_t indices[] = {
         0, 1, 2, 0, 2, 3,
-        5, 6, 7, 5, 7, 4, 
-        9, 8, 10, 9, 10, 11, 
-        12, 13, 15, 12, 13, 14, 
-        16, 17, 18, 16, 18, 19,
-        20, 22, 23, 20, 23, 21
     };
-    GLuint nbIndices = 36;
+    GLuint nbIndices = 6;
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, nbIndices * sizeof(uint32_t), indices, GL_STATIC_DRAW);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 
@@ -205,18 +181,51 @@ int main(int argc, char** argv) {
     glBindBuffer(GL_ARRAY_BUFFER, 0);
 
 
+    const GLuint VERTEX_ATTR_MAP_INFOS_FIND = 3;
+    glEnableVertexAttribArray(VERTEX_ATTR_MAP_INFOS_FIND);
+    glVertexAttribPointer(VERTEX_ATTR_MAP_INFOS_FIND, 1, GL_INT, GL_FALSE, sizeof(GLint), 0);
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
+
+
+
     glBindVertexArray(0);
     // Application loop:
+
+
+
+		int i =0;
+		for (i = 0; i < 30*30; i++) {
+			int j = 23;
+			char str[40] = "uniformArrayOfMapInfos[000].find";
+
+			str[23] = 48 + i/100;
+			str[24] = (48 + (i - i/100 * 100)/10);
+
+			str[25] = 48 + (i - i/10 * 10);
+			cout << str << endl;
+			cout << str[25] << endl;
+
+
+			// str.append((char)(0));
+			// str.append("].find");
+			GLuint loc = glGetUniformLocation(mapProgram.uniformArrayOfMapInfos, str);
+			glUniform1i(loc, 0);
+		}
+
+
+
 	FreeflyCamera camera (glm::vec3(0, 0,  interface.getMap().getHeight()*0.5));
     glm::mat4 viewMatrix;
 	glm::mat4 globalMVMatrix;
 
 	bool movingFront = false;
 	bool movingBack = false;
-	// bool turningLeft = false;
-	// bool turningRight = false;
 	int turningLeft = 0;
 	int turningRight = 0;
+
+
+ MapType typeGround;
+
 	bool done = false;
 	while(!done) {
 
@@ -229,6 +238,7 @@ int main(int argc, char** argv) {
 
         globalMVMatrix = camera.getViewMatrix();
 
+        //MAP DRAWING
         glBindVertexArray(1);   
 
         mapProgram.m_Program.use();
@@ -244,16 +254,46 @@ int main(int argc, char** argv) {
         glUniformMatrix4fv(mapProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(mapMVMatrix))));
         glUniformMatrix4fv(mapProgram.uMVPMatrix, 1, GL_FALSE, glm::value_ptr(projMatrix * mapMVMatrix));    
 
-      	glDrawElements(GL_TRIANGLES, 2*3, GL_UNSIGNED_INT, 0);
+        glm::vec2 sizeMap = glm::vec2(interface.getMap().getWidth(), interface.getMap().getHeight());
+        glUniform2f(mapProgram.uSizeMap, sizeMap.x, sizeMap.y);
+      	
+      	glUniform2f(mapProgram.uniformArrayOfMapInfos, sizeMap.x, sizeMap.y);
+
+      	
+       // MapType typeGround = interface.getMap().getType(camera.getPosition().x, camera.getPosition().z);
+      
+
+      	// if (typeGround == MONTAGNE)
+      	// 	glUniform1i(mapProgram.uFind, 1);
+       //  else  
+	      //   glUniform1i(mapProgram.uFind, 0);
+
+
+        glDrawElements(GL_TRIANGLES, 2*3, GL_UNSIGNED_INT, 0);
       
 
 		glBindVertexArray(0);
 
-	//	glBindVertexArray(0);
+
+		int i = camera.getPosition().x * 30 + camera.getPosition().y;
+			char str[40] = "uniformArrayOfMapInfos[000].find";
+
+			str[23] = 48 + i/100;
+			str[24] = (48 + (i - i/100 * 100)/10);
+			str[25] = 48 + (i - i/10 * 10);
+    cout << "cam X : " << abs(camera.getPosition().x) << endl;
+        cout << "cam Y : " << abs(camera.getPosition().y) << endl;
+cout << str << endl;
+			// str.append((char)(0));
+			// str.append("].find");
+			GLuint loc = glGetUniformLocation(mapProgram.uniformArrayOfMapInfos, str);
+			glUniform1i(loc, 1);
+		
 
 
 		globalMVMatrix = camera.getViewMatrix();
 
+        //WALL DRAWING
 		cubeProgram.m_Program.use();
 
 		glBindVertexArray(1);   
@@ -269,42 +309,104 @@ int main(int argc, char** argv) {
         glBindVertexArray(0);
 
 
-		cout << "camX : " << (camera.getPosition().x) << endl;
-		cout << "camZ : " << (camera.getPosition().z) << endl;
 
 
-		if (movingFront == true) {
-			if (abs(camera.getPosition().x) <= interface.getMap().getWidth() * 0.5 && abs(camera.getPosition().z) <= interface.getMap().getWidth() * 0.5 )
-			 	camera.moveFront(0.05);
-			else
-				camera.moveFront(-0.05);
-			// cout << "cam : " << abs(camera.getPosition().x) << endl;
-			// cout << "width : " << interface.getMap().getWidth() * 0.5 << endl;
+        //ALEATOIRUS DRAWING
 
-		}
-		if (movingBack == true) {
-			if (abs(camera.getPosition().x) <= interface.getMap().getWidth() * 0.5 && abs(camera.getPosition().z) <= interface.getMap().getWidth() * 0.5 )
-			 	camera.moveFront(-0.05);
-			else
-				camera.moveFront(0.05);
-		}
+        glBindVertexArray(1);
+        aleatoirusProgram.m_Program.use();
 
+        glm::mat4 aleaMVMatrix = glm::translate(globalMVMatrix, glm::vec3(0.5, 0, 0));
+       
 
-		if (turningRight > 5) {
-			camera.rotateLeft(-5);
-			turningRight -= 5;
-		}
-		cout << " r : " << turningRight;
-		cout << " l : " << turningLeft;
+        projMatrix = projMatrix;
+        glUniformMatrix4fv(aleatoirusProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(aleaMVMatrix));
+        glUniformMatrix4fv(aleatoirusProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(aleaMVMatrix))));
+        glUniformMatrix4fv(aleatoirusProgram.uMVPMatrix, 1, GL_FALSE, glm::value_ptr(projMatrix * aleaMVMatrix));    
 
-		if (turningLeft > 5) {
-			camera.rotateLeft(5);
-			turningLeft -= 5;
-		}
+        glDrawElements(GL_TRIANGLES, 2*3, GL_UNSIGNED_INT, 0);
+        glBindVertexArray(0);
 
 
-	 	SDL_Event e;
-     	while(windowManager.pollEvent(e)) {
+        // cout << "camX : " << (camera.getPosition().x) << endl;
+        // cout << "camZ : " << (camera.getPosition().z) << endl;
+
+
+        if (turningRight >= 5) {
+            camera.rotateLeft(-5);
+            turningRight -= 5;
+        }
+    
+        if (turningLeft >= 5) {
+            camera.rotateLeft(5);
+            turningLeft -= 5;
+        }
+
+
+       
+     //   cout << "lement map : " << interface.getMap().fromEnumToString(typeGround) << endl;
+
+
+        if (movingFront == true  && turningRight < 5 && turningLeft < 5) {
+
+        	if (abs(camera.getPosition().x) - interface.getMap().getWidth() * 0.5 <= 0 && abs(camera.getPosition().z) - interface.getMap().getWidth() * 0.5  <= 0) {
+				camera.moveFront(0.5);
+
+	        	typeGround = interface.getMap().getType(camera.getPosition().x, camera.getPosition().z );
+
+	        	if (typeGround != MONTAGNE) {
+	    	            // camera.moveFront(0.5);
+		           
+		        } else {
+	                camera.moveFront(-0.5);
+		        	movingFront = false;
+		       	}
+
+	       	} else {
+	            	movingFront = false;
+	                camera.moveFront(-0.5);
+			}
+
+            // cout << "cam : " << abs(camera.getPosition().x) << endl;
+            // cout << "width : " << interface.getMap().getWidth() * 0.5 << endl;
+
+        }
+        if (movingBack == true && turningRight < 5 && turningLeft < 5) {
+            // if (abs(camera.getPosition().x) - interface.getMap().getWidth() * 0.5 > 0.5 && abs(camera.getPosition().z) - interface.getMap().getWidth() * 0.5 > 0.5)
+            //     camera.moveFront(-0.5);
+            // else {
+            // 	movingBack = false;
+            //     camera.moveFront(0.5);
+        
+
+
+
+            // }
+        
+        	if (abs(camera.getPosition().x) - interface.getMap().getWidth() * 0.5 <= 0 && abs(camera.getPosition().z) - interface.getMap().getWidth() * 0.5  <= 0) {
+				camera.moveFront(-0.5);
+
+	        	typeGround = interface.getMap().getType(camera.getPosition().x, camera.getPosition().z );
+
+	        	if (typeGround != MONTAGNE) {
+	    	            // camera.moveFront(0.5);
+		           
+		        } else {
+	                camera.moveFront(0.5);
+		        	movingFront = false;
+		       	}
+
+	       	} else {
+	            	movingFront = false;
+	                camera.moveFront(0.5);
+			}
+
+
+        }
+
+
+        SDL_Event e;
+        while(windowManager.pollEvent(e)) {
             if(e.type == SDL_QUIT) {
                 done = true; // Leave the loop after this iteration
             }
@@ -313,34 +415,35 @@ int main(int argc, char** argv) {
 
             case SDL_KEYDOWN:
 
-				if(e.key.keysym.sym == SDLK_SPACE || e.key.keysym.sym == SDLK_UP) {
-					movingFront = true;
-				}
-				else if(e.key.keysym.sym == SDLK_RIGHT) {
-					turningRight = 90;
+                if(e.key.keysym.sym == SDLK_SPACE || e.key.keysym.sym == SDLK_UP) {
+                    movingFront = true;
                 }
-				else if(e.key.keysym.sym == SDLK_LEFT) {
-					turningLeft = 90;
-				}
-				else if(e.key.keysym.sym == SDLK_DOWN) {
-					movingBack = 90;
-				}
-				break;
+                else if(e.key.keysym.sym == SDLK_RIGHT) {
+                    turningRight += 90;
+                }
+                else if(e.key.keysym.sym == SDLK_LEFT) {
+                    turningLeft += 90;
+                }
+                else if(e.key.keysym.sym == SDLK_DOWN) {
+                    movingBack = true;
+                }
+                break;
 
-			
-			case SDL_KEYUP:
+            
+            case SDL_KEYUP:
 
-				if(e.key.keysym.sym == SDLK_SPACE || e.key.keysym.sym == SDLK_UP) {
-					movingFront = false;
-				}
-				else if(e.key.keysym.sym == SDLK_DOWN) {
-					movingBack = false;
+                if(e.key.keysym.sym == SDLK_SPACE || e.key.keysym.sym == SDLK_UP) {
+                    movingFront = false;
+                }
+                else if(e.key.keysym.sym == SDLK_DOWN) {
+                    movingBack = false;
                 }
                 break;
 
             }
                   
         }
+     
      
         
        	

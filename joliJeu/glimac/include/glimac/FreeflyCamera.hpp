@@ -63,7 +63,10 @@ namespace glimac {
 		}
 
 		glm::vec3 getPosition () const {
-			return m_Position;
+			int xTmp = m_Position.x;
+			int yTmp = m_Position.y;
+			int zTmp = m_Position.z;
+			return glm::vec3 (xTmp, yTmp, zTmp);
 		}
 
 
