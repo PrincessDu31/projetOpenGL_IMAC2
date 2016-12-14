@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu
+CMAKE_SOURCE_DIR = /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build
+CMAKE_BINARY_DIR = /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -73,14 +73,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(CMAKE_COMMAND) -E cmake_progress_start /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build/glimac/CMakeFiles/progress.marks
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f CMakeFiles/Makefile2 glimac/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles 0
+	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build && $(CMAKE_COMMAND) -E cmake_progress_start /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/glimac/CMakeFiles/progress.marks
+	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f CMakeFiles/Makefile2 glimac/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f CMakeFiles/Makefile2 glimac/clean
+	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f CMakeFiles/Makefile2 glimac/clean
 .PHONY : clean
 
 # The main clean target
@@ -89,22 +89,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f CMakeFiles/Makefile2 glimac/preinstall
+	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f CMakeFiles/Makefile2 glimac/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f CMakeFiles/Makefile2 glimac/preinstall
+	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f CMakeFiles/Makefile2 glimac/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 glimac/CMakeFiles/glimac.dir/rule:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f CMakeFiles/Makefile2 glimac/CMakeFiles/glimac.dir/rule
+	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f CMakeFiles/Makefile2 glimac/CMakeFiles/glimac.dir/rule
 .PHONY : glimac/CMakeFiles/glimac.dir/rule
 
 # Convenience name for target.
@@ -113,7 +113,7 @@ glimac: glimac/CMakeFiles/glimac.dir/rule
 
 # fast build rule for target.
 glimac/fast:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/build
+	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/build
 .PHONY : glimac/fast
 
 src/Aleatoirus.o: src/Aleatoirus.cpp.o
@@ -121,7 +121,7 @@ src/Aleatoirus.o: src/Aleatoirus.cpp.o
 
 # target to build an object file
 src/Aleatoirus.cpp.o:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Aleatoirus.cpp.o
+	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Aleatoirus.cpp.o
 .PHONY : src/Aleatoirus.cpp.o
 
 src/Aleatoirus.i: src/Aleatoirus.cpp.i
@@ -129,7 +129,7 @@ src/Aleatoirus.i: src/Aleatoirus.cpp.i
 
 # target to preprocess a source file
 src/Aleatoirus.cpp.i:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Aleatoirus.cpp.i
+	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Aleatoirus.cpp.i
 .PHONY : src/Aleatoirus.cpp.i
 
 src/Aleatoirus.s: src/Aleatoirus.cpp.s
@@ -137,7 +137,7 @@ src/Aleatoirus.s: src/Aleatoirus.cpp.s
 
 # target to generate assembly for a file
 src/Aleatoirus.cpp.s:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Aleatoirus.cpp.s
+	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Aleatoirus.cpp.s
 .PHONY : src/Aleatoirus.cpp.s
 
 src/Character.o: src/Character.cpp.o
@@ -145,7 +145,7 @@ src/Character.o: src/Character.cpp.o
 
 # target to build an object file
 src/Character.cpp.o:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Character.cpp.o
+	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Character.cpp.o
 .PHONY : src/Character.cpp.o
 
 src/Character.i: src/Character.cpp.i
@@ -153,7 +153,7 @@ src/Character.i: src/Character.cpp.i
 
 # target to preprocess a source file
 src/Character.cpp.i:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Character.cpp.i
+	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Character.cpp.i
 .PHONY : src/Character.cpp.i
 
 src/Character.s: src/Character.cpp.s
@@ -161,7 +161,7 @@ src/Character.s: src/Character.cpp.s
 
 # target to generate assembly for a file
 src/Character.cpp.s:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Character.cpp.s
+	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Character.cpp.s
 .PHONY : src/Character.cpp.s
 
 src/Cone.o: src/Cone.cpp.o
@@ -169,7 +169,7 @@ src/Cone.o: src/Cone.cpp.o
 
 # target to build an object file
 src/Cone.cpp.o:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Cone.cpp.o
+	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Cone.cpp.o
 .PHONY : src/Cone.cpp.o
 
 src/Cone.i: src/Cone.cpp.i
@@ -177,7 +177,7 @@ src/Cone.i: src/Cone.cpp.i
 
 # target to preprocess a source file
 src/Cone.cpp.i:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Cone.cpp.i
+	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Cone.cpp.i
 .PHONY : src/Cone.cpp.i
 
 src/Cone.s: src/Cone.cpp.s
@@ -185,7 +185,7 @@ src/Cone.s: src/Cone.cpp.s
 
 # target to generate assembly for a file
 src/Cone.cpp.s:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Cone.cpp.s
+	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Cone.cpp.s
 .PHONY : src/Cone.cpp.s
 
 src/Geometry.o: src/Geometry.cpp.o
@@ -193,7 +193,7 @@ src/Geometry.o: src/Geometry.cpp.o
 
 # target to build an object file
 src/Geometry.cpp.o:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Geometry.cpp.o
+	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Geometry.cpp.o
 .PHONY : src/Geometry.cpp.o
 
 src/Geometry.i: src/Geometry.cpp.i
@@ -201,7 +201,7 @@ src/Geometry.i: src/Geometry.cpp.i
 
 # target to preprocess a source file
 src/Geometry.cpp.i:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Geometry.cpp.i
+	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Geometry.cpp.i
 .PHONY : src/Geometry.cpp.i
 
 src/Geometry.s: src/Geometry.cpp.s
@@ -209,7 +209,7 @@ src/Geometry.s: src/Geometry.cpp.s
 
 # target to generate assembly for a file
 src/Geometry.cpp.s:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Geometry.cpp.s
+	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Geometry.cpp.s
 .PHONY : src/Geometry.cpp.s
 
 src/Image.o: src/Image.cpp.o
@@ -217,7 +217,7 @@ src/Image.o: src/Image.cpp.o
 
 # target to build an object file
 src/Image.cpp.o:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Image.cpp.o
+	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Image.cpp.o
 .PHONY : src/Image.cpp.o
 
 src/Image.i: src/Image.cpp.i
@@ -225,7 +225,7 @@ src/Image.i: src/Image.cpp.i
 
 # target to preprocess a source file
 src/Image.cpp.i:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Image.cpp.i
+	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Image.cpp.i
 .PHONY : src/Image.cpp.i
 
 src/Image.s: src/Image.cpp.s
@@ -233,7 +233,7 @@ src/Image.s: src/Image.cpp.s
 
 # target to generate assembly for a file
 src/Image.cpp.s:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Image.cpp.s
+	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Image.cpp.s
 .PHONY : src/Image.cpp.s
 
 src/Interface.o: src/Interface.cpp.o
@@ -241,7 +241,7 @@ src/Interface.o: src/Interface.cpp.o
 
 # target to build an object file
 src/Interface.cpp.o:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Interface.cpp.o
+	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Interface.cpp.o
 .PHONY : src/Interface.cpp.o
 
 src/Interface.i: src/Interface.cpp.i
@@ -249,7 +249,7 @@ src/Interface.i: src/Interface.cpp.i
 
 # target to preprocess a source file
 src/Interface.cpp.i:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Interface.cpp.i
+	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Interface.cpp.i
 .PHONY : src/Interface.cpp.i
 
 src/Interface.s: src/Interface.cpp.s
@@ -257,7 +257,7 @@ src/Interface.s: src/Interface.cpp.s
 
 # target to generate assembly for a file
 src/Interface.cpp.s:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Interface.cpp.s
+	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Interface.cpp.s
 .PHONY : src/Interface.cpp.s
 
 src/MainCaracter.o: src/MainCaracter.cpp.o
@@ -265,7 +265,7 @@ src/MainCaracter.o: src/MainCaracter.cpp.o
 
 # target to build an object file
 src/MainCaracter.cpp.o:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/MainCaracter.cpp.o
+	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/MainCaracter.cpp.o
 .PHONY : src/MainCaracter.cpp.o
 
 src/MainCaracter.i: src/MainCaracter.cpp.i
@@ -273,7 +273,7 @@ src/MainCaracter.i: src/MainCaracter.cpp.i
 
 # target to preprocess a source file
 src/MainCaracter.cpp.i:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/MainCaracter.cpp.i
+	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/MainCaracter.cpp.i
 .PHONY : src/MainCaracter.cpp.i
 
 src/MainCaracter.s: src/MainCaracter.cpp.s
@@ -281,7 +281,7 @@ src/MainCaracter.s: src/MainCaracter.cpp.s
 
 # target to generate assembly for a file
 src/MainCaracter.cpp.s:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/MainCaracter.cpp.s
+	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/MainCaracter.cpp.s
 .PHONY : src/MainCaracter.cpp.s
 
 src/Map.o: src/Map.cpp.o
@@ -289,7 +289,7 @@ src/Map.o: src/Map.cpp.o
 
 # target to build an object file
 src/Map.cpp.o:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Map.cpp.o
+	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Map.cpp.o
 .PHONY : src/Map.cpp.o
 
 src/Map.i: src/Map.cpp.i
@@ -297,7 +297,7 @@ src/Map.i: src/Map.cpp.i
 
 # target to preprocess a source file
 src/Map.cpp.i:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Map.cpp.i
+	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Map.cpp.i
 .PHONY : src/Map.cpp.i
 
 src/Map.s: src/Map.cpp.s
@@ -305,7 +305,7 @@ src/Map.s: src/Map.cpp.s
 
 # target to generate assembly for a file
 src/Map.cpp.s:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Map.cpp.s
+	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Map.cpp.s
 .PHONY : src/Map.cpp.s
 
 src/Monster.o: src/Monster.cpp.o
@@ -313,7 +313,7 @@ src/Monster.o: src/Monster.cpp.o
 
 # target to build an object file
 src/Monster.cpp.o:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Monster.cpp.o
+	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Monster.cpp.o
 .PHONY : src/Monster.cpp.o
 
 src/Monster.i: src/Monster.cpp.i
@@ -321,7 +321,7 @@ src/Monster.i: src/Monster.cpp.i
 
 # target to preprocess a source file
 src/Monster.cpp.i:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Monster.cpp.i
+	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Monster.cpp.i
 .PHONY : src/Monster.cpp.i
 
 src/Monster.s: src/Monster.cpp.s
@@ -329,7 +329,7 @@ src/Monster.s: src/Monster.cpp.s
 
 # target to generate assembly for a file
 src/Monster.cpp.s:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Monster.cpp.s
+	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Monster.cpp.s
 .PHONY : src/Monster.cpp.s
 
 src/Program.o: src/Program.cpp.o
@@ -337,7 +337,7 @@ src/Program.o: src/Program.cpp.o
 
 # target to build an object file
 src/Program.cpp.o:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Program.cpp.o
+	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Program.cpp.o
 .PHONY : src/Program.cpp.o
 
 src/Program.i: src/Program.cpp.i
@@ -345,7 +345,7 @@ src/Program.i: src/Program.cpp.i
 
 # target to preprocess a source file
 src/Program.cpp.i:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Program.cpp.i
+	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Program.cpp.i
 .PHONY : src/Program.cpp.i
 
 src/Program.s: src/Program.cpp.s
@@ -353,7 +353,7 @@ src/Program.s: src/Program.cpp.s
 
 # target to generate assembly for a file
 src/Program.cpp.s:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Program.cpp.s
+	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Program.cpp.s
 .PHONY : src/Program.cpp.s
 
 src/SDLWindowManager.o: src/SDLWindowManager.cpp.o
@@ -361,7 +361,7 @@ src/SDLWindowManager.o: src/SDLWindowManager.cpp.o
 
 # target to build an object file
 src/SDLWindowManager.cpp.o:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.o
+	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.o
 .PHONY : src/SDLWindowManager.cpp.o
 
 src/SDLWindowManager.i: src/SDLWindowManager.cpp.i
@@ -369,7 +369,7 @@ src/SDLWindowManager.i: src/SDLWindowManager.cpp.i
 
 # target to preprocess a source file
 src/SDLWindowManager.cpp.i:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.i
+	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.i
 .PHONY : src/SDLWindowManager.cpp.i
 
 src/SDLWindowManager.s: src/SDLWindowManager.cpp.s
@@ -377,7 +377,7 @@ src/SDLWindowManager.s: src/SDLWindowManager.cpp.s
 
 # target to generate assembly for a file
 src/SDLWindowManager.cpp.s:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.s
+	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/SDLWindowManager.cpp.s
 .PHONY : src/SDLWindowManager.cpp.s
 
 src/Shader.o: src/Shader.cpp.o
@@ -385,7 +385,7 @@ src/Shader.o: src/Shader.cpp.o
 
 # target to build an object file
 src/Shader.cpp.o:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Shader.cpp.o
+	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Shader.cpp.o
 .PHONY : src/Shader.cpp.o
 
 src/Shader.i: src/Shader.cpp.i
@@ -393,7 +393,7 @@ src/Shader.i: src/Shader.cpp.i
 
 # target to preprocess a source file
 src/Shader.cpp.i:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Shader.cpp.i
+	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Shader.cpp.i
 .PHONY : src/Shader.cpp.i
 
 src/Shader.s: src/Shader.cpp.s
@@ -401,7 +401,7 @@ src/Shader.s: src/Shader.cpp.s
 
 # target to generate assembly for a file
 src/Shader.cpp.s:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Shader.cpp.s
+	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Shader.cpp.s
 .PHONY : src/Shader.cpp.s
 
 src/Sphere.o: src/Sphere.cpp.o
@@ -409,7 +409,7 @@ src/Sphere.o: src/Sphere.cpp.o
 
 # target to build an object file
 src/Sphere.cpp.o:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Sphere.cpp.o
+	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Sphere.cpp.o
 .PHONY : src/Sphere.cpp.o
 
 src/Sphere.i: src/Sphere.cpp.i
@@ -417,7 +417,7 @@ src/Sphere.i: src/Sphere.cpp.i
 
 # target to preprocess a source file
 src/Sphere.cpp.i:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Sphere.cpp.i
+	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Sphere.cpp.i
 .PHONY : src/Sphere.cpp.i
 
 src/Sphere.s: src/Sphere.cpp.s
@@ -425,7 +425,7 @@ src/Sphere.s: src/Sphere.cpp.s
 
 # target to generate assembly for a file
 src/Sphere.cpp.s:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Sphere.cpp.s
+	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Sphere.cpp.s
 .PHONY : src/Sphere.cpp.s
 
 src/Weapon.o: src/Weapon.cpp.o
@@ -433,7 +433,7 @@ src/Weapon.o: src/Weapon.cpp.o
 
 # target to build an object file
 src/Weapon.cpp.o:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Weapon.cpp.o
+	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Weapon.cpp.o
 .PHONY : src/Weapon.cpp.o
 
 src/Weapon.i: src/Weapon.cpp.i
@@ -441,7 +441,7 @@ src/Weapon.i: src/Weapon.cpp.i
 
 # target to preprocess a source file
 src/Weapon.cpp.i:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Weapon.cpp.i
+	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Weapon.cpp.i
 .PHONY : src/Weapon.cpp.i
 
 src/Weapon.s: src/Weapon.cpp.s
@@ -449,7 +449,7 @@ src/Weapon.s: src/Weapon.cpp.s
 
 # target to generate assembly for a file
 src/Weapon.cpp.s:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Weapon.cpp.s
+	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/Weapon.cpp.s
 .PHONY : src/Weapon.cpp.s
 
 src/tiny_obj_loader.o: src/tiny_obj_loader.cpp.o
@@ -457,7 +457,7 @@ src/tiny_obj_loader.o: src/tiny_obj_loader.cpp.o
 
 # target to build an object file
 src/tiny_obj_loader.cpp.o:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/tiny_obj_loader.cpp.o
+	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/tiny_obj_loader.cpp.o
 .PHONY : src/tiny_obj_loader.cpp.o
 
 src/tiny_obj_loader.i: src/tiny_obj_loader.cpp.i
@@ -465,7 +465,7 @@ src/tiny_obj_loader.i: src/tiny_obj_loader.cpp.i
 
 # target to preprocess a source file
 src/tiny_obj_loader.cpp.i:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/tiny_obj_loader.cpp.i
+	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/tiny_obj_loader.cpp.i
 .PHONY : src/tiny_obj_loader.cpp.i
 
 src/tiny_obj_loader.s: src/tiny_obj_loader.cpp.s
@@ -473,7 +473,7 @@ src/tiny_obj_loader.s: src/tiny_obj_loader.cpp.s
 
 # target to generate assembly for a file
 src/tiny_obj_loader.cpp.s:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/tiny_obj_loader.cpp.s
+	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f glimac/CMakeFiles/glimac.dir/build.make glimac/CMakeFiles/glimac.dir/src/tiny_obj_loader.cpp.s
 .PHONY : src/tiny_obj_loader.cpp.s
 
 # Help Target
@@ -541,6 +541,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
