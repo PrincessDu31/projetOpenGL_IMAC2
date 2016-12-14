@@ -52,23 +52,23 @@ struct CubeProgram {
 };
 
 
-struct AleatoirusProgram {
-    Program m_Program;
+// struct AleatoirusProgram {
+//     Program m_Program;
 
-    GLint uMVPMatrix;
-    GLint uMVMatrix;
-    GLint uNormalMatrix;
-    // GLint uTextureOtherTextureIfWeWant;
+//     GLint uMVPMatrix;
+//     GLint uMVMatrix;
+//     GLint uNormalMatrix;
+//     // GLint uTextureOtherTextureIfWeWant;
 
-    AleatoirusProgram(const FilePath& applicationPath):
-        m_Program(loadProgram(applicationPath.dirPath() + "shaders/alea.vs.glsl",
-                              applicationPath.dirPath() + "shaders/alea.fs.glsl")) {    //if mutlitexturing mutli3D.fs.glsl
-        uMVPMatrix = glGetUniformLocation(m_Program.getGLId(), "uMVPMatrix");
-        uMVMatrix = glGetUniformLocation(m_Program.getGLId(), "uMVMatrix");
-        uNormalMatrix = glGetUniformLocation(m_Program.getGLId(), "uNormalMatrix");
-        // uTextureOtherTextureIfWeWant = glGetUniformLocation(m_Program.getGLId(), "uTextureCloud");
-    }
-};
+//     AleatoirusProgram(const FilePath& applicationPath):
+//         m_Program(loadProgram(applicationPath.dirPath() + "shaders/alea.vs.glsl",
+//                               applicationPath.dirPath() + "shaders/alea.fs.glsl")) {    //if mutlitexturing mutli3D.fs.glsl
+//         uMVPMatrix = glGetUniformLocation(m_Program.getGLId(), "uMVPMatrix");
+//         uMVMatrix = glGetUniformLocation(m_Program.getGLId(), "uMVMatrix");
+//         uNormalMatrix = glGetUniformLocation(m_Program.getGLId(), "uNormalMatrix");
+//         // uTextureOtherTextureIfWeWant = glGetUniformLocation(m_Program.getGLId(), "uTextureCloud");
+//     }
+// };
 
 
 
@@ -104,7 +104,7 @@ int main(int argc, char** argv) {
     FilePath applicationPath(argv[0]);
     MapProgram mapProgram(applicationPath);
 	CubeProgram cubeProgram(applicationPath);
-	AleatoirusProgram aleatoirusProgram(applicationPath);
+  //  AleatoirusProgram aleatoirusProgram(applicationPath);
 
 
     glEnable(GL_DEPTH_TEST);
@@ -249,7 +249,7 @@ int main(int argc, char** argv) {
 
 		glBindVertexArray(0);
 
-		glBindVertexArray(0);
+	//	glBindVertexArray(0);
 
 
 		globalMVMatrix = camera.getViewMatrix();
