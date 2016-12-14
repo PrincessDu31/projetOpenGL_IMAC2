@@ -104,7 +104,7 @@ int main(int argc, char** argv) {
     FilePath applicationPath(argv[0]);
     MapProgram mapProgram(applicationPath);
 	CubeProgram cubeProgram(applicationPath);
-    AleatoirusProgram aleatoirusProgram(applicationPath);
+	AleatoirusProgram aleatoirusProgram(applicationPath);
 
 
     glEnable(GL_DEPTH_TEST);
@@ -213,9 +213,10 @@ int main(int argc, char** argv) {
 
 	bool movingFront = false;
 	bool movingBack = false;
-	bool turningLeft = false;
-	bool turningRight = false;
-
+	// bool turningLeft = false;
+	// bool turningRight = false;
+	int turningLeft = 0;
+	int turningRight = 0;
 	bool done = false;
 	while(!done) {
 
@@ -281,7 +282,6 @@ int main(int argc, char** argv) {
 			// cout << "width : " << interface.getMap().getWidth() * 0.5 << endl;
 
 		}
-<<<<<<< HEAD
 		if (movingBack == true) {
 			if (abs(camera.getPosition().x) <= interface.getMap().getWidth() * 0.5 && abs(camera.getPosition().z) <= interface.getMap().getWidth() * 0.5 )
 			 	camera.moveFront(-0.05);
@@ -289,12 +289,18 @@ int main(int argc, char** argv) {
 				camera.moveFront(0.05);
 		}
 
-=======
-		if (movingBack == true) camera.moveFront(-0.5);
->>>>>>> 867a449753b1577753b77df269388721c2d4347b
-		if (turningLeft == true) camera.rotateLeft(5);
-		if (turningRight == true) camera.rotateLeft(-5);
 
+		if (turningRight > 5) {
+			camera.rotateLeft(-5);
+			turningRight -= 5;
+		}
+		cout << " r : " << turningRight;
+		cout << " l : " << turningLeft;
+
+		if (turningLeft > 5) {
+			camera.rotateLeft(5);
+			turningLeft -= 5;
+		}
 
 
 	 	SDL_Event e;
@@ -311,13 +317,13 @@ int main(int argc, char** argv) {
 					movingFront = true;
 				}
 				else if(e.key.keysym.sym == SDLK_RIGHT) {
-					turningRight = true;
+					turningRight = 90;
                 }
 				else if(e.key.keysym.sym == SDLK_LEFT) {
-					turningLeft = true;
+					turningLeft = 90;
 				}
 				else if(e.key.keysym.sym == SDLK_DOWN) {
-					movingBack = true;
+					movingBack = 90;
 				}
 				break;
 
@@ -327,15 +333,9 @@ int main(int argc, char** argv) {
 				if(e.key.keysym.sym == SDLK_SPACE || e.key.keysym.sym == SDLK_UP) {
 					movingFront = false;
 				}
-				else if(e.key.keysym.sym == SDLK_RIGHT) {
-					turningRight = false;
-                }
-				else if(e.key.keysym.sym == SDLK_LEFT) {
-					turningLeft = false;
-				}
 				else if(e.key.keysym.sym == SDLK_DOWN) {
 					movingBack = false;
-				}
+                }
                 break;
 
             }

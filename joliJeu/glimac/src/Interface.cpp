@@ -16,7 +16,7 @@ Interface::~Interface(){}
 void Interface::createWorld (){
 
 	string line;
-	ifstream myfile("../../joliJeu/TP_template/config.txt");
+	ifstream myfile("../../joliJeu/config.txt");
 	myfile.is_open();
 	if (myfile.fail())
 	{

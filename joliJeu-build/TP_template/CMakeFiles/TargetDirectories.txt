@@ -1,3 +1,0 @@
-/home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/TP_template/CMakeFiles/TP_template_Jeu.dir
-/home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/TP_template/CMakeFiles/TP_template_Jeu_cube.dir
-/home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/glimac/CMakeFiles/glimac.dir

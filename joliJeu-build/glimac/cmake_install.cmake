@@ -1,4 +1,4 @@
-# Install script for directory: /home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu/glimac
+# Install script for directory: /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu/glimac
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
