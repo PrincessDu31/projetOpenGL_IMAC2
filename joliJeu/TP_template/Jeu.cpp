@@ -7,34 +7,11 @@
 #include <glimac/FreeflyCamera.hpp>
 #include <glimac/Sphere.hpp>
 #include <glimac/Image.hpp>
-
+#include <glimac/Vector.hpp>
 
 using namespace glimac;
 using namespace std;
 
-
-struct Vertex2DColor {
-    glm::vec2 position;
-    glm::vec3 color;
-    Vertex2DColor(){}
-    Vertex2DColor (glm::vec2 p, glm::vec3 c){
-        position = p;
-        color = c;
-    }
-};
-
-
-struct Vertex3DColor {
-    glm::vec3 position;
-    glm::vec3 normal;
-    glm::vec3 color;
-    Vertex3DColor(){}
-    Vertex3DColor (glm::vec3 p, glm::vec3 n, glm::vec3 c){
-        position = p;
-        normal = n;
-        color = c;
-    }
-};
 
 struct MapProgram {
     Program m_Program;
@@ -75,14 +52,33 @@ struct CubeProgram {
 };
 
 
+struct AleatoirusProgram {
+    Program m_Program;
+
+    GLint uMVPMatrix;
+    GLint uMVMatrix;
+    GLint uNormalMatrix;
+    // GLint uTextureOtherTextureIfWeWant;
+
+    AleatoirusProgram(const FilePath& applicationPath):
+        m_Program(loadProgram(applicationPath.dirPath() + "shaders/alea.vs.glsl",
+                              applicationPath.dirPath() + "shaders/alea.fs.glsl")) {    //if mutlitexturing mutli3D.fs.glsl
+        uMVPMatrix = glGetUniformLocation(m_Program.getGLId(), "uMVPMatrix");
+        uMVMatrix = glGetUniformLocation(m_Program.getGLId(), "uMVMatrix");
+        uNormalMatrix = glGetUniformLocation(m_Program.getGLId(), "uNormalMatrix");
+        // uTextureOtherTextureIfWeWant = glGetUniformLocation(m_Program.getGLId(), "uTextureCloud");
+    }
+};
+
+
 
 
 int main(int argc, char** argv) {
 
 
 
-   Interface interface;
-   interface.createWorld();
+    Interface interface;
+    interface.createWorld();
 
 	interface.getMap().testMapLoading();
 
@@ -108,7 +104,7 @@ int main(int argc, char** argv) {
     FilePath applicationPath(argv[0]);
     MapProgram mapProgram(applicationPath);
 	CubeProgram cubeProgram(applicationPath);
-
+    AleatoirusProgram aleatoirusProgram(applicationPath);
 
 
     glEnable(GL_DEPTH_TEST);
@@ -167,7 +163,8 @@ int main(int argc, char** argv) {
     };
 
    	GLint nbTriangles = 12;
-    glBufferData(GL_ARRAY_BUFFER, 8 * sizeof(Vertex3DColor), vertices, GL_STATIC_DRAW);
+    //GLint nbTriangles = 4;
+    glBufferData(GL_ARRAY_BUFFER, nbTriangles*3 * sizeof(Vertex3DColor), vertices, GL_STATIC_DRAW);
 
     glBindBuffer(GL_ARRAY_BUFFER, 0);
 
@@ -182,7 +179,8 @@ int main(int argc, char** argv) {
         16, 17, 18, 16, 18, 19,
         20, 22, 23, 20, 23, 21
     };
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, 36 * sizeof(uint32_t), indices, GL_STATIC_DRAW);
+    GLuint nbIndices = 36;
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, nbIndices * sizeof(uint32_t), indices, GL_STATIC_DRAW);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 
     GLuint vao;
@@ -266,7 +264,7 @@ int main(int argc, char** argv) {
         glUniformMatrix4fv(cubeProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(cubeMVMatrix))));
         glUniformMatrix4fv(cubeProgram.uMVPMatrix, 1, GL_FALSE, glm::value_ptr(projMatrix * cubeMVMatrix));    
 
-      	glDrawElements(GL_TRIANGLES, 2*3, GL_UNSIGNED_INT, 0);
+      	glDrawElements(GL_TRIANGLES, nbTriangles*3, GL_UNSIGNED_INT, 0);
         glBindVertexArray(0);
 
 
@@ -283,6 +281,7 @@ int main(int argc, char** argv) {
 			// cout << "width : " << interface.getMap().getWidth() * 0.5 << endl;
 
 		}
+<<<<<<< HEAD
 		if (movingBack == true) {
 			if (abs(camera.getPosition().x) <= interface.getMap().getWidth() * 0.5 && abs(camera.getPosition().z) <= interface.getMap().getWidth() * 0.5 )
 			 	camera.moveFront(-0.05);
@@ -290,6 +289,9 @@ int main(int argc, char** argv) {
 				camera.moveFront(0.05);
 		}
 
+=======
+		if (movingBack == true) camera.moveFront(-0.5);
+>>>>>>> 867a449753b1577753b77df269388721c2d4347b
 		if (turningLeft == true) camera.rotateLeft(5);
 		if (turningRight == true) camera.rotateLeft(-5);
 

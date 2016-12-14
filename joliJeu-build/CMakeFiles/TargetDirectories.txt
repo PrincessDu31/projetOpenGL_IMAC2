@@ -1,3 +1,3 @@
-/home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/TP_template_Jeu.dir
-/home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/TP_template_Jeu_cube.dir
-/home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build/glimac/CMakeFiles/glimac.dir
+/home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/TP_template_Jeu.dir
+/home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/TP_template_Jeu_cube.dir
+/home/6im2/jpuech/Bureau/14dec/projetOpenGL_IMAC2/joliJeu-build/glimac/CMakeFiles/glimac.dir
