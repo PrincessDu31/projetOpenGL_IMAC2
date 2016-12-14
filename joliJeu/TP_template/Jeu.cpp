@@ -193,24 +193,18 @@ int main(int argc, char** argv) {
 
 
 
-		int i =0;
-		for (i = 0; i < 30*30; i++) {
-			int j = 23;
-			char str[40] = "uniformArrayOfMapInfos[000].find";
+	int i =0;
+	for (i = 0; i < 30*30; i++) {
+		int j = 23;
+		char str[40] = "uniformArrayOfMapInfos[000].find";
 
-			str[23] = 48 + i/100;
-			str[24] = (48 + (i - i/100 * 100)/10);
+		str[23] = 48 + i/100;
+		str[24] = (48 + (i - i/100 * 100)/10);
+		str[25] = 48 + (i - i/10 * 10);
 
-			str[25] = 48 + (i - i/10 * 10);
-			cout << str << endl;
-			cout << str[25] << endl;
-
-
-			// str.append((char)(0));
-			// str.append("].find");
-			GLuint loc = glGetUniformLocation(mapProgram.uniformArrayOfMapInfos, str);
-			glUniform1i(loc, 0);
-		}
+		GLuint loc = glGetUniformLocation(mapProgram.uniformArrayOfMapInfos, str);
+		glUniform1i(loc, 0);
+	}
 
 
 
@@ -224,8 +218,10 @@ int main(int argc, char** argv) {
 	int turningRight = 0;
 
 
- MapType typeGround;
+	MapType typeGround;
 
+    std::vector<Aleatoirus> aleatoirusList = interface.getListAleatoirus();
+    
 	bool done = false;
 	while(!done) {
 
@@ -275,19 +271,15 @@ int main(int argc, char** argv) {
 		glBindVertexArray(0);
 
 
-		int i = camera.getPosition().x * 30 + camera.getPosition().y;
-			char str[40] = "uniformArrayOfMapInfos[000].find";
+		i = camera.getPosition().x * 30 + camera.getPosition().y;
+		char str[40] = "uniformArrayOfMapInfos[000].find";
 
-			str[23] = 48 + i/100;
-			str[24] = (48 + (i - i/100 * 100)/10);
-			str[25] = 48 + (i - i/10 * 10);
-    cout << "cam X : " << abs(camera.getPosition().x) << endl;
-        cout << "cam Y : " << abs(camera.getPosition().y) << endl;
-cout << str << endl;
-			// str.append((char)(0));
-			// str.append("].find");
-			GLuint loc = glGetUniformLocation(mapProgram.uniformArrayOfMapInfos, str);
-			glUniform1i(loc, 1);
+		str[23] = 48 + i/100;
+		str[24] = (48 + (i - i/100 * 100)/10);
+		str[25] = 48 + (i - i/10 * 10);
+
+		GLuint loc = glGetUniformLocation(mapProgram.uniformArrayOfMapInfos, str);
+		glUniform1i(loc, 1);
 		
 
 
@@ -315,21 +307,25 @@ cout << str << endl;
 
         glBindVertexArray(1);
         aleatoirusProgram.m_Program.use();
+        for (i=0; i < aleatoirusList.size(); i++){
 
-        glm::mat4 aleaMVMatrix = glm::translate(globalMVMatrix, glm::vec3(0.5, 0, 0));
+            //AMELIORER PLACEMENT ALEA Z
+            glm::mat4 aleaMVMatrix = glm::translate(globalMVMatrix, glm::vec3((-0.5 + aleatoirusList.at(i).getPosition().x*0.01)*interface.getMap().getWidth() - 0.45, -0.49, (-0.5 + aleatoirusList.at(i).getPosition().y*0.03)*interface.getMap().getHeight() - 0.1 ) );
+            aleaMVMatrix = glm::rotate(aleaMVMatrix, angle, glm::vec3(1, 0, 0));
+            aleaMVMatrix = glm::scale(aleaMVMatrix, glm::vec3(0.01*interface.getMap().getWidth(), 0.03*interface.getMap().getHeight(), 0));
+
+
+            projMatrix = projMatrix;
+            glUniformMatrix4fv(aleatoirusProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(aleaMVMatrix));
+            glUniformMatrix4fv(aleatoirusProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(aleaMVMatrix))));
+            glUniformMatrix4fv(aleatoirusProgram.uMVPMatrix, 1, GL_FALSE, glm::value_ptr(projMatrix * aleaMVMatrix));    
+
+            glDrawElements(GL_TRIANGLES, 2*3, GL_UNSIGNED_INT, 0);
+        }
+        
        
-
-        projMatrix = projMatrix;
-        glUniformMatrix4fv(aleatoirusProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(aleaMVMatrix));
-        glUniformMatrix4fv(aleatoirusProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(aleaMVMatrix))));
-        glUniformMatrix4fv(aleatoirusProgram.uMVPMatrix, 1, GL_FALSE, glm::value_ptr(projMatrix * aleaMVMatrix));    
-
-        glDrawElements(GL_TRIANGLES, 2*3, GL_UNSIGNED_INT, 0);
         glBindVertexArray(0);
 
-
-        // cout << "camX : " << (camera.getPosition().x) << endl;
-        // cout << "camZ : " << (camera.getPosition().z) << endl;
 
 
         if (turningRight >= 5) {
@@ -344,8 +340,6 @@ cout << str << endl;
 
 
        
-     //   cout << "lement map : " << interface.getMap().fromEnumToString(typeGround) << endl;
-
 
         if (movingFront == true  && turningRight < 5 && turningLeft < 5) {
 
@@ -367,21 +361,10 @@ cout << str << endl;
 	                camera.moveFront(-0.5);
 			}
 
-            // cout << "cam : " << abs(camera.getPosition().x) << endl;
-            // cout << "width : " << interface.getMap().getWidth() * 0.5 << endl;
-
+ 
         }
-        if (movingBack == true && turningRight < 5 && turningLeft < 5) {
-            // if (abs(camera.getPosition().x) - interface.getMap().getWidth() * 0.5 > 0.5 && abs(camera.getPosition().z) - interface.getMap().getWidth() * 0.5 > 0.5)
-            //     camera.moveFront(-0.5);
-            // else {
-            // 	movingBack = false;
-            //     camera.moveFront(0.5);
-        
+        if (movingBack == true && turningRight < 5 && turningLeft < 5) {	//encore des problemes
 
-
-
-            // }
         
         	if (abs(camera.getPosition().x) - interface.getMap().getWidth() * 0.5 <= 0 && abs(camera.getPosition().z) - interface.getMap().getWidth() * 0.5  <= 0) {
 				camera.moveFront(-0.5);
@@ -389,7 +372,6 @@ cout << str << endl;
 	        	typeGround = interface.getMap().getType(camera.getPosition().x, camera.getPosition().z );
 
 	        	if (typeGround != MONTAGNE) {
-	    	            // camera.moveFront(0.5);
 		           
 		        } else {
 	                camera.moveFront(0.5);
@@ -400,8 +382,6 @@ cout << str << endl;
 	            	movingFront = false;
 	                camera.moveFront(0.5);
 			}
-
-
         }
 
 

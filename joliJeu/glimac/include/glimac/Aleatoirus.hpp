@@ -19,6 +19,7 @@ public:
 	void setPosition(glm::vec2 p);
 	void setType(std::string t);
 	void draw();
+	glm::vec2 getPosition();
 
 };
 

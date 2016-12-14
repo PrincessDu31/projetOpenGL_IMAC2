@@ -48,3 +48,7 @@ void Aleatoirus::setPosition(glm::vec2 p){ position = p; }
 void Aleatoirus::setType(std::string t){ /*typeAlea = t; */}
 
 void Aleatoirus::draw(){ }
+
+glm::vec2 Aleatoirus::getPosition() {
+	return position;
+}
