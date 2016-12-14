@@ -270,18 +270,26 @@ int main(int argc, char** argv) {
         glBindVertexArray(0);
 
 
+		cout << "camX : " << (camera.getPosition().x) << endl;
+		cout << "camZ : " << (camera.getPosition().z) << endl;
 
 
 		if (movingFront == true) {
-			// if (abs(camera.getPosition().x) < interface.getMap().getWidth() * 0.5 )
+			if (abs(camera.getPosition().x) <= interface.getMap().getWidth() * 0.5 && abs(camera.getPosition().z) <= interface.getMap().getWidth() * 0.5 )
 			 	camera.moveFront(0.05);
-			// else
-			// 	camera.moveFront(-0.2);
+			else
+				camera.moveFront(-0.05);
 			// cout << "cam : " << abs(camera.getPosition().x) << endl;
 			// cout << "width : " << interface.getMap().getWidth() * 0.5 << endl;
 
 		}
-		if (movingBack == true) camera.moveFront(-0.2);
+		if (movingBack == true) {
+			if (abs(camera.getPosition().x) <= interface.getMap().getWidth() * 0.5 && abs(camera.getPosition().z) <= interface.getMap().getWidth() * 0.5 )
+			 	camera.moveFront(-0.05);
+			else
+				camera.moveFront(0.05);
+		}
+
 		if (turningLeft == true) camera.rotateLeft(5);
 		if (turningRight == true) camera.rotateLeft(-5);
 
