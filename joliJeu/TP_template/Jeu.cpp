@@ -10,11 +10,8 @@
 #include <glimac/Vector.hpp>
 
 
-
 using namespace glimac;
 using namespace std;
-
-
 
 
 
@@ -33,14 +30,14 @@ struct MapProgram {
 
     MapProgram(const FilePath& applicationPath):
         m_Program(loadProgram(applicationPath.dirPath() + "shaders/grid.vs.glsl",
-                              applicationPath.dirPath() + "shaders/grid.fs.glsl")) {	//if mutlitexturing mutli3D.fs.glsl
+                              applicationPath.dirPath() + "shaders/grid.fs.glsl")) {    //if mutlitexturing mutli3D.fs.glsl
         uMVPMatrix = glGetUniformLocation(m_Program.getGLId(), "uMVPMatrix");
         uMVMatrix = glGetUniformLocation(m_Program.getGLId(), "uMVMatrix");
         uNormalMatrix = glGetUniformLocation(m_Program.getGLId(), "uNormalMatrix");
         uSizeMap = glGetUniformLocation(m_Program.getGLId(), "uSizeMap");
    
-   		uFind = glGetUniformLocation(m_Program.getGLId(), "uFind");
-   		uniformArrayOfMapInfos = glGetUniformLocation(m_Program.getGLId(), "uniformArrayOfMapInfos");
+        uFind = glGetUniformLocation(m_Program.getGLId(), "uFind");
+        uniformArrayOfMapInfos = glGetUniformLocation(m_Program.getGLId(), "uniformArrayOfMapInfos");
 
         // uTextureMap = glGetUniformLocation(m_Program.getGLId(), "uTextureMap");
         // uTextureOtherTextureIfWeWant = glGetUniformLocation(m_Program.getGLId(), "uTextureCloud");
@@ -57,7 +54,7 @@ struct CubeProgram {
 
     CubeProgram(const FilePath& applicationPath):
         m_Program(loadProgram(applicationPath.dirPath() + "shaders/cube.vs.glsl",
-                              applicationPath.dirPath() + "shaders/cube.fs.glsl")) {	//if mutlitexturing mutli3D.fs.glsl
+                              applicationPath.dirPath() + "shaders/cube.fs.glsl")) {    //if mutlitexturing mutli3D.fs.glsl
         uMVPMatrix = glGetUniformLocation(m_Program.getGLId(), "uMVPMatrix");
         uMVMatrix = glGetUniformLocation(m_Program.getGLId(), "uMVMatrix");
         uNormalMatrix = glGetUniformLocation(m_Program.getGLId(), "uNormalMatrix");
@@ -74,6 +71,24 @@ struct AleatoirusProgram {
     // GLint uTextureOtherTextureIfWeWant;
 
     AleatoirusProgram(const FilePath& applicationPath):
+        m_Program(loadProgram(applicationPath.dirPath() + "shaders/alea.vs.glsl",
+                              applicationPath.dirPath() + "shaders/alea.fs.glsl")) {    //if mutlitexturing mutli3D.fs.glsl
+        uMVPMatrix = glGetUniformLocation(m_Program.getGLId(), "uMVPMatrix");
+        uMVMatrix = glGetUniformLocation(m_Program.getGLId(), "uMVMatrix");
+        uNormalMatrix = glGetUniformLocation(m_Program.getGLId(), "uNormalMatrix");
+        // uTextureOtherTextureIfWeWant = glGetUniformLocation(m_Program.getGLId(), "uTextureCloud");
+    }
+};
+
+struct MonsterProgram {
+    Program m_Program;
+
+    GLint uMVPMatrix;
+    GLint uMVMatrix;
+    GLint uNormalMatrix;
+    // GLint uTextureOtherTextureIfWeWant;
+
+    MonsterProgram(const FilePath& applicationPath):
         m_Program(loadProgram(applicationPath.dirPath() + "shaders/alea.vs.glsl",
                               applicationPath.dirPath() + "shaders/alea.fs.glsl")) {    //if mutlitexturing mutli3D.fs.glsl
         uMVPMatrix = glGetUniformLocation(m_Program.getGLId(), "uMVPMatrix");
@@ -116,6 +131,7 @@ int main(int argc, char** argv) {
     MapProgram mapProgram(applicationPath);
 	CubeProgram cubeProgram(applicationPath);
     AleatoirusProgram aleatoirusProgram(applicationPath);
+    MonsterProgram monsterProgram(applicationPath);
 
 
 
@@ -126,14 +142,10 @@ int main(int argc, char** argv) {
     MVMatrix = glm::translate(MVMatrix, glm::vec3(0,0,-5));
     NormalMatrix = glm::transpose(glm::inverse(MVMatrix));
 
-
+    //////////// PLAN /////////////////////
 	GLuint vbo;
- 
-
     glGenBuffers(1, &vbo);
-
     glBindBuffer(GL_ARRAY_BUFFER, vbo);
-
     //Sommets du quad
     Vertex3DColor vertices[] = {
         //face avant
@@ -186,14 +198,46 @@ int main(int argc, char** argv) {
     glVertexAttribPointer(VERTEX_ATTR_MAP_INFOS_FIND, 1, GL_INT, GL_FALSE, sizeof(GLint), 0);
     glBindBuffer(GL_ARRAY_BUFFER, 0);
 
+    glBindVertexArray(0);
 
+    ////// SPHERE ////////////:
+    Sphere mySphere(0.4, 32, 32);
+
+    GLuint vboSphere;
+    glGenBuffers(2, &vboSphere);
+    glBindBuffer(GL_ARRAY_BUFFER, vboSphere);
+    GLuint nbVertexShere = mySphere.getVertexCount();
+    ShapeVertex verticesSphere[nbVertexShere];
+    const ShapeVertex *myData = mySphere.getDataPointer();
+    int i;
+    for (i = 0; i < nbVertexShere; i++){
+        verticesSphere[i] = myData[i];
+    }
+
+    GLuint nbSphere = 1;
+    glBufferData(GL_ARRAY_BUFFER, nbSphere*nbVertexShere*sizeof(ShapeVertex), verticesSphere, GL_STATIC_DRAW);
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
+
+    GLuint vaoSphere;
+    glGenVertexArrays(2, &vaoSphere);  
+    glBindVertexArray(vaoSphere);
+
+    glBindBuffer(GL_ARRAY_BUFFER, vboSphere);
+    glEnableVertexAttribArray(VERTEX_ATTR_POSITION);
+    glVertexAttribPointer(VERTEX_ATTR_POSITION, 3, GL_FLOAT, GL_FALSE, sizeof(ShapeVertex), (const GLvoid*)offsetof(ShapeVertex,position));
+
+    glEnableVertexAttribArray(VERTEX_ATTR_NORMAL);
+    glVertexAttribPointer(VERTEX_ATTR_NORMAL, 3, GL_FLOAT, GL_FALSE, sizeof(ShapeVertex), (const GLvoid*)offsetof(ShapeVertex, normal));
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
+
+    const GLuint VERTEX_ATTR_TEX = 2;
+    glEnableVertexAttribArray(VERTEX_ATTR_TEX);
+    glVertexAttribPointer(VERTEX_ATTR_TEX, 2, GL_FLOAT, GL_FALSE, sizeof(ShapeVertex), (const GLvoid*)offsetof(ShapeVertex, texCoords));
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
 
     glBindVertexArray(0);
     // Application loop:
 
-
-
-	int i =0;
 	for (i = 0; i < 30*30; i++) {
 		int j = 23;
 		char str[40] = "uniformArrayOfMapInfos[000].find";
@@ -221,6 +265,7 @@ int main(int argc, char** argv) {
 	MapType typeGround;
 
     std::vector<Aleatoirus> aleatoirusList = interface.getListAleatoirus();
+    std::vector<Monster> monsterList = interface.getListMonsters();
     
 	bool done = false;
 	while(!done) {
@@ -326,7 +371,20 @@ int main(int argc, char** argv) {
        
         glBindVertexArray(0);
 
+        // MONSTER DRAWING //
+        glBindVertexArray(2);   
+        monsterProgram.m_Program.use();
+        for (i=0; i < monsterList.size(); i++){
+            glm::mat4 monsterMVMatrix = glm::translate(globalMVMatrix, glm::vec3((-0.5 + monsterList.at(i).getPosition().x*0.01)*interface.getMap().getWidth() - 0.45, 0.5, (-0.5 + monsterList.at(i).getPosition().y*0.03)*interface.getMap().getHeight() - 0.1 ) );
+            monsterMVMatrix = glm::scale(monsterMVMatrix, glm::vec3(0.5, 0.5, 0.5));
 
+            projMatrix = projMatrix;
+            glUniformMatrix4fv(monsterProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(monsterMVMatrix));
+            glUniformMatrix4fv(monsterProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(monsterMVMatrix))));
+            glUniformMatrix4fv(monsterProgram.uMVPMatrix, 1, GL_FALSE, glm::value_ptr(projMatrix * monsterMVMatrix));    
+            glDrawArrays(GL_TRIANGLES, 0, nbVertexShere);
+        }
+        glBindVertexArray(0);
 
         if (turningRight >= 5) {
             camera.rotateLeft(-5);
