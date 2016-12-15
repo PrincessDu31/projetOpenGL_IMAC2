@@ -140,7 +140,6 @@ int i = 0;
 
 			while (file.get(tmpChar) && tmpChar != ASCII_NEW_LINE) {
 				r = r*10 + (tmpChar - ZERO);
-				if (i < 40) cout << "i : " << i << "   r : " << (int) r << endl;
 			}
 			i++;
 					// getline(file,r);
@@ -309,32 +308,32 @@ void Map::testMapLoading () {
 	printElement (rowToTest,colToTest);
 	cout << endl;
 
-	rowToTest = 0; 
-	colToTest = 29;
-	val = getValueMap(rowToTest,colToTest);
-	cout << "pixel row " << rowToTest << " col " << colToTest << " : ";
-	val.printPixel();
-	cout << "moyenne des pixels : " << (int) val.moyennePixels() << endl;
-	printElement (rowToTest,colToTest);
-	cout << endl;
+	// rowToTest = 0; 
+	// colToTest = 29;
+	// val = getValueMap(rowToTest,colToTest);
+	// cout << "pixel row " << rowToTest << " col " << colToTest << " : ";
+	// val.printPixel();
+	// cout << "moyenne des pixels : " << (int) val.moyennePixels() << endl;
+	// printElement (rowToTest,colToTest);
+	// cout << endl;
 
 
-	rowToTest = 1; colToTest = 0;
-	val = getValueMap(rowToTest,colToTest);
-	cout << "pixel row " << rowToTest << " col " << colToTest << " : ";
-	val.printPixel();
-	cout << "moyenne des pixels : " << (int) val.moyennePixels() << endl;
-	printElement (rowToTest,colToTest);
-	cout << endl;
+	// rowToTest = 1; colToTest = 0;
+	// val = getValueMap(rowToTest,colToTest);
+	// cout << "pixel row " << rowToTest << " col " << colToTest << " : ";
+	// val.printPixel();
+	// cout << "moyenne des pixels : " << (int) val.moyennePixels() << endl;
+	// printElement (rowToTest,colToTest);
+	// cout << endl;
 
-	rowToTest = 1;
-	colToTest = 29;
-	val = getValueMap(rowToTest,colToTest);
-	cout << "pixel row " << rowToTest << " col " << colToTest << " : ";
-	val.printPixel();
-	cout <<  "moyenne des pixels : " << (int) val.moyennePixels() << endl;
-	printElement (rowToTest,colToTest);
-	cout << endl;
+	// rowToTest = 1;
+	// colToTest = 29;
+	// val = getValueMap(rowToTest,colToTest);
+	// cout << "pixel row " << rowToTest << " col " << colToTest << " : ";
+	// val.printPixel();
+	// cout <<  "moyenne des pixels : " << (int) val.moyennePixels() << endl;
+	// printElement (rowToTest,colToTest);
+	// cout << endl;
 
 	rowToTest = 1;
 	colToTest = 1;

@@ -9,6 +9,7 @@
 #include <glimac/Image.hpp>
 #include <glimac/Vector.hpp>
 
+#define TURNING_VAL 15
 
 using namespace glimac;
 using namespace std;
@@ -23,9 +24,9 @@ struct MapProgram {
     GLint uNormalMatrix;
     GLint uTextureMap;
     GLint uSizeMap;
-    GLint uFind;
+    GLuint uniformMapFind;
 
-    GLint uniformArrayOfMapInfos;
+   // GLint uniformMapFind;
     // GLint uTextureOtherTextureIfWeWant;
 
     MapProgram(const FilePath& applicationPath):
@@ -36,8 +37,11 @@ struct MapProgram {
         uNormalMatrix = glGetUniformLocation(m_Program.getGLId(), "uNormalMatrix");
         uSizeMap = glGetUniformLocation(m_Program.getGLId(), "uSizeMap");
    
-        uFind = glGetUniformLocation(m_Program.getGLId(), "uFind");
-        uniformArrayOfMapInfos = glGetUniformLocation(m_Program.getGLId(), "uniformArrayOfMapInfos");
+     //   uFind = glGetUniformLocation(m_Program.getGLId(), "uFind");
+        uniformMapFind = glGetUniformLocation(m_Program.getGLId(), "uniformMapFind");
+
+
+	//uniformFind = glGetUniformBlockIndex​ (m_Program.getGLId(),"uniformFind[900]");
 
         // uTextureMap = glGetUniformLocation(m_Program.getGLId(), "uTextureMap");
         // uTextureOtherTextureIfWeWant = glGetUniformLocation(m_Program.getGLId(), "uTextureCloud");
@@ -238,16 +242,21 @@ int main(int argc, char** argv) {
     glBindVertexArray(0);
     // Application loop:
 
+    mapProgram.m_Program.use();
+
+			int vals[900] = {1};
+
 	for (i = 0; i < 30*30; i++) {
 		int j = 23;
-		char str[40] = "uniformArrayOfMapInfos[000].find";
+		char str[50] = "uniformMapFind[000]";
 
-		str[23] = 48 + i/100;
-		str[24] = (48 + (i - i/100 * 100)/10);
-		str[25] = 48 + (i - i/10 * 10);
+		str[23+11] = 48 + i/100;
+		str[24+11] = (48 + (i - i/100 * 100)/10);
+		str[25+11] = 48 + (i - i/10 * 10);
+		GLuint loc = glGetUniformLocation(mapProgram.uniformMapFind, "uniformMapFind");
+// 		glUniform1ivARB(loc, i,  valFind);
 
-		GLuint loc = glGetUniformLocation(mapProgram.uniformArrayOfMapInfos, str);
-		glUniform1i(loc, 0);
+		glUniform1ivARB(loc, 1, vals);
 	}
 
 
@@ -298,16 +307,9 @@ int main(int argc, char** argv) {
         glm::vec2 sizeMap = glm::vec2(interface.getMap().getWidth(), interface.getMap().getHeight());
         glUniform2f(mapProgram.uSizeMap, sizeMap.x, sizeMap.y);
       	
-      	glUniform2f(mapProgram.uniformArrayOfMapInfos, sizeMap.x, sizeMap.y);
 
-      	
-       // MapType typeGround = interface.getMap().getType(camera.getPosition().x, camera.getPosition().z);
-      
 
-      	// if (typeGround == MONTAGNE)
-      	// 	glUniform1i(mapProgram.uFind, 1);
-       //  else  
-	      //   glUniform1i(mapProgram.uFind, 0);
+
 
         glDrawElements(GL_TRIANGLES, 2*3, GL_UNSIGNED_INT, 0);
       
@@ -319,7 +321,6 @@ int main(int argc, char** argv) {
 				
 				if (typeGround == MONTAGNE) {
 					if (interface.getMap().getType(i-1, j) == SOL) {
-// cout << "here";
 						angle = - M_PI*0.5;
 						globalMVMatrix = camera.getViewMatrix();
 
@@ -337,7 +338,6 @@ int main(int argc, char** argv) {
 
 						glDrawElements(GL_TRIANGLES, 2*3, GL_UNSIGNED_INT, 0);
  					} else if (i < interface.getMap().getWidth() && interface.getMap().getType(i+1, j) == SOL) {
- // cout << "here";
  						angle = M_PI*0.5;
  						globalMVMatrix = camera.getViewMatrix();
  						mapMVMatrix = glm::translate(globalMVMatrix, glm::vec3(i-15, 0, j-15));
@@ -355,7 +355,6 @@ int main(int argc, char** argv) {
  						glDrawElements(GL_TRIANGLES, 2*3, GL_UNSIGNED_INT, 0);
 
  					} else if (interface.getMap().getType(i, j-1) == SOL) {
-// cout << "here";
  						globalMVMatrix = camera.getViewMatrix();
  						mapMVMatrix = glm::translate(globalMVMatrix, glm::vec3(i-15, 0, j-15));
  						mapMVMatrix = glm::scale(mapMVMatrix, glm::vec3(1, 0.5, 1));
@@ -370,7 +369,6 @@ int main(int argc, char** argv) {
  						glDrawElements(GL_TRIANGLES, 2*3, GL_UNSIGNED_INT, 0);
  					} 
  					else if (j < interface.getMap().getHeight() && interface.getMap().getType(i, j+1) == SOL) {
-// cout << "here";
  						globalMVMatrix = camera.getViewMatrix();
  						mapMVMatrix = glm::translate(globalMVMatrix, glm::vec3(i-15, 0, j-15));
  						mapMVMatrix = glm::scale(mapMVMatrix, glm::vec3(1, 0.5, 1));
@@ -385,11 +383,6 @@ int main(int argc, char** argv) {
  					} 
 
 				}
-
-				
-
-
-
 			}
 		}
 
@@ -400,15 +393,18 @@ int main(int argc, char** argv) {
 		glBindVertexArray(0);
 
 
-		i = camera.getPosition().x * 30 + camera.getPosition().y;
-		char str[40] = "uniformArrayOfMapInfos[000].find";
+		for (i = 0; i < 30*30; i++) {
+			int j = 23;
+			char str[40] = "uniformMapFind[000]";
 
-		str[23] = 48 + i/100;
-		str[24] = (48 + (i - i/100 * 100)/10);
-		str[25] = 48 + (i - i/10 * 10);
+			str[23] = 48 + i/100;
+			str[24] = (48 + (i - i/100 * 100)/10);
+			str[25] = 48 + (i - i/10 * 10);
+			int vals[900] = {1};
 
-		GLuint loc = glGetUniformLocation(mapProgram.uniformArrayOfMapInfos, str);
-		glUniform1i(loc, 1);
+			GLuint loc = glGetUniformLocation(mapProgram.uniformMapFind, "uniformMapFind");
+			glUniform1i(loc, 1);
+		}
 		
 
 
@@ -470,14 +466,14 @@ int main(int argc, char** argv) {
         }
         glBindVertexArray(0);
 
-        if (turningRight >= 5) {
-            camera.rotateLeft(-5);
-            turningRight -= 5;
+        if (turningRight >= TURNING_VAL) {
+            camera.rotateLeft(-TURNING_VAL);
+            turningRight -= TURNING_VAL;
         }
     
-        if (turningLeft >= 5) {
-            camera.rotateLeft(5);
-            turningLeft -= 5;
+        if (turningLeft >= TURNING_VAL) {
+            camera.rotateLeft(TURNING_VAL);
+            turningLeft -= TURNING_VAL;
         }
 
 
