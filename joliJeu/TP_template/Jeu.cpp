@@ -309,9 +309,9 @@ int main(int argc, char** argv) {
        //  else  
 	      //   glUniform1i(mapProgram.uFind, 0);
 
-
         glDrawElements(GL_TRIANGLES, 2*3, GL_UNSIGNED_INT, 0);
       
+        monsterProgram.m_Program.use();
         // dessin montagnes
         for (i=0; i < interface.getMap().getWidth(); i++) {
 			int j;
@@ -319,16 +319,17 @@ int main(int argc, char** argv) {
 				typeGround = interface.getMap().getType(i, j);
 				
 				if (typeGround == MONTAGNE) {
-					if (i > 0 && interface.getMap().getType(i-1, j) == SOL) {
+					if (interface.getMap().getType(i-1, j) == SOL) {
 // cout << "here";
-						angle = -90;
+						angle = - M_PI*0.5;
 						globalMVMatrix = camera.getViewMatrix();
-						mapMVMatrix = glm::translate(globalMVMatrix, glm::vec3(0, -0.5, 0));
-						mapMVMatrix = glm::rotate(mapMVMatrix, angle, glm::vec3(1, 0, 0));
-						mapMVMatrix = glm::scale(mapMVMatrix, glm::vec3(1, 0.5, 1));
-						mapMVMatrix = glm::translate(globalMVMatrix, glm::vec3(i-15, 0, j-15));
 
-
+                        mapMVMatrix = glm::translate(globalMVMatrix, glm::vec3(i-15, 0, j-15));   
+                        mapMVMatrix = glm::rotate(mapMVMatrix, angle, glm::vec3(0, 1, 0));
+                        
+                        mapMVMatrix = glm::scale(mapMVMatrix, glm::vec3(1, 0.5, 1));
+                        
+                       
 				        projMatrix = projMatrix;
 				        glUniformMatrix4fv(mapProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(mapMVMatrix));
 				        glUniformMatrix4fv(mapProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(mapMVMatrix))));
@@ -336,56 +337,53 @@ int main(int argc, char** argv) {
 				      	
 
 						glDrawElements(GL_TRIANGLES, 2*3, GL_UNSIGNED_INT, 0);
-					} else if (i < interface.getMap().getWidth() && interface.getMap().getType(i+1, j) == SOL) {
-// cout << "here";
-						angle = 90;
-						globalMVMatrix = camera.getViewMatrix();
-						mapMVMatrix = glm::translate(globalMVMatrix, glm::vec3(0, 0.5, 0));
-						mapMVMatrix = glm::rotate(mapMVMatrix, angle, glm::vec3(1, 0, 0));
-						mapMVMatrix = glm::scale(mapMVMatrix, glm::vec3(1, 0.5, 1));
-						mapMVMatrix = glm::translate(globalMVMatrix, glm::vec3(i-15, 0, j-15));
+ 					} else if (i < interface.getMap().getWidth() && interface.getMap().getType(i+1, j) == SOL) {
+ // cout << "here";
+ 						angle = M_PI*0.5;
+ 						globalMVMatrix = camera.getViewMatrix();
+ 						mapMVMatrix = glm::translate(globalMVMatrix, glm::vec3(i-15, 0, j-15));
+ 						mapMVMatrix = glm::rotate(mapMVMatrix, angle, glm::vec3(0, 1, 0));
+ 						mapMVMatrix = glm::scale(mapMVMatrix, glm::vec3(1, 0.5, 1));
+ 						
 
 
-				        projMatrix = projMatrix;
-				        glUniformMatrix4fv(mapProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(mapMVMatrix));
-				        glUniformMatrix4fv(mapProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(mapMVMatrix))));
-				        glUniformMatrix4fv(mapProgram.uMVPMatrix, 1, GL_FALSE, glm::value_ptr(projMatrix * mapMVMatrix));    
+ 				        projMatrix = projMatrix;
+ 				        glUniformMatrix4fv(mapProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(mapMVMatrix));
+ 				        glUniformMatrix4fv(mapProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(mapMVMatrix))));
+ 				        glUniformMatrix4fv(mapProgram.uMVPMatrix, 1, GL_FALSE, glm::value_ptr(projMatrix * mapMVMatrix));    
 				      	
 
-						glDrawElements(GL_TRIANGLES, 2*3, GL_UNSIGNED_INT, 0);
+ 						glDrawElements(GL_TRIANGLES, 2*3, GL_UNSIGNED_INT, 0);
 
-					} else if (j > 0 && interface.getMap().getType(i, j-1) == SOL) {
+ 					} else if (interface.getMap().getType(i, j-1) == SOL) {
 // cout << "here";
-						globalMVMatrix = camera.getViewMatrix();
-						mapMVMatrix = glm::translate(globalMVMatrix, glm::vec3(0, 0.5, 0));
-						mapMVMatrix = glm::scale(mapMVMatrix, glm::vec3(1, 0.5, 1));
-						mapMVMatrix = glm::translate(globalMVMatrix, glm::vec3(i-15, 0, j-15));
+ 						globalMVMatrix = camera.getViewMatrix();
+ 						mapMVMatrix = glm::translate(globalMVMatrix, glm::vec3(i-15, 0, j-15));
+ 						mapMVMatrix = glm::scale(mapMVMatrix, glm::vec3(1, 0.5, 1));
+ 						
 
-
-				        projMatrix = projMatrix;
-				        glUniformMatrix4fv(mapProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(mapMVMatrix));
-				        glUniformMatrix4fv(mapProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(mapMVMatrix))));
-				        glUniformMatrix4fv(mapProgram.uMVPMatrix, 1, GL_FALSE, glm::value_ptr(projMatrix * mapMVMatrix));    
+ 				        projMatrix = projMatrix;
+ 				        glUniformMatrix4fv(mapProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(mapMVMatrix));
+ 				        glUniformMatrix4fv(mapProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(mapMVMatrix))));
+ 				        glUniformMatrix4fv(mapProgram.uMVPMatrix, 1, GL_FALSE, glm::value_ptr(projMatrix * mapMVMatrix));    
 				      	
 
-						glDrawElements(GL_TRIANGLES, 2*3, GL_UNSIGNED_INT, 0);
-					} 
-					else if (j < interface.getMap().getHeight() && interface.getMap().getType(i, j+1) == SOL) {
+ 						glDrawElements(GL_TRIANGLES, 2*3, GL_UNSIGNED_INT, 0);
+ 					} 
+ 					else if (j < interface.getMap().getHeight() && interface.getMap().getType(i, j+1) == SOL) {
 // cout << "here";
-						globalMVMatrix = camera.getViewMatrix();
-						mapMVMatrix = glm::translate(globalMVMatrix, glm::vec3(0, 0.5, 0));
-						mapMVMatrix = glm::scale(mapMVMatrix, glm::vec3(1, 0.5, 1));
-						mapMVMatrix = glm::translate(globalMVMatrix, glm::vec3(i-15, 0, j-15));
-
-
+ 						globalMVMatrix = camera.getViewMatrix();
+ 						mapMVMatrix = glm::translate(globalMVMatrix, glm::vec3(i-15, 0, j-15));
+ 						mapMVMatrix = glm::scale(mapMVMatrix, glm::vec3(1, 0.5, 1));
+ 						
 				        projMatrix = projMatrix;
-				        glUniformMatrix4fv(mapProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(mapMVMatrix));
-				        glUniformMatrix4fv(mapProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(mapMVMatrix))));
-				        glUniformMatrix4fv(mapProgram.uMVPMatrix, 1, GL_FALSE, glm::value_ptr(projMatrix * mapMVMatrix));    
+ 				        glUniformMatrix4fv(mapProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(mapMVMatrix));
+ 				        glUniformMatrix4fv(mapProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(mapMVMatrix))));
+ 				        glUniformMatrix4fv(mapProgram.uMVPMatrix, 1, GL_FALSE, glm::value_ptr(projMatrix * mapMVMatrix));    
 				      	
 
-						glDrawElements(GL_TRIANGLES, 2*3, GL_UNSIGNED_INT, 0);
-					} 
+ 						glDrawElements(GL_TRIANGLES, 2*3, GL_UNSIGNED_INT, 0);
+ 					} 
 
 				}
 
@@ -462,7 +460,7 @@ int main(int argc, char** argv) {
         glBindVertexArray(2);   
         monsterProgram.m_Program.use();
         for (i=0; i < monsterList.size(); i++){
-            glm::mat4 monsterMVMatrix = glm::translate(globalMVMatrix, glm::vec3((-0.5 + monsterList.at(i).getPosition().x*0.01)*interface.getMap().getWidth() - 0.45, 0.5, (-0.5 + monsterList.at(i).getPosition().y*0.03)*interface.getMap().getHeight() - 0.1 ) );
+            glm::mat4 monsterMVMatrix = glm::translate(globalMVMatrix, glm::vec3((-0.5 + monsterList.at(i).getPosition().x*0.01)*interface.getMap().getWidth() - 0.45, 0, (-0.5 + monsterList.at(i).getPosition().y*0.03)*interface.getMap().getHeight() - 0.1 ) );
             monsterMVMatrix = glm::scale(monsterMVMatrix, glm::vec3(0.5, 0.5, 0.5));
 
             projMatrix = projMatrix;
