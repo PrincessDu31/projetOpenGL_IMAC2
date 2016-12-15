@@ -311,7 +311,6 @@ int main(int argc, char** argv) {
 
         glDrawElements(GL_TRIANGLES, 2*3, GL_UNSIGNED_INT, 0);
       
-        monsterProgram.m_Program.use();
         // dessin montagnes
         for (i=0; i < interface.getMap().getWidth(); i++) {
 			int j;
@@ -489,8 +488,8 @@ int main(int argc, char** argv) {
         	if (abs(camera.getPosition().x) - interface.getMap().getWidth() * 0.5 <= 0 && abs(camera.getPosition().z) - interface.getMap().getWidth() * 0.5  <= 0) {
 				camera.moveFront(0.5);
 
-	        	typeGround = interface.getMap().getType(camera.getPosition().x, camera.getPosition().z );
-	        	cout << interface.getMap().fromEnumToString(interface.getMap().getType(camera.getPosition().x, camera.getPosition().z)) << endl;
+	        	typeGround = interface.getMap().getType(camera.getPosition().x+ 15, camera.getPosition().z + 15);
+	        	cout << interface.getMap().fromEnumToString(interface.getMap().getType(camera.getPosition().x + 15, camera.getPosition().z + 15)) << endl;
 
 	        	if (typeGround != MONTAGNE) {
 	    	            // camera.moveFront(0.5);
@@ -505,7 +504,8 @@ int main(int argc, char** argv) {
 	                camera.moveFront(-0.5);
 			}
 
- 
+ 			cout << " x : " << camera.getPosition().x << endl;
+ 			cout << " z : " << camera.getPosition().z << endl;
         }
         if (movingBack == true && turningRight < 5 && turningLeft < 5) {	//encore des problemes
 
@@ -513,7 +513,7 @@ int main(int argc, char** argv) {
         	if (abs(camera.getPosition().x) - interface.getMap().getWidth() * 0.5 <= 0 && abs(camera.getPosition().z) - interface.getMap().getWidth() * 0.5  <= 0) {
 				camera.moveFront(-0.5);
 
-	        	typeGround = interface.getMap().getType(camera.getPosition().x, camera.getPosition().z );
+	        	typeGround = interface.getMap().getType(camera.getPosition().x + 15, camera.getPosition().z  + 15);
 
 	        	if (typeGround != MONTAGNE) {
 		           

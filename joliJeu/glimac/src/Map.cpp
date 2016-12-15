@@ -40,13 +40,13 @@ Map::Map(int w, int h){
 }
 Map::~Map(){}
 	
-Pixel Map::getValueMap ( int row,  int col) { return tabMap[(row-1)*width + col]; }
+Pixel Map::getValueMap ( int row,  int col) { return tabMap[row*width + col]; }
 
 
 
-MapType Map::getType(int row,  int col) { 
-	if (abs(row) < width && abs(col) < height)
-		return mapElements[((row+width*0.5)-1)*width + (col + height *0.5)]; 
+MapType Map::getType(int row,  int col) { // de 0 à 29
+	if (row < width && col < height)
+		return mapElements[row*width + col]; 
 	return OTHER;
 }
 
@@ -58,12 +58,12 @@ Pixel Map::getValueMap (int numVal) { return tabMap[numVal]; }
 void Map::addValueTab (Pixel p) { tabMap.push_back(p); }
 
 void Map::printElement (int numElement) {
-	if (mapElements[numElement] == SOL) { cout << "_"; }
+	if (mapElements[numElement] == SOL) { cout << "."; }
 	else if (mapElements[numElement] == MONTAGNE) { cout << "^"; }
-	else { cout << " "; }
+	else if (mapElements[numElement] == OTHER) { cout << "_"; }
 }
 void Map::printElement (int row, int col) {
-	printElement(width*(row-1) + col);
+	printElement(width*row + col);
 }
 
 void Map::setWidth( int w) {	width = w; }
@@ -132,25 +132,34 @@ void Map::loadMapFromPPM (std::string mapFile) {
 		Pixel tmp;
 		unsigned char r,g,b;
 		char tmpChar = ZERO;
-
+int i = 0;
 		while (!file.eof()) {
 			r = 0;
 			g = 0;
 			b = 0;
 
-			while (file.get(tmpChar) && tmpChar != ASCII_NEW_LINE && !file.eof()) {
+			while (file.get(tmpChar) && tmpChar != ASCII_NEW_LINE) {
 				r = r*10 + (tmpChar - ZERO);
+				if (i < 40) cout << "i : " << i << "   r : " << (int) r << endl;
 			}
-			// getline(file,r);
+			i++;
+					// getline(file,r);
 			// rUnsigned = (int) r;
+
 			while (file.get(tmpChar) && tmpChar != ASCII_NEW_LINE && !file.eof()) {
 				g = g*10 + (tmpChar - ZERO);
+
 			}
+			
 			// getline(file, g);
 			// gUnsigned = (int) g;
+
 			while (file.get(tmpChar) && tmpChar != ASCII_NEW_LINE && !file.eof()) {
 				b = b*10 + (tmpChar - ZERO);
+
 			}
+							
+
 			// getline(file, b);
 			// bUnsigned = (int)b;
 
@@ -253,11 +262,11 @@ void Map::testMapLoading () {
 
 
 	int i, j;
+	cout << "begining";
 
-
-	for (i = 1; i <= width; i++) {
+	for (i = 0; i < width; i++) {
 		cout << endl;
-		for (j = 1; j <= height; j++) {
+		for (j = 0; j < height; j++) {
 			printElement (i,j);
 		}
 
@@ -267,8 +276,51 @@ void Map::testMapLoading () {
 	cout << "width : " << width << endl;
 	cout << "height : " << height << endl;
 	
-	int rowToTest = 1, colToTest = 12;
+	int rowToTest = 0, colToTest = 0;
 	Pixel val = getValueMap(rowToTest,colToTest);
+	cout << "pixel row " << rowToTest << " col " << colToTest << " : ";
+	val.printPixel();
+	cout << "moyenne des pixels : " << (int) val.moyennePixels() << endl;
+	printElement (rowToTest,colToTest);
+	cout << endl;
+
+
+	rowToTest = 0; colToTest = 1;
+	val = getValueMap(rowToTest,colToTest);
+	cout << "pixel row " << rowToTest << " col " << colToTest << " : ";
+	val.printPixel();
+	cout << "moyenne des pixels : " << (int) val.moyennePixels() << endl;
+	printElement (rowToTest,colToTest);
+	cout << endl;
+
+	rowToTest = 0; colToTest = 3;
+	val = getValueMap(rowToTest,colToTest);
+	cout << "pixel row " << rowToTest << " col " << colToTest << " : ";
+	val.printPixel();
+	cout << "moyenne des pixels : " << (int) val.moyennePixels() << endl;
+	printElement (rowToTest,colToTest);
+	cout << endl;
+
+	rowToTest = 0; colToTest = 30;
+	val = getValueMap(rowToTest,colToTest);
+	cout << "pixel row " << rowToTest << " col " << colToTest << " : ";
+	val.printPixel();
+	cout << "moyenne des pixels : " << (int) val.moyennePixels() << endl;
+	printElement (rowToTest,colToTest);
+	cout << endl;
+
+	rowToTest = 0; 
+	colToTest = 29;
+	val = getValueMap(rowToTest,colToTest);
+	cout << "pixel row " << rowToTest << " col " << colToTest << " : ";
+	val.printPixel();
+	cout << "moyenne des pixels : " << (int) val.moyennePixels() << endl;
+	printElement (rowToTest,colToTest);
+	cout << endl;
+
+
+	rowToTest = 1; colToTest = 0;
+	val = getValueMap(rowToTest,colToTest);
 	cout << "pixel row " << rowToTest << " col " << colToTest << " : ";
 	val.printPixel();
 	cout << "moyenne des pixels : " << (int) val.moyennePixels() << endl;
@@ -293,6 +345,14 @@ void Map::testMapLoading () {
 	printElement (rowToTest,colToTest);
 	cout << endl;
 
+	rowToTest = 29;
+	colToTest = 29;
+	val = getValueMap(rowToTest,colToTest);
+	cout << "pixel row " << rowToTest << " col " << colToTest << " : ";
+	val.printPixel();
+	cout <<  "moyenne des pixels : " << (int) val.moyennePixels() << endl;
+	printElement (rowToTest,colToTest);
+	cout << endl;
 
 
 }
