@@ -19,10 +19,11 @@ private:
 	unsigned int nbPink;
 	unsigned int nbBlue;
 	std::vector<Aleatoirus> listAleatoirus;
-	MainCaracter player;
+
 	std::vector<Monster> listMonsters;
 
 public: 
+	MainCaracter player;
 	Interface();
 	~Interface();
 

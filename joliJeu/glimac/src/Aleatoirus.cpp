@@ -45,10 +45,44 @@ void Aleatoirus::doAction (MainCaracter m) {
 
 void Aleatoirus::setPosition(glm::vec2 p){ position = p; }
 
-void Aleatoirus::setType(std::string t){ /*typeAlea = t; */}
+void Aleatoirus::setType(std::string t){ 
+	if (t == "BONUS") {
+		typeAlea = BONUS;
+	} else if ( t == "MALUS") {
+		typeAlea = MALUS;
+	} else if ( t == "WEAPON_UPGRADE" ){
+		typeAlea = WEAPON_UPGRADE;
+	} else if ( t == "WEAPON_DOWNGRADE") {
+		typeAlea = WEAPON_DOWNGRADE;
+	} else {
+		typeAlea = NO_FUNCTION;
+	}
+}	
+
 
 void Aleatoirus::draw(){ }
 
 glm::vec2 Aleatoirus::getPosition() {
 	return position;
+}
+
+std::string Aleatoirus::fromEnumToString() {
+	switch (typeAlea){
+		case BONUS:
+			return "BONUS";
+			break;
+		case MALUS:
+			return "MALUS";
+			break;
+		case WEAPON_UPGRADE:
+			return "WEAPON_UPGRADE";
+			break;
+		case WEAPON_DOWNGRADE :
+			return "WEAPON_DOWNGRADE";
+			break;
+		default:
+			return "NO_FUNCTION";
+			break;
+	}
+
 }

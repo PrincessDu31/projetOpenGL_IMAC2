@@ -6,7 +6,7 @@
 #include <string>
 
 class Aleatoirus {
-	enum Type {BONUS, MALUS, WEAPON_UPGRADE, WEAPON_DOWNGRADE }; 
+	enum Type {BONUS, MALUS, WEAPON_UPGRADE, WEAPON_DOWNGRADE, NO_FUNCTION }; 
 
 private: 
 	glm::vec2 position;
@@ -20,6 +20,7 @@ public:
 	void setType(std::string t);
 	void draw();
 	glm::vec2 getPosition();
+	std::string fromEnumToString();
 
 };
 
