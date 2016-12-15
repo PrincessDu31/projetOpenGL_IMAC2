@@ -312,6 +312,93 @@ int main(int argc, char** argv) {
 
         glDrawElements(GL_TRIANGLES, 2*3, GL_UNSIGNED_INT, 0);
       
+        // dessin montagnes
+        for (i=0; i < interface.getMap().getWidth(); i++) {
+			int j;
+			for (j=0; j < interface.getMap().getHeight(); j++) {
+				typeGround = interface.getMap().getType(i, j);
+				
+				if (typeGround == MONTAGNE) {
+					if (i > 0 && interface.getMap().getType(i-1, j) == SOL) {
+// cout << "here";
+						angle = -90;
+						globalMVMatrix = camera.getViewMatrix();
+						mapMVMatrix = glm::translate(globalMVMatrix, glm::vec3(0, -0.5, 0));
+						mapMVMatrix = glm::rotate(mapMVMatrix, angle, glm::vec3(1, 0, 0));
+						mapMVMatrix = glm::scale(mapMVMatrix, glm::vec3(1, 0.5, 1));
+						mapMVMatrix = glm::translate(globalMVMatrix, glm::vec3(i-15, 0, j-15));
+
+
+				        projMatrix = projMatrix;
+				        glUniformMatrix4fv(mapProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(mapMVMatrix));
+				        glUniformMatrix4fv(mapProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(mapMVMatrix))));
+				        glUniformMatrix4fv(mapProgram.uMVPMatrix, 1, GL_FALSE, glm::value_ptr(projMatrix * mapMVMatrix));    
+				      	
+
+						glDrawElements(GL_TRIANGLES, 2*3, GL_UNSIGNED_INT, 0);
+					} else if (i < interface.getMap().getWidth() && interface.getMap().getType(i+1, j) == SOL) {
+// cout << "here";
+						angle = 90;
+						globalMVMatrix = camera.getViewMatrix();
+						mapMVMatrix = glm::translate(globalMVMatrix, glm::vec3(0, 0.5, 0));
+						mapMVMatrix = glm::rotate(mapMVMatrix, angle, glm::vec3(1, 0, 0));
+						mapMVMatrix = glm::scale(mapMVMatrix, glm::vec3(1, 0.5, 1));
+						mapMVMatrix = glm::translate(globalMVMatrix, glm::vec3(i-15, 0, j-15));
+
+
+				        projMatrix = projMatrix;
+				        glUniformMatrix4fv(mapProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(mapMVMatrix));
+				        glUniformMatrix4fv(mapProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(mapMVMatrix))));
+				        glUniformMatrix4fv(mapProgram.uMVPMatrix, 1, GL_FALSE, glm::value_ptr(projMatrix * mapMVMatrix));    
+				      	
+
+						glDrawElements(GL_TRIANGLES, 2*3, GL_UNSIGNED_INT, 0);
+
+					} else if (j > 0 && interface.getMap().getType(i, j-1) == SOL) {
+// cout << "here";
+						globalMVMatrix = camera.getViewMatrix();
+						mapMVMatrix = glm::translate(globalMVMatrix, glm::vec3(0, 0.5, 0));
+						mapMVMatrix = glm::scale(mapMVMatrix, glm::vec3(1, 0.5, 1));
+						mapMVMatrix = glm::translate(globalMVMatrix, glm::vec3(i-15, 0, j-15));
+
+
+				        projMatrix = projMatrix;
+				        glUniformMatrix4fv(mapProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(mapMVMatrix));
+				        glUniformMatrix4fv(mapProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(mapMVMatrix))));
+				        glUniformMatrix4fv(mapProgram.uMVPMatrix, 1, GL_FALSE, glm::value_ptr(projMatrix * mapMVMatrix));    
+				      	
+
+						glDrawElements(GL_TRIANGLES, 2*3, GL_UNSIGNED_INT, 0);
+					} 
+					else if (j < interface.getMap().getHeight() && interface.getMap().getType(i, j+1) == SOL) {
+// cout << "here";
+						globalMVMatrix = camera.getViewMatrix();
+						mapMVMatrix = glm::translate(globalMVMatrix, glm::vec3(0, 0.5, 0));
+						mapMVMatrix = glm::scale(mapMVMatrix, glm::vec3(1, 0.5, 1));
+						mapMVMatrix = glm::translate(globalMVMatrix, glm::vec3(i-15, 0, j-15));
+
+
+				        projMatrix = projMatrix;
+				        glUniformMatrix4fv(mapProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(mapMVMatrix));
+				        glUniformMatrix4fv(mapProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(mapMVMatrix))));
+				        glUniformMatrix4fv(mapProgram.uMVPMatrix, 1, GL_FALSE, glm::value_ptr(projMatrix * mapMVMatrix));    
+				      	
+
+						glDrawElements(GL_TRIANGLES, 2*3, GL_UNSIGNED_INT, 0);
+					} 
+
+				}
+
+				
+
+
+
+			}
+		}
+
+
+
+
 
 		glBindVertexArray(0);
 
@@ -405,6 +492,7 @@ int main(int argc, char** argv) {
 				camera.moveFront(0.5);
 
 	        	typeGround = interface.getMap().getType(camera.getPosition().x, camera.getPosition().z );
+	        	cout << interface.getMap().fromEnumToString(interface.getMap().getType(camera.getPosition().x, camera.getPosition().z)) << endl;
 
 	        	if (typeGround != MONTAGNE) {
 	    	            // camera.moveFront(0.5);
