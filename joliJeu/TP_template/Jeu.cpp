@@ -435,7 +435,8 @@ int main(int argc, char** argv) {
         for (i=0; i < aleatoirusList.size(); i++){
 
             //AMELIORER PLACEMENT ALEA Z
-            glm::mat4 aleaMVMatrix = glm::translate(globalMVMatrix, glm::vec3((-0.5 + aleatoirusList.at(i).getPosition().x*0.01)*interface.getMap().getWidth() - 0.45, -0.49, (-0.5 + aleatoirusList.at(i).getPosition().y*0.03)*interface.getMap().getHeight() - 0.1 ) );
+           // glm::mat4 aleaMVMatrix = glm::translate(globalMVMatrix, glm::vec3((-0.5 + aleatoirusList.at(i).getPosition().x*0.01)*interface.getMap().getWidth() - 0.45, -0.49, (-0.5 + aleatoirusList.at(i).getPosition().y*0.03)*interface.getMap().getHeight() - 0.1 ) );
+             glm::mat4 aleaMVMatrix = glm::translate(globalMVMatrix, glm::vec3(aleatoirusList.at(i).getPosition().x - 15, -0.49, aleatoirusList.at(i).getPosition().y - 15.5)); 
             aleaMVMatrix = glm::rotate(aleaMVMatrix, angle, glm::vec3(1, 0, 0));
             aleaMVMatrix = glm::scale(aleaMVMatrix, glm::vec3(0.01*interface.getMap().getWidth(), 0.03*interface.getMap().getHeight(), 0));
 
@@ -499,9 +500,6 @@ int main(int argc, char** argv) {
 	            	movingFront = false;
 	                camera.moveFront(-0.5);
 			}
-
- 			cout << " x : " << camera.getPosition().x << endl;
- 			cout << " z : " << camera.getPosition().z << endl;
         }
         if (movingBack == true && turningRight < 5 && turningLeft < 5) {	//encore des problemes
 
@@ -524,7 +522,8 @@ int main(int argc, char** argv) {
 			}
         }
 
-
+        interface.player.setPosition(glm::vec2(camera.getPosition().x, camera.getPosition().z));
+        interface.collision();
         SDL_Event e;
         while(windowManager.pollEvent(e)) {
             if(e.type == SDL_QUIT) {

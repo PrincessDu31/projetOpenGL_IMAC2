@@ -1,4 +1,4 @@
-# Install script for directory: /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu
+# Install script for directory: /home/6im2/jpuech/Bureau/15dec/projetOpenGL_IMAC2/joliJeu
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,8 +34,8 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build/glimac/cmake_install.cmake")
-  include("/home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build/TP_template/cmake_install.cmake")
+  include("/home/6im2/jpuech/Bureau/15dec/projetOpenGL_IMAC2/joliJeu-build/glimac/cmake_install.cmake")
+  include("/home/6im2/jpuech/Bureau/15dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/cmake_install.cmake")
 
 endif()
 
@@ -45,7 +45,7 @@ else()
   set(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
 endif()
 
-file(WRITE "/home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build/${CMAKE_INSTALL_MANIFEST}" "")
+file(WRITE "/home/6im2/jpuech/Bureau/15dec/projetOpenGL_IMAC2/joliJeu-build/${CMAKE_INSTALL_MANIFEST}" "")
 foreach(file ${CMAKE_INSTALL_MANIFEST_FILES})
-  file(APPEND "/home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
+  file(APPEND "/home/6im2/jpuech/Bureau/15dec/projetOpenGL_IMAC2/joliJeu-build/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
 endforeach()

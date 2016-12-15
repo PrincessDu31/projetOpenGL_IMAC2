@@ -110,7 +110,19 @@ void Interface::addAleatoirus(string line){
 }
 
 void Interface::collision() {
+	//ALEATOIRUS
+	int i = 0;
 
+	for (i=0; i< listAleatoirus.size(); i++){
+			cout << "player : " << player.getPosition().x + 15 << "," << player.getPosition().y + 15<< endl;
+			cout << "aleatoirus : " << listAleatoirus.at(i).getPosition().x << "," << listAleatoirus.at(i).getPosition().y << endl;
+		if (abs(player.getPosition().x + 15 - listAleatoirus.at(i).getPosition().x) < 1){
+			if (abs(player.getPosition().y +15 - listAleatoirus.at(i).getPosition().y) < 1){
+				cout << "COLLISION ALEATOIRUS TYPE " << listAleatoirus.at(i).fromEnumToString() << endl;
+				listAleatoirus.at(i).doAction(player);
+			}
+		}
+	}
 }
 
 void Interface::showCursor () {

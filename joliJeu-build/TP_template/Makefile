@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu
+CMAKE_SOURCE_DIR = /home/6im2/jpuech/Bureau/15dec/projetOpenGL_IMAC2/joliJeu
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build
+CMAKE_BINARY_DIR = /home/6im2/jpuech/Bureau/15dec/projetOpenGL_IMAC2/joliJeu-build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -73,14 +73,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(CMAKE_COMMAND) -E cmake_progress_start /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/progress.marks
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f CMakeFiles/Makefile2 TP_template/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles 0
+	cd /home/6im2/jpuech/Bureau/15dec/projetOpenGL_IMAC2/joliJeu-build && $(CMAKE_COMMAND) -E cmake_progress_start /home/6im2/jpuech/Bureau/15dec/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles /home/6im2/jpuech/Bureau/15dec/projetOpenGL_IMAC2/joliJeu-build/TP_template/CMakeFiles/progress.marks
+	cd /home/6im2/jpuech/Bureau/15dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f CMakeFiles/Makefile2 TP_template/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/6im2/jpuech/Bureau/15dec/projetOpenGL_IMAC2/joliJeu-build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f CMakeFiles/Makefile2 TP_template/clean
+	cd /home/6im2/jpuech/Bureau/15dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f CMakeFiles/Makefile2 TP_template/clean
 .PHONY : clean
 
 # The main clean target
@@ -89,22 +89,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f CMakeFiles/Makefile2 TP_template/preinstall
+	cd /home/6im2/jpuech/Bureau/15dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f CMakeFiles/Makefile2 TP_template/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f CMakeFiles/Makefile2 TP_template/preinstall
+	cd /home/6im2/jpuech/Bureau/15dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f CMakeFiles/Makefile2 TP_template/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/6im2/jpuech/Bureau/15dec/projetOpenGL_IMAC2/joliJeu-build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 TP_template/CMakeFiles/TP_template_Jeu.dir/rule:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f CMakeFiles/Makefile2 TP_template/CMakeFiles/TP_template_Jeu.dir/rule
+	cd /home/6im2/jpuech/Bureau/15dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f CMakeFiles/Makefile2 TP_template/CMakeFiles/TP_template_Jeu.dir/rule
 .PHONY : TP_template/CMakeFiles/TP_template_Jeu.dir/rule
 
 # Convenience name for target.
@@ -113,12 +113,12 @@ TP_template_Jeu: TP_template/CMakeFiles/TP_template_Jeu.dir/rule
 
 # fast build rule for target.
 TP_template_Jeu/fast:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f TP_template/CMakeFiles/TP_template_Jeu.dir/build.make TP_template/CMakeFiles/TP_template_Jeu.dir/build
+	cd /home/6im2/jpuech/Bureau/15dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f TP_template/CMakeFiles/TP_template_Jeu.dir/build.make TP_template/CMakeFiles/TP_template_Jeu.dir/build
 .PHONY : TP_template_Jeu/fast
 
 # Convenience name for target.
 TP_template/CMakeFiles/TP_template_Jeu_cube.dir/rule:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f CMakeFiles/Makefile2 TP_template/CMakeFiles/TP_template_Jeu_cube.dir/rule
+	cd /home/6im2/jpuech/Bureau/15dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f CMakeFiles/Makefile2 TP_template/CMakeFiles/TP_template_Jeu_cube.dir/rule
 .PHONY : TP_template/CMakeFiles/TP_template_Jeu_cube.dir/rule
 
 # Convenience name for target.
@@ -127,7 +127,7 @@ TP_template_Jeu_cube: TP_template/CMakeFiles/TP_template_Jeu_cube.dir/rule
 
 # fast build rule for target.
 TP_template_Jeu_cube/fast:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f TP_template/CMakeFiles/TP_template_Jeu_cube.dir/build.make TP_template/CMakeFiles/TP_template_Jeu_cube.dir/build
+	cd /home/6im2/jpuech/Bureau/15dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f TP_template/CMakeFiles/TP_template_Jeu_cube.dir/build.make TP_template/CMakeFiles/TP_template_Jeu_cube.dir/build
 .PHONY : TP_template_Jeu_cube/fast
 
 Jeu.o: Jeu.cpp.o
@@ -135,7 +135,7 @@ Jeu.o: Jeu.cpp.o
 
 # target to build an object file
 Jeu.cpp.o:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f TP_template/CMakeFiles/TP_template_Jeu.dir/build.make TP_template/CMakeFiles/TP_template_Jeu.dir/Jeu.cpp.o
+	cd /home/6im2/jpuech/Bureau/15dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f TP_template/CMakeFiles/TP_template_Jeu.dir/build.make TP_template/CMakeFiles/TP_template_Jeu.dir/Jeu.cpp.o
 .PHONY : Jeu.cpp.o
 
 Jeu.i: Jeu.cpp.i
@@ -143,7 +143,7 @@ Jeu.i: Jeu.cpp.i
 
 # target to preprocess a source file
 Jeu.cpp.i:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f TP_template/CMakeFiles/TP_template_Jeu.dir/build.make TP_template/CMakeFiles/TP_template_Jeu.dir/Jeu.cpp.i
+	cd /home/6im2/jpuech/Bureau/15dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f TP_template/CMakeFiles/TP_template_Jeu.dir/build.make TP_template/CMakeFiles/TP_template_Jeu.dir/Jeu.cpp.i
 .PHONY : Jeu.cpp.i
 
 Jeu.s: Jeu.cpp.s
@@ -151,7 +151,7 @@ Jeu.s: Jeu.cpp.s
 
 # target to generate assembly for a file
 Jeu.cpp.s:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f TP_template/CMakeFiles/TP_template_Jeu.dir/build.make TP_template/CMakeFiles/TP_template_Jeu.dir/Jeu.cpp.s
+	cd /home/6im2/jpuech/Bureau/15dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f TP_template/CMakeFiles/TP_template_Jeu.dir/build.make TP_template/CMakeFiles/TP_template_Jeu.dir/Jeu.cpp.s
 .PHONY : Jeu.cpp.s
 
 Jeu_cube.o: Jeu_cube.cpp.o
@@ -159,7 +159,7 @@ Jeu_cube.o: Jeu_cube.cpp.o
 
 # target to build an object file
 Jeu_cube.cpp.o:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f TP_template/CMakeFiles/TP_template_Jeu_cube.dir/build.make TP_template/CMakeFiles/TP_template_Jeu_cube.dir/Jeu_cube.cpp.o
+	cd /home/6im2/jpuech/Bureau/15dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f TP_template/CMakeFiles/TP_template_Jeu_cube.dir/build.make TP_template/CMakeFiles/TP_template_Jeu_cube.dir/Jeu_cube.cpp.o
 .PHONY : Jeu_cube.cpp.o
 
 Jeu_cube.i: Jeu_cube.cpp.i
@@ -167,7 +167,7 @@ Jeu_cube.i: Jeu_cube.cpp.i
 
 # target to preprocess a source file
 Jeu_cube.cpp.i:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f TP_template/CMakeFiles/TP_template_Jeu_cube.dir/build.make TP_template/CMakeFiles/TP_template_Jeu_cube.dir/Jeu_cube.cpp.i
+	cd /home/6im2/jpuech/Bureau/15dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f TP_template/CMakeFiles/TP_template_Jeu_cube.dir/build.make TP_template/CMakeFiles/TP_template_Jeu_cube.dir/Jeu_cube.cpp.i
 .PHONY : Jeu_cube.cpp.i
 
 Jeu_cube.s: Jeu_cube.cpp.s
@@ -175,7 +175,7 @@ Jeu_cube.s: Jeu_cube.cpp.s
 
 # target to generate assembly for a file
 Jeu_cube.cpp.s:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f TP_template/CMakeFiles/TP_template_Jeu_cube.dir/build.make TP_template/CMakeFiles/TP_template_Jeu_cube.dir/Jeu_cube.cpp.s
+	cd /home/6im2/jpuech/Bureau/15dec/projetOpenGL_IMAC2/joliJeu-build && $(MAKE) -f TP_template/CMakeFiles/TP_template_Jeu_cube.dir/build.make TP_template/CMakeFiles/TP_template_Jeu_cube.dir/Jeu_cube.cpp.s
 .PHONY : Jeu_cube.cpp.s
 
 # Help Target
@@ -205,6 +205,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/6im2/eritoux/Documents/SYNTESE_IMAGE/projetOpenGL_IMAC2/joliJeu-build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/6im2/jpuech/Bureau/15dec/projetOpenGL_IMAC2/joliJeu-build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
