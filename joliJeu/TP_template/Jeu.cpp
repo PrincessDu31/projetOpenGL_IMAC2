@@ -42,11 +42,34 @@ struct MapProgram {
 
 
 	//uniformFind = glGetUniformBlockIndex​ (m_Program.getGLId(),"uniformFind[900]");
+	//uniformFind = glGetUniformBlockIndex​ (m_Program.getGLId(),"uniformFind[900]");
 
         // uTextureMap = glGetUniformLocation(m_Program.getGLId(), "uTextureMap");
         // uTextureOtherTextureIfWeWant = glGetUniformLocation(m_Program.getGLId(), "uTextureCloud");
     }
 };
+
+
+struct WallProgram {
+    Program m_Program;
+
+    GLint uMVPMatrix;
+    GLint uMVMatrix;
+    GLint uNormalMatrix;
+    GLint uTextureMap;
+
+   // GLint uniformMapFind;
+    // GLint uTextureOtherTextureIfWeWant;
+
+    WallProgram(const FilePath& applicationPath):
+        m_Program(loadProgram(applicationPath.dirPath() + "shaders/wall.vs.glsl",
+                              applicationPath.dirPath() + "shaders/wall.fs.glsl")) {    //if mutlitexturing mutli3D.fs.glsl
+        uMVPMatrix = glGetUniformLocation(m_Program.getGLId(), "uMVPMatrix");
+        uMVMatrix = glGetUniformLocation(m_Program.getGLId(), "uMVMatrix");
+        uNormalMatrix = glGetUniformLocation(m_Program.getGLId(), "uNormalMatrix");
+     }
+};
+
 
 struct CubeProgram {
     Program m_Program;
@@ -133,6 +156,7 @@ int main(int argc, char** argv) {
 
     FilePath applicationPath(argv[0]);
     MapProgram mapProgram(applicationPath);
+    WallProgram wallProgram(applicationPath);
 	CubeProgram cubeProgram(applicationPath);
     AleatoirusProgram aleatoirusProgram(applicationPath);
     MonsterProgram monsterProgram(applicationPath);
@@ -153,14 +177,39 @@ int main(int argc, char** argv) {
     //Sommets du quad
     Vertex3DColor vertices[] = {
         //face avant
-        Vertex3DColor(glm::vec3(-0.5, -0.5, 0.5), glm::vec3(0,0,1), glm::vec3(1, 0, 0)), // Sommet 0 - 0
-        Vertex3DColor(glm::vec3(0.5, -0.5, 0.5), glm::vec3(0,0,1), glm::vec3(0, 1, 0)), // Sommet 1 - 1
-        Vertex3DColor(glm::vec3(0.5, 0.5, 0.5), glm::vec3(0,0,1), glm::vec3(0, 0, 1)), // Sommet 2 - 2
-        Vertex3DColor(glm::vec3(-0.5, 0.5, 0.5), glm::vec3(0,0,1), glm::vec3(1, 1, 1)), // Sommet 3 - 3 
+		Vertex3DColor(glm::vec3(-0.5,-0.5, 0.5), glm::vec3(0,0,1), glm::vec3(1, 0, 0)), // Sommet 0 - 0		// FACE AVANT
+		Vertex3DColor(glm::vec3( 0.5,-0.5, 0.5), glm::vec3(0,0,1), glm::vec3(0, 1, 0)), // Sommet 1 - 1
+		Vertex3DColor(glm::vec3( 0.5, 0.5, 0.5), glm::vec3(0,0,1), glm::vec3(0, 0, 1)), // Sommet 2 - 2
+		Vertex3DColor(glm::vec3(-0.5, 0.5, 0.5), glm::vec3(0,0,1), glm::vec3(1, 1, 1)), // Sommet 3 - 3 
+
+		Vertex3DColor(glm::vec3(-0.5,-0.5, 0.5), glm::vec3(-1,0,0), glm::vec3(1, 0, 0)), // Sommet 0 - 0		// LEFT
+		Vertex3DColor(glm::vec3(-0.5,-0.5,-0.5), glm::vec3(-1,0,0), glm::vec3(0, 1, 0)), // Sommet 1 - 1
+		Vertex3DColor(glm::vec3(-0.5, 0.5,-0.5), glm::vec3(-1,0,0), glm::vec3(0, 0, 1)), // Sommet 2 - 2
+		Vertex3DColor(glm::vec3(-0.5, 0.5, 0.5), glm::vec3(-1,0,0), glm::vec3(1, 1, 1)), // Sommet 3 - 3 
+
+		Vertex3DColor(glm::vec3(-0.5,-0.5,-0.5), glm::vec3(0,0,-1), glm::vec3(1, 0, 0)), // Sommet 0 - 0		// BACK
+		Vertex3DColor(glm::vec3( 0.5,-0.5,-0.5), glm::vec3(0,0,-1), glm::vec3(0, 1, 0)), // Sommet 1 - 1
+		Vertex3DColor(glm::vec3( 0.5, 0.5,-0.5), glm::vec3(0,0,-1), glm::vec3(0, 0, 1)), // Sommet 2 - 2
+		Vertex3DColor(glm::vec3(-0.5, 0.5,-0.5), glm::vec3(0,0,-1), glm::vec3(1, 1, 1)), // Sommet 3 - 3 
+
+		Vertex3DColor(glm::vec3( 0.5,-0.5, 0.5), glm::vec3(1,0,0), glm::vec3(1, 0, 0)), // Sommet 0 - 0		// RIGHT
+		Vertex3DColor(glm::vec3( 0.5,-0.5,-0.5), glm::vec3(1,0,0), glm::vec3(0, 1, 0)), // Sommet 1 - 1
+		Vertex3DColor(glm::vec3( 0.5, 0.5,-0.5), glm::vec3(1,0,0), glm::vec3(0, 0, 1)), // Sommet 2 - 2
+		Vertex3DColor(glm::vec3( 0.5, 0.5, 0.5), glm::vec3(1,0,0), glm::vec3(1, 1, 1)), // Sommet 3 - 3 
+
+		Vertex3DColor(glm::vec3(-0.5, 0.5, 0.5), glm::vec3(0,1,0), glm::vec3(1, 0, 0)), // Sommet 0 - 0		// TOP
+		Vertex3DColor(glm::vec3(-0.5, 0.5,-0.5), glm::vec3(0,1,0), glm::vec3(0, 1, 0)), // Sommet 1 - 1
+		Vertex3DColor(glm::vec3( 0.5, 0.5,-0.5), glm::vec3(0,1,0), glm::vec3(0, 0, 1)), // Sommet 2 - 2
+		Vertex3DColor(glm::vec3( 0.5, 0.5, 0.5), glm::vec3(0,1,0), glm::vec3(1, 1, 1)), // Sommet 3 - 3 
+
+		Vertex3DColor(glm::vec3(-0.5,-0.5, 0.5), glm::vec3(0,-1,0), glm::vec3(1, 0, 0)), // Sommet 0 - 0		// BOTTOM
+		Vertex3DColor(glm::vec3(-0.5,-0.5,-0.5), glm::vec3(0,-1,0), glm::vec3(0, 1, 0)), // Sommet 1 - 1
+		Vertex3DColor(glm::vec3( 0.5,-0.5,-0.5), glm::vec3(0,-1,0), glm::vec3(0, 0, 1)), // Sommet 2 - 2
+		Vertex3DColor(glm::vec3( 0.5,-0.5, 0.5), glm::vec3(0,-1,0), glm::vec3(1, 1, 1)) // Sommet 3 - 3 
 
     };
 
-   	GLint nbTriangles = 2;
+   	GLint nbTriangles = 2 * 6;
     glBufferData(GL_ARRAY_BUFFER, nbTriangles*3 * sizeof(Vertex3DColor), vertices, GL_STATIC_DRAW);
 
     glBindBuffer(GL_ARRAY_BUFFER, 0);
@@ -169,9 +218,14 @@ int main(int argc, char** argv) {
     glGenBuffers(1, &ibo);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibo);
     uint32_t indices[] = {
-        0, 1, 2, 0, 2, 3,
+		 0,  1,  2,  0,  2,  3,
+		 4,  5,  6,  4,  6,  7,
+		 8,  9, 10,  8, 10, 11,
+        12, 13, 14, 12, 14, 15,
+        16, 17, 18, 16, 18, 19,
+        20, 21, 22, 20, 22, 23,
     };
-    GLuint nbIndices = 6;
+    GLuint nbIndices = 6* 6;
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, nbIndices * sizeof(uint32_t), indices, GL_STATIC_DRAW);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 
@@ -240,6 +294,7 @@ int main(int argc, char** argv) {
     glBindBuffer(GL_ARRAY_BUFFER, 0);
 
     glBindVertexArray(0);
+  
     // Application loop:
 
     mapProgram.m_Program.use();
@@ -247,17 +302,12 @@ int main(int argc, char** argv) {
 			int vals[900] = {1};
 
 	for (i = 0; i < 30*30; i++) {
-		int j = 23;
-		char str[50] = "uniformMapFind[000]";
-
-		str[23+11] = 48 + i/100;
-		str[24+11] = (48 + (i - i/100 * 100)/10);
-		str[25+11] = 48 + (i - i/10 * 10);
-		GLuint loc = glGetUniformLocation(mapProgram.uniformMapFind, "uniformMapFind");
-// 		glUniform1ivARB(loc, i,  valFind);
-
-		glUniform1ivARB(loc, 1, vals);
+		vals[i] = 1;
 	}
+
+
+	GLuint loc = glGetUniformLocation(mapProgram.uniformMapFind, "uniformMapFind");
+	glUniform1ivARB(loc, 1, vals);
 
 
 
@@ -306,13 +356,16 @@ int main(int argc, char** argv) {
 
         glm::vec2 sizeMap = glm::vec2(interface.getMap().getWidth(), interface.getMap().getHeight());
         glUniform2f(mapProgram.uSizeMap, sizeMap.x, sizeMap.y);
-      	
-
-
 
 
         glDrawElements(GL_TRIANGLES, 2*3, GL_UNSIGNED_INT, 0);
-      
+    
+
+        glm::mat4 wallMVMatrix = mapMVMatrix;  
+
+        wallProgram.m_Program.use();
+
+
         // dessin montagnes
         for (i=0; i < interface.getMap().getWidth(); i++) {
 			int j;
@@ -321,65 +374,67 @@ int main(int argc, char** argv) {
 				
 				if (typeGround == MONTAGNE) {
 					if (interface.getMap().getType(i-1, j) == SOL) {
-						angle = - M_PI*0.5;
+						angle = -M_PI*0.5;
 						globalMVMatrix = camera.getViewMatrix();
 
-                        mapMVMatrix = glm::translate(globalMVMatrix, glm::vec3(i-15, 0, j-15));   
-                        mapMVMatrix = glm::rotate(mapMVMatrix, angle, glm::vec3(0, 1, 0));
-                        
-                        mapMVMatrix = glm::scale(mapMVMatrix, glm::vec3(1, 0.5, 1));
+                        wallMVMatrix = glm::translate(globalMVMatrix, glm::vec3(i-15,  -0.3, j-15));   
+						wallMVMatrix = glm::rotate(wallMVMatrix, angle, glm::vec3(0, 1, 0));
+ 						wallMVMatrix = glm::scale(wallMVMatrix, glm::vec3(1, 0.2, 1));
+
                         
                        
 				        projMatrix = projMatrix;
-				        glUniformMatrix4fv(mapProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(mapMVMatrix));
-				        glUniformMatrix4fv(mapProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(mapMVMatrix))));
-				        glUniformMatrix4fv(mapProgram.uMVPMatrix, 1, GL_FALSE, glm::value_ptr(projMatrix * mapMVMatrix));    
+				        glUniformMatrix4fv(wallProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(wallMVMatrix));
+				        glUniformMatrix4fv(wallProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(wallMVMatrix))));
+				        glUniformMatrix4fv(wallProgram.uMVPMatrix, 1, GL_FALSE, glm::value_ptr(projMatrix * wallMVMatrix));    
 				      	
 
-						glDrawElements(GL_TRIANGLES, 2*3, GL_UNSIGNED_INT, 0);
- 					} else if (i < interface.getMap().getWidth() && interface.getMap().getType(i+1, j) == SOL) {
+						glDrawElements(GL_TRIANGLES, nbTriangles*3, GL_UNSIGNED_INT, 0);
+ 					} 
+                    if (i < interface.getMap().getWidth() && interface.getMap().getType(i+1, j) == SOL) {
  						angle = M_PI*0.5;
  						globalMVMatrix = camera.getViewMatrix();
- 						mapMVMatrix = glm::translate(globalMVMatrix, glm::vec3(i-15, 0, j-15));
- 						mapMVMatrix = glm::rotate(mapMVMatrix, angle, glm::vec3(0, 1, 0));
- 						mapMVMatrix = glm::scale(mapMVMatrix, glm::vec3(1, 0.5, 1));
+ 						wallMVMatrix = glm::translate(globalMVMatrix, glm::vec3(i-15,  -0.3, j-15));
+ 						wallMVMatrix = glm::rotate(wallMVMatrix, angle, glm::vec3(0, 1, 0));
+ 						wallMVMatrix = glm::scale(wallMVMatrix, glm::vec3(1, 0.2, 1));
  						
 
 
  				        projMatrix = projMatrix;
- 				        glUniformMatrix4fv(mapProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(mapMVMatrix));
- 				        glUniformMatrix4fv(mapProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(mapMVMatrix))));
- 				        glUniformMatrix4fv(mapProgram.uMVPMatrix, 1, GL_FALSE, glm::value_ptr(projMatrix * mapMVMatrix));    
+ 				        glUniformMatrix4fv(wallProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(wallMVMatrix));
+ 				        glUniformMatrix4fv(wallProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(wallMVMatrix))));
+ 				        glUniformMatrix4fv(wallProgram.uMVPMatrix, 1, GL_FALSE, glm::value_ptr(projMatrix * wallMVMatrix));    
 				      	
 
- 						glDrawElements(GL_TRIANGLES, 2*3, GL_UNSIGNED_INT, 0);
+ 						glDrawElements(GL_TRIANGLES, nbTriangles*3, GL_UNSIGNED_INT, 0);
 
- 					} else if (interface.getMap().getType(i, j-1) == SOL) {
+ 					}
+                    if (interface.getMap().getType(i, j-1) == SOL) {
  						globalMVMatrix = camera.getViewMatrix();
- 						mapMVMatrix = glm::translate(globalMVMatrix, glm::vec3(i-15, 0, j-15));
- 						mapMVMatrix = glm::scale(mapMVMatrix, glm::vec3(1, 0.5, 1));
- 						
+ 						wallMVMatrix = glm::translate(globalMVMatrix, glm::vec3(i-15,  -0.3, j-15));
+ 						wallMVMatrix = glm::scale(wallMVMatrix, glm::vec3(1, 0.2, 1));
 
- 				        projMatrix = projMatrix;
- 				        glUniformMatrix4fv(mapProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(mapMVMatrix));
- 				        glUniformMatrix4fv(mapProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(mapMVMatrix))));
- 				        glUniformMatrix4fv(mapProgram.uMVPMatrix, 1, GL_FALSE, glm::value_ptr(projMatrix * mapMVMatrix));    
+
+ 						projMatrix = projMatrix;
+ 						glUniformMatrix4fv(wallProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(wallMVMatrix));
+ 						glUniformMatrix4fv(wallProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(wallMVMatrix))));
+ 						glUniformMatrix4fv(wallProgram.uMVPMatrix, 1, GL_FALSE, glm::value_ptr(projMatrix * wallMVMatrix));    
 				      	
 
- 						glDrawElements(GL_TRIANGLES, 2*3, GL_UNSIGNED_INT, 0);
+ 						glDrawElements(GL_TRIANGLES, nbTriangles*3, GL_UNSIGNED_INT, 0);
  					} 
- 					else if (j < interface.getMap().getHeight() && interface.getMap().getType(i, j+1) == SOL) {
+ 					if (j < interface.getMap().getHeight() && interface.getMap().getType(i, j+1) == SOL) {
  						globalMVMatrix = camera.getViewMatrix();
- 						mapMVMatrix = glm::translate(globalMVMatrix, glm::vec3(i-15, 0, j-15));
- 						mapMVMatrix = glm::scale(mapMVMatrix, glm::vec3(1, 0.5, 1));
- 						
-				        projMatrix = projMatrix;
- 				        glUniformMatrix4fv(mapProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(mapMVMatrix));
- 				        glUniformMatrix4fv(mapProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(mapMVMatrix))));
- 				        glUniformMatrix4fv(mapProgram.uMVPMatrix, 1, GL_FALSE, glm::value_ptr(projMatrix * mapMVMatrix));    
-				      	
 
- 						glDrawElements(GL_TRIANGLES, 2*3, GL_UNSIGNED_INT, 0);
+ 						wallMVMatrix = glm::translate(globalMVMatrix, glm::vec3(i-15, -0.3, j-15));
+ 						wallMVMatrix = glm::scale(wallMVMatrix, glm::vec3(1, 0.2, 1));
+
+				        projMatrix = projMatrix;
+ 				        glUniformMatrix4fv(wallProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(wallMVMatrix));
+ 				        glUniformMatrix4fv(wallProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(wallMVMatrix))));
+ 				        glUniformMatrix4fv(wallProgram.uMVPMatrix, 1, GL_FALSE, glm::value_ptr(projMatrix * wallMVMatrix));    
+
+ 						glDrawElements(GL_TRIANGLES, nbTriangles*3, GL_UNSIGNED_INT, 0);
  					} 
 
 				}
@@ -391,20 +446,13 @@ int main(int argc, char** argv) {
 
 
 		glBindVertexArray(0);
+		
 
 
-		for (i = 0; i < 30*30; i++) {
-			int j = 23;
-			char str[40] = "uniformMapFind[000]";
+		vals[i] = 1;
 
-			str[23] = 48 + i/100;
-			str[24] = (48 + (i - i/100 * 100)/10);
-			str[25] = 48 + (i - i/10 * 10);
-			int vals[900] = {1};
-
-			GLuint loc = glGetUniformLocation(mapProgram.uniformMapFind, "uniformMapFind");
-			glUniform1i(loc, 1);
-		}
+		GLuint loc = glGetUniformLocation(mapProgram.uniformMapFind, "uniformMapFind");
+		glUniform1ivARB(loc, 1,vals);
 		
 
 
@@ -436,7 +484,7 @@ int main(int argc, char** argv) {
 
             //AMELIORER PLACEMENT ALEA Z
            // glm::mat4 aleaMVMatrix = glm::translate(globalMVMatrix, glm::vec3((-0.5 + aleatoirusList.at(i).getPosition().x*0.01)*interface.getMap().getWidth() - 0.45, -0.49, (-0.5 + aleatoirusList.at(i).getPosition().y*0.03)*interface.getMap().getHeight() - 0.1 ) );
-             glm::mat4 aleaMVMatrix = glm::translate(globalMVMatrix, glm::vec3(aleatoirusList.at(i).getPosition().x - 15, -0.49, aleatoirusList.at(i).getPosition().y - 15.5)); 
+            glm::mat4 aleaMVMatrix = glm::translate(globalMVMatrix, glm::vec3(aleatoirusList.at(i).getPosition().x - - interface.getMap().getWidth()*0.5, -0.49, aleatoirusList.at(i).getPosition().y - - interface.getMap().getHeight()*0.5 - .5)); 
             aleaMVMatrix = glm::rotate(aleaMVMatrix, angle, glm::vec3(1, 0, 0));
             aleaMVMatrix = glm::scale(aleaMVMatrix, glm::vec3(0.01*interface.getMap().getWidth(), 0.03*interface.getMap().getHeight(), 0));
 
@@ -456,7 +504,8 @@ int main(int argc, char** argv) {
         glBindVertexArray(2);   
         monsterProgram.m_Program.use();
         for (i=0; i < monsterList.size(); i++){
-            glm::mat4 monsterMVMatrix = glm::translate(globalMVMatrix, glm::vec3((-0.5 + monsterList.at(i).getPosition().x*0.01)*interface.getMap().getWidth() - 0.45, 0, (-0.5 + monsterList.at(i).getPosition().y*0.03)*interface.getMap().getHeight() - 0.1 ) );
+            // glm::mat4 monsterMVMatrix = glm::translate(globalMVMatrix, glm::vec3((-0.5 + monsterList.at(i).getPosition().x*0.01)*interface.getMap().getWidth() - 0.45, 0, (-0.5 + monsterList.at(i).getPosition().y*0.03)*interface.getMap().getHeight() - 0.1 ) );
+            glm::mat4 monsterMVMatrix = glm::translate(globalMVMatrix, glm::vec3( monsterList.at(i).getPosition().x - interface.getMap().getWidth()*0.5, 0, monsterList.at(i).getPosition().y - interface.getMap().getHeight()*0.5 ) );
             monsterMVMatrix = glm::scale(monsterMVMatrix, glm::vec3(0.5, 0.5, 0.5));
 
             projMatrix = projMatrix;
@@ -464,6 +513,19 @@ int main(int argc, char** argv) {
             glUniformMatrix4fv(monsterProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(monsterMVMatrix))));
             glUniformMatrix4fv(monsterProgram.uMVPMatrix, 1, GL_FALSE, glm::value_ptr(projMatrix * monsterMVMatrix));    
             glDrawArrays(GL_TRIANGLES, 0, nbVertexShere);
+
+            if (interface.collisionMonster(i)) {
+
+            	glBindVertexArray(0);
+            	glBindVertexArray(1);
+
+            	cout << "ATTENTION J'ATTAQUE !!!!" << endl;
+      			glDrawElements(GL_TRIANGLES, nbTriangles*3, GL_UNSIGNED_INT, 0);
+
+            	glBindVertexArray(2);   
+
+            }
+
         }
         glBindVertexArray(0);
 
@@ -483,7 +545,7 @@ int main(int argc, char** argv) {
         if (movingFront == true  && turningRight < 5 && turningLeft < 5) {
 
         	if (abs(camera.getPosition().x) - interface.getMap().getWidth() * 0.5 <= 0 && abs(camera.getPosition().z) - interface.getMap().getWidth() * 0.5  <= 0) {
-				camera.moveFront(0.5);
+				camera.moveFront(1);
 
 	        	typeGround = interface.getMap().getType(camera.getPosition().x+ 15, camera.getPosition().z + 15);
 	        	cout << interface.getMap().fromEnumToString(interface.getMap().getType(camera.getPosition().x + 15, camera.getPosition().z + 15)) << endl;
@@ -492,33 +554,36 @@ int main(int argc, char** argv) {
 	    	            // camera.moveFront(0.5);
 		           
 		        } else {
-	                camera.moveFront(-0.5);
+	                camera.moveFront(-1);
 		        	movingFront = false;
 		       	}
 
 	       	} else {
 	            	movingFront = false;
-	                camera.moveFront(-0.5);
+	                camera.moveFront(-1);
 			}
+
+            cout << "cam X : " << camera.getPosition().x << endl;
+            cout << "cam Y : " << camera.getPosition().z << endl;
         }
         if (movingBack == true && turningRight < 5 && turningLeft < 5) {	//encore des problemes
 
         
         	if (abs(camera.getPosition().x) - interface.getMap().getWidth() * 0.5 <= 0 && abs(camera.getPosition().z) - interface.getMap().getWidth() * 0.5  <= 0) {
-				camera.moveFront(-0.5);
+				camera.moveFront(-1);
 
 	        	typeGround = interface.getMap().getType(camera.getPosition().x + 15, camera.getPosition().z  + 15);
 
 	        	if (typeGround != MONTAGNE) {
 		           
 		        } else {
-	                camera.moveFront(0.5);
+	                camera.moveFront(1);
 		        	movingFront = false;
 		       	}
 
 	       	} else {
 	            	movingFront = false;
-	                camera.moveFront(0.5);
+	                camera.moveFront(1);
 			}
         }
 

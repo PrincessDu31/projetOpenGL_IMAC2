@@ -71,14 +71,12 @@ void Interface::addMonster(std::string line){
 	while (std::getline(line_stream, item, ':')) {
 		elems.push_back(item);
 	}
-
 	long int positionX = strtol (elems.at(1).c_str(),NULL,10);
 	long int positionY = strtol (elems.at(2).c_str(),NULL,10);
 	long int id_weapon = strtol (elems.at(4).c_str(),NULL,10);
 	long int attack = strtol (elems.at(5).c_str(),NULL,10);
 	long int defense= strtol (elems.at(6).c_str(),NULL,10);
 	long int life = strtod (elems.at(7).c_str(),NULL);
-
 	monster.setPosition(glm::vec2(positionX,positionY));
 	monster.setType(elems.at(3));
 	Weapon myweapon = Weapon(id_weapon);
@@ -87,7 +85,6 @@ void Interface::addMonster(std::string line){
 	monster.setDefense(defense);
 	monster.setLife(life);
 	listMonsters.push_back(monster);
-
 	//id:X:Y:type:id_arme:attack:defense:lifespan:?
 }
 
@@ -114,8 +111,8 @@ void Interface::collision() {
 	int i = 0;
 
 	for (i=0; i< listAleatoirus.size(); i++){
-			cout << "player : " << player.getPosition().x + 15 << "," << player.getPosition().y + 15<< endl;
-			cout << "aleatoirus : " << listAleatoirus.at(i).getPosition().x << "," << listAleatoirus.at(i).getPosition().y << endl;
+//			cout << "player : " << player.getPosition().x + 15 << "," << player.getPosition().y + 15<< endl;
+//			cout << "aleatoirus : " << listAleatoirus.at(i).getPosition().x << "," << listAleatoirus.at(i).getPosition().y << endl;
 		if (abs(player.getPosition().x + 15 - listAleatoirus.at(i).getPosition().x) < 1){
 			if (abs(player.getPosition().y +15 - listAleatoirus.at(i).getPosition().y) < 1){
 				cout << "COLLISION ALEATOIRUS TYPE " << listAleatoirus.at(i).fromEnumToString() << endl;
@@ -123,7 +120,34 @@ void Interface::collision() {
 			}
 		}
 	}
+
+
+	for (i=0; i< listMonsters.size(); i++){
+//			cout << "player : " << player.getPosition().x + 15 << "," << player.getPosition().y + 15<< endl;
+//			cout << "aleatoirus : " << listAleatoirus.at(i).getPosition().x << "," << listAleatoirus.at(i).getPosition().y << endl;
+		if (abs(player.getPosition().x + 15 - listMonsters.at(i).getPosition().x) < 3){
+			if (abs(player.getPosition().y +15 - listMonsters.at(i).getPosition().y) < 3){
+				cout << "COLLISION MONSTER TYPE " << listMonsters.at(i).fromEnumToString() << endl;
+			//	listMonsters.at(i).doAction(player);
+			}
+		}
+	}
+	
+
 }
+
+
+bool Interface::collisionMonster(int numMonster) {
+	
+	if (abs(player.getPosition().x + 15 - listMonsters.at(numMonster).getPosition().x) < 3){
+		if (abs(player.getPosition().y +15 - listMonsters.at(numMonster).getPosition().y) < 3){
+			return true;
+		}
+	}
+	return false;
+}
+
+
 
 void Interface::showCursor () {
 

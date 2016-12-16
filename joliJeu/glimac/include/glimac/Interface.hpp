@@ -36,6 +36,7 @@ public:
 	void addAleatoirus(std::string line);
 
 	void collision();
+	bool collisionMonster(int numMonster);
 	void showCursor ();
 
 
