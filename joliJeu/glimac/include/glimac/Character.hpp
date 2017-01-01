@@ -39,6 +39,7 @@ public:
 	void setWeapon (Weapon w);
 	void setLife (double l);
 	void setOrientation (glm::vec2 o);
+	void setSpeed(float s);
 
 };
 

@@ -45,8 +45,8 @@ public:
 	Map getMap ();
 	unsigned int getNbPink();
 	unsigned int getNbBlue();
-	std::vector<Aleatoirus> getListAleatoirus ();
-	std::vector<Monster> getListMonsters ();
+	std::vector<Aleatoirus> *getListAleatoirus ();
+	std::vector<Monster> *getListMonsters ();
 	MainCaracter getPlayer ();
 
 	// setters
@@ -57,6 +57,7 @@ public:
 	void setListMonsters (std::vector<Monster> list);
 	void setPlayer (MainCaracter m);
 
+	void updateMonster(int i, glm::vec3 position);
 };
 
 #endif

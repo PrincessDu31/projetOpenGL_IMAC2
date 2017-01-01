@@ -1,11 +1,16 @@
-
+#include <iostream>
 #include <glimac/Monster.hpp>
 
-Monster::Monster(){
+using namespace std;
 
+Monster::Monster(){
+	detection = DISACTIVE;
+	setSpeed(1);
 }
 
 Monster::Monster(glm::vec2 pos) {
+	detection = DISACTIVE;
+	setSpeed(1);
 	setAttack(3);
 	setDefense(2);
 	setPosition(pos);
@@ -16,6 +21,8 @@ Monster::Monster(glm::vec2 pos) {
 Monster::~Monster() {
 
 }
+
+
 
 // void Monster::attack1(MainCaracter m) {
 
@@ -65,12 +72,29 @@ void Monster::setType(std::string t){
 	}
 }	
 
+void Monster::setDetection(Detection d){
+	detection = d;
+}
 
-// void Monster::draw(){ }
+void Monster::setDistanceToPlayer(float d){
+	distanceToPlayer = d;
+}
 
-// glm::vec2 Monster::getPosition() {
-// 	return getPosition();
-// }
+Detection Monster::getDetection(){
+	return detection;
+}
+
+float Monster::getDistanceToPlayer(){
+	return distanceToPlayer;
+}
+
+
+void Monster::updatePosition(glm::vec3 v){
+	glm::vec2 position;
+	position.x = getPosition().x + v.x;
+	position.y = getPosition().y + v.z;
+	setPosition(position);
+}
 
 
 std::string Monster::fromEnumToString() {
@@ -87,6 +111,21 @@ std::string Monster::fromEnumToString() {
 		
 		default:
 			return "NO_TYPE";
+			break;
+	}
+
+}
+
+std::string Monster::fromEnumToStringDetection(){
+	switch (detection){
+		case ACTIVE:
+			return "ACTIVE";
+			break;
+		case DISACTIVE:
+			return "DISACTIVE";
+			break;
+		default:
+			return "NO_FUNCTION";
 			break;
 	}
 

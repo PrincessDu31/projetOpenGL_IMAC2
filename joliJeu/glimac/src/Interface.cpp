@@ -10,6 +10,10 @@
 using namespace std;
 
 
+#define  DETECTION 7
+#define CLOSE_ENOUGH 2
+#define TOO_FAR 15
+
 
 Interface::Interface(){}
 Interface::~Interface(){}
@@ -115,7 +119,7 @@ void Interface::collision() {
 	for (i=0; i< listAleatoirus.size(); i++){
 		if (abs(player.getPosition().x + 20 - listAleatoirus.at(i).getPosition().x) < 1){
 			if (abs(player.getPosition().y + 20 - listAleatoirus.at(i).getPosition().y) < 1){
-				cout << "COLLISION ALEATOIRUS ETAT" << listAleatoirus.at(i).fromEnumToStringState() << endl;
+				//cout << "COLLISION ALEATOIRUS ETAT" << listAleatoirus.at(i).fromEnumToStringState() << endl;
 				if (listAleatoirus.at(i).getState() == ON){
 					listAleatoirus.at(i).doAction(player);
 					listAleatoirus.at(i).setState(OFF);
@@ -125,18 +129,16 @@ void Interface::collision() {
 	}
 
 
-// 	for (i=0; i< listMonsters.size(); i++){
+	for (i=0; i< listMonsters.size(); i++){
+		if (abs(player.getPosition().x + 20 - listMonsters.at(i).getPosition().x) < DETECTION){
+			if (abs(player.getPosition().y + 20 - listMonsters.at(i).getPosition().y) < DETECTION){
+				//cout << "MONSTRE ETAT" << listMonsters.at(i).fromEnumToStringDetection() << endl;
+				listMonsters.at(i).setDetection(ACTIVE);
+				cout << "position " << listMonsters.at(i).getPosition().x << " , " << listMonsters.at(i).getPosition().y << endl;
 
-// //			cout << "player : " << player.getPosition().x + 15 << "," << player.getPosition().y + 15<< endl;
-// //			cout << "aleatoirus : " << listAleatoirus.at(i).getPosition().x << "," << listAleatoirus.at(i).getPosition().y << endl;
-// 		if (abs(player.getPosition().x + 15 - listMonsters.at(i).getPosition().x) < 3){
-// 			if (abs(player.getPosition().y +15 - listMonsters.at(i).getPosition().y) < 3){
-// 				cout << "COLLISION MONSTER TYPE " << listMonsters.at(i).fromEnumToString() << endl;
-// 			//	listMonsters.at(i).doAction(player);
-// 			}
-// 		}
-// 	}
-	
+			}
+		}
+	}
 
 }
 
@@ -186,8 +188,8 @@ void Interface::showCursor () {
 Map Interface::getMap () {return map;}
 unsigned int Interface::getNbPink() {return nbPink;}
 unsigned int Interface::getNbBlue() {return nbBlue;}
-std::vector<Aleatoirus> Interface::getListAleatoirus () {return listAleatoirus;}
-std::vector<Monster> Interface::getListMonsters () {return listMonsters;}
+std::vector<Aleatoirus> * Interface::getListAleatoirus () {return &listAleatoirus;}
+std::vector<Monster> * Interface::getListMonsters () {return &listMonsters;}
 MainCaracter Interface::getPlayer () {return player;}
 
 
@@ -198,4 +200,23 @@ void Interface::setNbBlue(unsigned int b) { nbBlue = b; }
 void Interface::setListAleatoirus (std::vector<Aleatoirus> list) { listAleatoirus = list; }
 void Interface::setListMonsters (std::vector<Monster> list) { listMonsters = list; }
 void Interface::setPlayer (MainCaracter m) { player = m; }
+
+
+
+void Interface::updateMonster(int i, glm::vec3 position){
+	cout << "Player X: " << player.getPosition().x + 20 << endl;
+	cout << "Player Y: " << player.getPosition().y + 20 << endl;
+	cout << "Monstre X: " << listMonsters.at(i).getPosition().x << endl;
+	cout << "Monstre Y: " << listMonsters.at(i).getPosition().y << endl;
+	if ((abs(player.getPosition().x + 20 - listMonsters.at(i).getPosition().x) > CLOSE_ENOUGH) ||
+	 (abs(player.getPosition().y + 20 - listMonsters.at(i).getPosition().y) > CLOSE_ENOUGH)) {
+	 		cout << "UPDATE" << endl;
+			listMonsters.at(i).updatePosition(position);
+	}
+	if ((abs(player.getPosition().x + 20 - listMonsters.at(i).getPosition().x) > TOO_FAR) ||
+	 (abs(player.getPosition().y + 20 - listMonsters.at(i).getPosition().y) > TOO_FAR)) {
+			listMonsters.at(i).setDetection(DISACTIVE);
+			cout << "TOO FAR" << endl;
+	}
+}
 

@@ -25,3 +25,4 @@ void Character::setPosition (glm::vec2 p){ position = p; }
 void Character::setWeapon (Weapon w){ weapon = w; }
 void Character::setLife (double l){ life = l; }
 void Character::setOrientation (glm::vec2 o){ orientation = o; }
+void Character::setSpeed(float s) { speed = s;}

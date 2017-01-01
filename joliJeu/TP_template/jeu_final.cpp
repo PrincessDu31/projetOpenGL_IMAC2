@@ -313,14 +313,14 @@ int main(int argc, char** argv) {
     float shooting = 0;
     MapType typeGround;
 
-    // std::vector<Aleatoirus> aleatoirusList = interface.getListAleatoirus();
-    // std::vector<Monster> monsterList = interface.getListMonsters();
+    std::vector<Aleatoirus>  *aleatoirusList = interface.getListAleatoirus();
+    std::vector<Monster> *monsterList = interface.getListMonsters();
     
     bool done = false;
     while(!done) {
 
-        std::vector<Aleatoirus> aleatoirusList = interface.getListAleatoirus();
-        std::vector<Monster> monsterList = interface.getListMonsters();
+        // std::vector<Aleatoirus> aleatoirusList = interface.getListAleatoirus();
+        // std::vector<Monster> monsterList = interface.getListMonsters();
 
         /*********************************
          * HERE SHOULD COME THE RENDERING CODE
@@ -366,15 +366,15 @@ int main(int argc, char** argv) {
 
         //ALEATOIRUS
         aleatoirusProgram.m_Program.use();
-        for (i=0; i < aleatoirusList.size(); i++){
+        for (i=0; i < aleatoirusList->size(); i++){
              glm::mat4 aleaMVMatrix;
-            if (aleatoirusList.at(i).getState() == ON){
+            if (aleatoirusList->at(i).getState() == ON){
                 aleaMVMatrix = glm::scale(globalMVMatrix, glm::vec3(1, 0.1, 1));
             } else {
                 aleaMVMatrix = glm::scale(globalMVMatrix, glm::vec3(1, 0.001, 1));
             }
             
-            aleaMVMatrix = glm::translate(aleaMVMatrix, glm::vec3(aleatoirusList.at(i).getPosition().x-shift + 0.5, 0.5, aleatoirusList.at(i).getPosition().y-shift + 0.5));
+            aleaMVMatrix = glm::translate(aleaMVMatrix, glm::vec3(aleatoirusList->at(i).getPosition().x-shift + 0.5, 0.5, aleatoirusList->at(i).getPosition().y-shift + 0.5));
             projMatrix = projMatrix;
             glUniformMatrix4fv(aleatoirusProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(aleaMVMatrix));
             glUniformMatrix4fv(aleatoirusProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(aleaMVMatrix))));
@@ -387,21 +387,19 @@ int main(int argc, char** argv) {
         //MONSTRES
         monsterProgram.m_Program.use();
 
-        for (i=0; i < monsterList.size(); i++){
+        for (i=0; i < monsterList->size(); i++){
             glm::mat4 monsterMVMatrix = glm::scale(globalMVMatrix, glm::vec3(1, 1, 1));
-            monsterMVMatrix = glm::translate(monsterMVMatrix, glm::vec3(monsterList.at(i).getPosition().x-shift + 0.5, 0.5, monsterList.at(i).getPosition().y-shift + 0.5));
-            float epsilon = 5;
-            if ((camera.getPosition().x > monsterList.at(i).getPosition().x-shift - epsilon) && (camera.getPosition().x < monsterList.at(i).getPosition().x-shift + epsilon)){
-                 if ((camera.getPosition().z > monsterList.at(i).getPosition().y-shift - epsilon) && (camera.getPosition().z <  monsterList.at(i).getPosition().y-shift + epsilon)){
-
-                    float noiseX = ((double) rand() / (RAND_MAX))*0.1;
-                    float noiseY = ((double) rand() / (RAND_MAX))*0.1;
-                    float noiseZ = ((double) rand() / (RAND_MAX))*0.1;
-                    monsterMVMatrix = glm::translate(monsterMVMatrix, glm::vec3(noiseX, noiseY, noiseZ));
-                   
-                } 
+             //cout << "Position A x:" <<  monsterList->at(i).getPosition().x << " , y: " <<  monsterList->at(i).getPosition().y << endl;
+            monsterMVMatrix = glm::translate(monsterMVMatrix, glm::vec3(monsterList->at(i).getPosition().x-shift + 0.5, 0.5, monsterList->at(i).getPosition().y-shift +0.5));
+            if (monsterList->at(i).getDetection() == ACTIVE){
+                monsterMVMatrix = glm::translate(monsterMVMatrix, -monsterList->at(i).getSpeed()*camera.getDirectionFront());
+               interface.updateMonster(i, -monsterList->at(i).getSpeed()*camera.getDirectionFront());
+                float noiseX = ((double) rand() / (RAND_MAX))*0.1;
+                float noiseY = ((double) rand() / (RAND_MAX))*0.1;
+                float noiseZ = ((double) rand() / (RAND_MAX))*0.1;
+                monsterMVMatrix = glm::translate(monsterMVMatrix, glm::vec3(noiseX, noiseY, noiseZ));
             } 
-
+           
             projMatrix = projMatrix;
             glUniformMatrix4fv(monsterProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(monsterMVMatrix));
             glUniformMatrix4fv(monsterProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(monsterMVMatrix))));
