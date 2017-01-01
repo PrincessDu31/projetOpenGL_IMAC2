@@ -28,6 +28,7 @@ public:
 
 	void createWorld ();
 	void readMap (std::string mapFile);
+	string getRandomMap();
 
 
 	void readMonsterAndAleatoirusInfos (std::ifstream &file);

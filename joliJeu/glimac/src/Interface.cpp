@@ -6,6 +6,10 @@
 #include <iostream>
 #include <cstdlib>
 #include <sstream>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#define NB_MAPS 2
 
 using namespace std;
 
@@ -18,10 +22,27 @@ using namespace std;
 Interface::Interface(){}
 Interface::~Interface(){}
 
+
+string Interface::getRandomMap() {
+	string path = "../../joliJeu/config_map";
+	string endPath = "_39x39.txt";
+	int ASCII_ZERO = 48;
+
+	srand (time(NULL));
+	int nbRand = rand() % NB_MAPS + 1;
+
+	path.push_back(nbRand + ASCII_ZERO);
+	for (int i=0; i <endPath.size(); i++)
+		path.push_back(endPath[i]);
+
+	return path;
+}
+
+
 void Interface::createWorld (){
 
 	string line;
-	ifstream myfile("../../joliJeu/config.txt");
+	ifstream myfile(getRandomMap());
 	myfile.is_open();
 	if (myfile.fail())
 	{

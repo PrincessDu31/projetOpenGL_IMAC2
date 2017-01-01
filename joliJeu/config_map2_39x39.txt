@@ -1,0 +1,13 @@
+#Donjon naheulbeuk
+../../joliJeu/map/map2_39x39.ppm
+3
+37:38:0:BONUS:1:120:argent.obj
+7:25:2:MALUS:1:240:argent.obj
+16:12:10:WEAPON_UPGRADE:2:10:fiole.obj
+6
+17:21:5:groark:1:15:5:40:monster1.obj
+3:19:5:groark:1:15:5:40:monster1.obj
+16:31:5:groark:1:15:5:40:monster1.obj
+29:7:30:bzzz:2:30:0:20:monster2.obj
+15:19:0:bzz2:2:30:0:20:monster2.obj
+36:0:0:bzz2:2:30:0:20:monster2.obj
