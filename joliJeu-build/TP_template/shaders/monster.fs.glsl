@@ -19,6 +19,6 @@ void main() {
 		
 	// fFragColor = attenuation(1, 10, vec2(0,0), vPosition_vs.xy, fFragColor);
 	
-};
+}
 
 

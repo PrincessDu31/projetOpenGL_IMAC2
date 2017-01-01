@@ -25,7 +25,6 @@ struct MapProgram {
     GLint uTextureMap;
     GLint uSizeMap;
     GLuint uniformMapFind;
-
    // GLint uniformMapFind;
     // GLint uTextureOtherTextureIfWeWant;
 
@@ -170,7 +169,7 @@ int main(int argc, char** argv) {
     MVMatrix = glm::translate(MVMatrix, glm::vec3(0,0,-5));
     NormalMatrix = glm::transpose(glm::inverse(MVMatrix));
 
-    //////////// PLAN /////////////////////
+    //////////// CUBE /////////////////////
 	GLuint vbo;
     glGenBuffers(1, &vbo);
     glBindBuffer(GL_ARRAY_BUFFER, vbo);
@@ -325,7 +324,7 @@ int main(int argc, char** argv) {
 
     std::vector<Aleatoirus> aleatoirusList = interface.getListAleatoirus();
     std::vector<Monster> monsterList = interface.getListMonsters();
-    
+    std::cout << "uSizeMAp" << mapProgram.uSizeMap << endl;
 	bool done = false;
 	while(!done) {
 

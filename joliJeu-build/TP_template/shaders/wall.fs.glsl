@@ -59,4 +59,4 @@ void main() {
 	
 	fFragColor = grid(0.01, 0.03, vPosition.xy, 0.1);
 	fFragColor = yellow;
-}; 
+}

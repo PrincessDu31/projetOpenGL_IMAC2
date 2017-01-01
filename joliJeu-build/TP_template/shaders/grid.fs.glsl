@@ -67,4 +67,4 @@ void main() {
 	//fFragColor = vec3(0.1, 0.3,0.15);
 
 	// fFragColor = actuFind(fFragColor, vPosition.xy);
-}; 
+}
