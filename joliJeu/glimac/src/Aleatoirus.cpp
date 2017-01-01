@@ -5,7 +5,9 @@
 #define VAL_WEAPON_UPGRADE 20
 #define VAL_WEAPON_DOWNGRADE 15
 
-Aleatoirus::Aleatoirus(){}
+Aleatoirus::Aleatoirus(){
+	state = ON;
+}
 Aleatoirus::~Aleatoirus(){}
 
 void Aleatoirus::doAction (MainCaracter m) {
@@ -59,11 +61,19 @@ void Aleatoirus::setType(std::string t){
 	}
 }	
 
+void Aleatoirus::setState(State t){ 
+	state = t;
+}	
+
 
 void Aleatoirus::draw(){ }
 
 glm::vec2 Aleatoirus::getPosition() {
 	return position;
+}
+
+State Aleatoirus::getState() {
+	return state;
 }
 
 std::string Aleatoirus::fromEnumToString() {
@@ -79,6 +89,21 @@ std::string Aleatoirus::fromEnumToString() {
 			break;
 		case WEAPON_DOWNGRADE :
 			return "WEAPON_DOWNGRADE";
+			break;
+		default:
+			return "NO_FUNCTION";
+			break;
+	}
+
+}
+
+std::string Aleatoirus::fromEnumToStringState() {
+	switch (state){
+		case ON:
+			return "ON";
+			break;
+		case OFF:
+			return "OFF";
 			break;
 		default:
 			return "NO_FUNCTION";

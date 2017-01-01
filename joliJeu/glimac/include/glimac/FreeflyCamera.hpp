@@ -69,6 +69,20 @@ namespace glimac {
 			return glm::vec3 (xTmp, yTmp, zTmp);
 		}
 
+		glm::vec3 getDirectionFront () const {
+			float xTmp = floor(m_FrontVector.x);
+			float yTmp = floor(m_FrontVector.y);
+			float zTmp = floor(m_FrontVector.z);
+			return glm::vec3 (xTmp, yTmp, zTmp);
+		}
+
+		glm::vec3 getDirectionLeft () const {
+			float xTmp = floor(m_LeftVector.x);
+			float yTmp = floor(m_LeftVector.y);
+			float zTmp = floor(m_LeftVector.z);
+			return glm::vec3 (xTmp, yTmp, zTmp);
+		}
+
 
 	};
 

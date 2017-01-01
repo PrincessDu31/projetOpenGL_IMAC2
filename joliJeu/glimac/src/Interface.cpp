@@ -10,6 +10,7 @@
 using namespace std;
 
 
+
 Interface::Interface(){}
 Interface::~Interface(){}
 
@@ -106,34 +107,61 @@ void Interface::addAleatoirus(string line){
 	listAleatoirus.push_back(alea);
 }
 
+
 void Interface::collision() {
 	//ALEATOIRUS
 	int i = 0;
 
 	for (i=0; i< listAleatoirus.size(); i++){
-//			cout << "player : " << player.getPosition().x + 15 << "," << player.getPosition().y + 15<< endl;
-//			cout << "aleatoirus : " << listAleatoirus.at(i).getPosition().x << "," << listAleatoirus.at(i).getPosition().y << endl;
-		if (abs(player.getPosition().x + 15 - listAleatoirus.at(i).getPosition().x) < 1){
-			if (abs(player.getPosition().y +15 - listAleatoirus.at(i).getPosition().y) < 1){
-				cout << "COLLISION ALEATOIRUS TYPE " << listAleatoirus.at(i).fromEnumToString() << endl;
-				listAleatoirus.at(i).doAction(player);
+		if (abs(player.getPosition().x + 20 - listAleatoirus.at(i).getPosition().x) < 1){
+			if (abs(player.getPosition().y + 20 - listAleatoirus.at(i).getPosition().y) < 1){
+				cout << "COLLISION ALEATOIRUS ETAT" << listAleatoirus.at(i).fromEnumToStringState() << endl;
+				if (listAleatoirus.at(i).getState() == ON){
+					listAleatoirus.at(i).doAction(player);
+					listAleatoirus.at(i).setState(OFF);
+				}
 			}
 		}
 	}
 
 
-	for (i=0; i< listMonsters.size(); i++){
-//			cout << "player : " << player.getPosition().x + 15 << "," << player.getPosition().y + 15<< endl;
-//			cout << "aleatoirus : " << listAleatoirus.at(i).getPosition().x << "," << listAleatoirus.at(i).getPosition().y << endl;
-		if (abs(player.getPosition().x + 15 - listMonsters.at(i).getPosition().x) < 3){
-			if (abs(player.getPosition().y +15 - listMonsters.at(i).getPosition().y) < 3){
-				cout << "COLLISION MONSTER TYPE " << listMonsters.at(i).fromEnumToString() << endl;
-			//	listMonsters.at(i).doAction(player);
-			}
-		}
-	}
+// 	for (i=0; i< listMonsters.size(); i++){
+
+// //			cout << "player : " << player.getPosition().x + 15 << "," << player.getPosition().y + 15<< endl;
+// //			cout << "aleatoirus : " << listAleatoirus.at(i).getPosition().x << "," << listAleatoirus.at(i).getPosition().y << endl;
+// 		if (abs(player.getPosition().x + 15 - listMonsters.at(i).getPosition().x) < 3){
+// 			if (abs(player.getPosition().y +15 - listMonsters.at(i).getPosition().y) < 3){
+// 				cout << "COLLISION MONSTER TYPE " << listMonsters.at(i).fromEnumToString() << endl;
+// 			//	listMonsters.at(i).doAction(player);
+// 			}
+// 		}
+// 	}
 	
 
+}
+
+bool Interface::collisionMountains(float step){
+	
+	int i = floor(player.getPosition().x + step*player.getOrientation().x + 20);
+	int j = floor(player.getPosition().y + step*player.getOrientation().y + 20);
+	if (getMap().getType(i, j) == MONTAGNE){
+
+		cout << "MONTAGNE, i:" << i << " j: " << j << endl;
+		return true;
+	}
+	
+	return false;
+}
+
+bool Interface::collisionBorder(float step){
+	
+	int i = floor(player.getPosition().x + step*player.getOrientation().x + 20);
+	int j = floor(player.getPosition().y + step*player.getOrientation().y + 20);
+	if ((i < 0) || (i > getMap().getHeight()-1) || (j < 0) || (j > getMap().getHeight()-1) ){
+		cout << "COLLISION BORDURE" << endl;
+		return true;
+	}	
+	return false;
 }
 
 

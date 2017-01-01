@@ -11,6 +11,7 @@
 #include <cstdlib>
 
 #define TURNING_VAL 15
+#define STEP 0.25
 
 using namespace glimac;
 using namespace std;
@@ -298,7 +299,7 @@ int main(int argc, char** argv) {
     glBindVertexArray(0);
 
     //CAMERA
-    FreeflyCamera camera (glm::vec3(0, 0.5,  interface.getMap().getHeight()*0.5));
+    FreeflyCamera camera (glm::vec3(0, 0.5,  1));
     glm::mat4 viewMatrix;
     glm::mat4 globalMVMatrix;
 
@@ -306,18 +307,20 @@ int main(int argc, char** argv) {
     bool movingBack = false;
     int turningLeft = 0;
     int turningRight = 0;
-
+    int shift = interface.getMap().getHeight()/2;
 
     bool shot = false;
     float shooting = 0;
     MapType typeGround;
 
-    std::vector<Aleatoirus> aleatoirusList = interface.getListAleatoirus();
-    std::vector<Monster> monsterList = interface.getListMonsters();
+    // std::vector<Aleatoirus> aleatoirusList = interface.getListAleatoirus();
+    // std::vector<Monster> monsterList = interface.getListMonsters();
     
     bool done = false;
     while(!done) {
 
+        std::vector<Aleatoirus> aleatoirusList = interface.getListAleatoirus();
+        std::vector<Monster> monsterList = interface.getListMonsters();
 
         /*********************************
          * HERE SHOULD COME THE RENDERING CODE
@@ -328,7 +331,7 @@ int main(int argc, char** argv) {
         mapProgram.m_Program.use();
 
         globalMVMatrix = camera.getViewMatrix();
-        glm::mat4 mapMVMatrix = glm::scale(globalMVMatrix, glm::vec3(30, 0, 30));
+        glm::mat4 mapMVMatrix = glm::scale(globalMVMatrix, glm::vec3(interface.getMap().getHeight(), 0,interface.getMap().getHeight()));
         glBindVertexArray(1);
         projMatrix = projMatrix;
         glUniformMatrix4fv(mapProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(mapMVMatrix));
@@ -349,7 +352,7 @@ int main(int argc, char** argv) {
                 typeGround = interface.getMap().getType(i, j);
                 
                 if (typeGround == MONTAGNE) {
-                    glm::mat4 cubeMVMatrix = glm::translate(globalMVMatrix, glm::vec3(i-15 + 0.5, 0.5, j-15 + 0.5));
+                    glm::mat4 cubeMVMatrix = glm::translate(globalMVMatrix, glm::vec3(i-shift + 0.5, 0.5, j-shift + 0.5));
                     projMatrix = projMatrix;
                     glUniformMatrix4fv(cubeProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(cubeMVMatrix));
                     glUniformMatrix4fv(cubeProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(cubeMVMatrix))));
@@ -364,9 +367,14 @@ int main(int argc, char** argv) {
         //ALEATOIRUS
         aleatoirusProgram.m_Program.use();
         for (i=0; i < aleatoirusList.size(); i++){
-
-            glm::mat4 aleaMVMatrix = glm::scale(globalMVMatrix, glm::vec3(1, 0.2, 1));
-            aleaMVMatrix = glm::translate(aleaMVMatrix, glm::vec3(aleatoirusList.at(i).getPosition().x-15 + 0.5, 0.5, aleatoirusList.at(i).getPosition().y-15 + 0.5));
+             glm::mat4 aleaMVMatrix;
+            if (aleatoirusList.at(i).getState() == ON){
+                aleaMVMatrix = glm::scale(globalMVMatrix, glm::vec3(1, 0.1, 1));
+            } else {
+                aleaMVMatrix = glm::scale(globalMVMatrix, glm::vec3(1, 0.001, 1));
+            }
+            
+            aleaMVMatrix = glm::translate(aleaMVMatrix, glm::vec3(aleatoirusList.at(i).getPosition().x-shift + 0.5, 0.5, aleatoirusList.at(i).getPosition().y-shift + 0.5));
             projMatrix = projMatrix;
             glUniformMatrix4fv(aleatoirusProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(aleaMVMatrix));
             glUniformMatrix4fv(aleatoirusProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(aleaMVMatrix))));
@@ -381,10 +389,10 @@ int main(int argc, char** argv) {
 
         for (i=0; i < monsterList.size(); i++){
             glm::mat4 monsterMVMatrix = glm::scale(globalMVMatrix, glm::vec3(1, 1, 1));
-            monsterMVMatrix = glm::translate(monsterMVMatrix, glm::vec3(monsterList.at(i).getPosition().x-15 + 0.5, 0.5, monsterList.at(i).getPosition().y-15 + 0.5));
+            monsterMVMatrix = glm::translate(monsterMVMatrix, glm::vec3(monsterList.at(i).getPosition().x-shift + 0.5, 0.5, monsterList.at(i).getPosition().y-shift + 0.5));
             float epsilon = 5;
-            if ((camera.getPosition().x > monsterList.at(i).getPosition().x-15 - epsilon) && (camera.getPosition().x < monsterList.at(i).getPosition().x-15 + epsilon)){
-                 if ((camera.getPosition().z > monsterList.at(i).getPosition().y-15 - epsilon) && (camera.getPosition().z <  monsterList.at(i).getPosition().y-15 + epsilon)){
+            if ((camera.getPosition().x > monsterList.at(i).getPosition().x-shift - epsilon) && (camera.getPosition().x < monsterList.at(i).getPosition().x-shift + epsilon)){
+                 if ((camera.getPosition().z > monsterList.at(i).getPosition().y-shift - epsilon) && (camera.getPosition().z <  monsterList.at(i).getPosition().y-shift + epsilon)){
 
                     float noiseX = ((double) rand() / (RAND_MAX))*0.1;
                     float noiseY = ((double) rand() / (RAND_MAX))*0.1;
@@ -409,8 +417,9 @@ int main(int argc, char** argv) {
 
 
 
-
-
+        interface.player.setPosition(glm::vec2(camera.getPosition().x, camera.getPosition().z));
+        interface.player.setOrientation(glm::vec2(camera.getDirectionFront().x, camera.getDirectionFront().z));
+        interface.collision();
         if (turningRight >= TURNING_VAL) {
             camera.rotateLeft(-TURNING_VAL);
             turningRight -= TURNING_VAL;
@@ -422,18 +431,26 @@ int main(int argc, char** argv) {
         }
 
         if (movingFront == true) {
-            camera.moveFront(0.5);             
+            if (!interface.collisionMountains(STEP) && (!interface.collisionBorder(STEP))){
+                camera.moveFront(STEP);   
+            }                 
 
         }
                     
 
-            cout << "cam X : " << camera.getPosition().x << endl;
-            cout << "cam Y : " << camera.getPosition().y << endl;
-            cout << "cam Z : " << camera.getPosition().z << endl;
-        if (movingBack == true ) {    //encore des problemes
+            // cout << "cam X : " << floor(camera.getDirectionFront().x) << endl;
+            // cout << "cam Y : " << floor(camera.getDirectionFront().y)<< endl;
+            // cout << "cam Z : " << floor(camera.getDirectionFront().z) << endl;
 
-            camera.moveFront(-0.5);
-            movingFront = false;
+            // cout << "cam X left : " << floor(camera.getDirectionLeft().x) << endl;
+            // cout << "cam Y left: " << floor(camera.getDirectionLeft().y)<< endl;
+            // cout << "cam Z left: " << floor(camera.getDirectionLeft().z) << endl;
+
+        if (movingBack == true ) {   
+            if (!interface.collisionMountains(-STEP) && (!interface.collisionBorder(-STEP))){
+                camera.moveFront(-STEP);   
+            }  
+           
 
 
         }

@@ -40,13 +40,13 @@ Map::Map(int w, int h){
 }
 Map::~Map(){}
 	
-Pixel Map::getValueMap ( int row,  int col) { return tabMap[row*width + col]; }
+Pixel Map::getValueMap ( int row,  int col) { return tabMap[row*(width-1) + col]; }
 
 
 
-MapType Map::getType(int row,  int col) { // de 0 à 29
+MapType Map::getType(int row,  int col) { 
 	if (row < width && col < height)
-		return mapElements[row*width + col]; 
+		return mapElements[row*(width - 1) + col]; 
 	return OTHER;
 }
 
@@ -122,8 +122,8 @@ void Map::loadMapFromPPM (std::string mapFile) {
 		// 	file.get(valMaxTmp);
 		// }	
 
-		setWidth(width);
-		setHeight(height);
+		setWidth(width + 1);
+		setHeight(height + 1);
 			
 		unsigned char rUnsigned;
 		unsigned char gUnsigned;

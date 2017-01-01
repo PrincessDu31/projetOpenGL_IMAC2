@@ -19,7 +19,6 @@ private:
 	unsigned int nbPink;
 	unsigned int nbBlue;
 	std::vector<Aleatoirus> listAleatoirus;
-
 	std::vector<Monster> listMonsters;
 
 public: 
@@ -36,6 +35,8 @@ public:
 	void addAleatoirus(std::string line);
 
 	void collision();
+	bool collisionMountains(float step);
+	bool collisionBorder(float step);
 	bool collisionMonster(int numMonster);
 	void showCursor ();
 
