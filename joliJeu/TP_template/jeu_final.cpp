@@ -12,6 +12,7 @@
 
 #define TURNING_VAL 15
 #define STEP 0.25
+#define SHOOTING_RANGE 50
 
 using namespace glimac;
 using namespace std;
@@ -158,7 +159,7 @@ int main(int argc, char** argv) {
 
     FilePath applicationPath(argv[0]);
     MapProgram mapProgram(applicationPath);
-    //WallProgram wallProgram(applicationPath);
+    WallProgram wallProgram(applicationPath);
     CubeProgram cubeProgram(applicationPath);
     AleatoirusProgram aleatoirusProgram(applicationPath);
     MonsterProgram monsterProgram(applicationPath);
@@ -299,7 +300,7 @@ int main(int argc, char** argv) {
     glBindVertexArray(0);
 
     //CAMERA
-    FreeflyCamera camera (glm::vec3(0, 0.5,  1));
+    FreeflyCamera camera (glm::vec3(0, 0.5,  20));
     glm::mat4 viewMatrix;
     glm::mat4 globalMVMatrix;
 
@@ -344,25 +345,25 @@ int main(int argc, char** argv) {
         glDrawElements(GL_TRIANGLES, nbTriangles*3, GL_UNSIGNED_INT, 0);
 
         //MONTAGNES
-        cubeProgram.m_Program.use();
-        int i;
-        for (i=0; i < interface.getMap().getWidth(); i++) {
-            int j;
-            for (j=0; j < interface.getMap().getHeight(); j++) {
-                typeGround = interface.getMap().getType(i, j);
+        // cubeProgram.m_Program.use();
+        // int i;
+        // for (i=0; i < interface.getMap().getWidth(); i++) {
+        //     int j;
+        //     for (j=0; j < interface.getMap().getHeight(); j++) {
+        //         typeGround = interface.getMap().getType(i, j);
                 
-                if (typeGround == MONTAGNE) {
-                    glm::mat4 cubeMVMatrix = glm::translate(globalMVMatrix, glm::vec3(i-shift + 0.5, 0.5, j-shift + 0.5));
-                    projMatrix = projMatrix;
-                    glUniformMatrix4fv(cubeProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(cubeMVMatrix));
-                    glUniformMatrix4fv(cubeProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(cubeMVMatrix))));
-                    glUniformMatrix4fv(cubeProgram.uMVPMatrix, 1, GL_FALSE, glm::value_ptr(projMatrix * cubeMVMatrix));    
+        //         if (typeGround == MONTAGNE) {
+        //             glm::mat4 cubeMVMatrix = glm::translate(globalMVMatrix, glm::vec3(i-shift + 0.5, 0.5, j-shift + 0.5));
+        //             projMatrix = projMatrix;
+        //             glUniformMatrix4fv(cubeProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(cubeMVMatrix));
+        //             glUniformMatrix4fv(cubeProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(cubeMVMatrix))));
+        //             glUniformMatrix4fv(cubeProgram.uMVPMatrix, 1, GL_FALSE, glm::value_ptr(projMatrix * cubeMVMatrix));    
 
-                    glDrawElements(GL_TRIANGLES, nbTriangles*3, GL_UNSIGNED_INT, 0);
+        //             glDrawElements(GL_TRIANGLES, nbTriangles*3, GL_UNSIGNED_INT, 0);
             
-                }
-            }
-        }
+        //         }
+        //     }
+        // }
 
         //ALEATOIRUS
         aleatoirusProgram.m_Program.use();
@@ -389,11 +390,10 @@ int main(int argc, char** argv) {
 
         for (i=0; i < monsterList->size(); i++){
             glm::mat4 monsterMVMatrix = glm::scale(globalMVMatrix, glm::vec3(1, 1, 1));
-             //cout << "Position A x:" <<  monsterList->at(i).getPosition().x << " , y: " <<  monsterList->at(i).getPosition().y << endl;
             monsterMVMatrix = glm::translate(monsterMVMatrix, glm::vec3(monsterList->at(i).getPosition().x-shift + 0.5, 0.5, monsterList->at(i).getPosition().y-shift +0.5));
             if (monsterList->at(i).getDetection() == ACTIVE){
                 monsterMVMatrix = glm::translate(monsterMVMatrix, -monsterList->at(i).getSpeed()*camera.getDirectionFront());
-               interface.updateMonster(i, -monsterList->at(i).getSpeed()*camera.getDirectionFront());
+                interface.updateMonster(i, -monsterList->at(i).getSpeed()*camera.getDirectionFront());
                 float noiseX = ((double) rand() / (RAND_MAX))*0.1;
                 float noiseY = ((double) rand() / (RAND_MAX))*0.1;
                 float noiseZ = ((double) rand() / (RAND_MAX))*0.1;
@@ -410,7 +410,47 @@ int main(int argc, char** argv) {
             glBindVertexArray(0);
         }
              
+        //SHOOTING
+        wallProgram.m_Program.use();
 
+        if (shot == true){
+             cout << "SHOT" <<  endl;
+            if (shooting > 0){
+                //cout << "shooting 2: "  << shooting <<  endl;
+                glBindVertexArray(1);   
+
+                glm::mat4 wallMVMatrix = glm::translate(globalMVMatrix, glm::vec3(camera.getPosition().x , 0.2, camera.getPosition().z));
+                wallMVMatrix = glm::scale(wallMVMatrix, glm::vec3(0.1, 0.1, 0.1));
+                
+
+                if (camera.getDirectionFront().x == 1){
+                    cout << "right" << endl;
+                    wallMVMatrix = glm::translate(wallMVMatrix, (SHOOTING_RANGE - shooting)*glm::vec3(1, 0, 0));
+                } else if ((camera.getDirectionFront().x == -1) && (camera.getDirectionFront().z == 1)){
+                    cout << "back" << endl;
+                    wallMVMatrix = glm::translate(wallMVMatrix, (SHOOTING_RANGE - shooting)*glm::vec3(0, 0, 1));
+                } else if (camera.getDirectionFront().z == 0){
+                    cout << "left" << endl;
+                    wallMVMatrix = glm::translate(wallMVMatrix, (SHOOTING_RANGE - shooting)*glm::vec3(-1, 0, 0));
+                } else {
+                    cout << "front" << endl;
+                   wallMVMatrix = glm::translate(wallMVMatrix, (SHOOTING_RANGE - shooting)*glm::vec3(0, 0, -1));
+                }       
+              
+                projMatrix = projMatrix;
+                glUniformMatrix4fv(wallProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(wallMVMatrix));
+                glUniformMatrix4fv(wallProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(wallMVMatrix))));
+                glUniformMatrix4fv(wallProgram.uMVPMatrix, 1, GL_FALSE, glm::value_ptr(projMatrix * wallMVMatrix));    
+
+                glDrawElements(GL_TRIANGLES, nbTriangles*3, GL_UNSIGNED_INT, 0);
+                glBindVertexArray(0);      
+           
+                shooting -= 1;
+            } else {
+                 shot = false;
+            }     
+           
+        }
 
 
 
@@ -436,13 +476,17 @@ int main(int argc, char** argv) {
         }
                     
 
-            // cout << "cam X : " << floor(camera.getDirectionFront().x) << endl;
-            // cout << "cam Y : " << floor(camera.getDirectionFront().y)<< endl;
-            // cout << "cam Z : " << floor(camera.getDirectionFront().z) << endl;
+            // cout << "cam X : " << camera.getDirectionFront().x << endl;
+            // cout << "cam Y : " << camera.getDirectionFront().y<< endl;
+            // cout << "cam Z : " << camera.getDirectionFront().z << endl;
 
             // cout << "cam X left : " << floor(camera.getDirectionLeft().x) << endl;
             // cout << "cam Y left: " << floor(camera.getDirectionLeft().y)<< endl;
             // cout << "cam Z left: " << floor(camera.getDirectionLeft().z) << endl;
+
+            // cout << "cam X up : " << floor(camera.getDirectionUp().x) << endl;
+            // cout << "cam Y up: " << floor(camera.getDirectionUp().y)<< endl;
+            // cout << "cam Z up: " << floor(camera.getDirectionUp().z) << endl;
 
         if (movingBack == true ) {   
             if (!interface.collisionMountains(-STEP) && (!interface.collisionBorder(-STEP))){
@@ -487,7 +531,7 @@ int main(int argc, char** argv) {
                     movingBack = false;
                 } else if (e.key.keysym.sym == SDLK_SPACE){
                     shot = true;
-                    shooting = camera.getPosition().z + 20;
+                    shooting = SHOOTING_RANGE;
                 }
                 break;
 

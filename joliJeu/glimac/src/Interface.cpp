@@ -14,8 +14,8 @@
 using namespace std;
 
 
-#define  DETECTION 7
-#define CLOSE_ENOUGH 2
+#define  DETECTION 5
+#define CLOSE_ENOUGH 4
 #define TOO_FAR 15
 
 
@@ -225,6 +225,7 @@ void Interface::setPlayer (MainCaracter m) { player = m; }
 
 
 void Interface::updateMonster(int i, glm::vec3 position){
+	cout << "MONSTRE :" << i << endl;
 	cout << "Player X: " << player.getPosition().x + 20 << endl;
 	cout << "Player Y: " << player.getPosition().y + 20 << endl;
 	cout << "Monstre X: " << listMonsters.at(i).getPosition().x << endl;

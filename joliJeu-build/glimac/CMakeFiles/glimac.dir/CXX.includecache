@@ -91,6 +91,12 @@ cstdlib
 -
 sstream
 -
+stdio.h
+-
+stdlib.h
+-
+time.h
+-
 
 /home/julie/Desktop/openGL/projetOpenGL_IMAC2/joliJeu/third-party/include/glm/common.hpp
 detail/func_common.hpp

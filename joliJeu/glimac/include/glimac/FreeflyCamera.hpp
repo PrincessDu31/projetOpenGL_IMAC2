@@ -13,7 +13,6 @@ namespace glimac {
 		glm::vec3 m_UpVector;
 
 		void computeDirectionVectors() {
-//			m_FrontVector = glm::vec3(cos(m_fTheta) * sin(m_fPhi), sin(m_fTheta), cos(m_fTheta) * cos(m_fPhi));
 			m_FrontVector = glm::vec3(cos(m_fTheta) * sin(m_fPhi), sin(m_fTheta), cos(m_fTheta) * cos(m_fPhi));
 			m_LeftVector = glm::vec3(sin(m_fPhi+(M_PI * 0.5)), 0, cos(m_fPhi+(M_PI * 0.5)));
 			m_UpVector =  glm::cross(m_FrontVector, m_LeftVector); 
@@ -80,6 +79,13 @@ namespace glimac {
 			float xTmp = floor(m_LeftVector.x);
 			float yTmp = floor(m_LeftVector.y);
 			float zTmp = floor(m_LeftVector.z);
+			return glm::vec3 (xTmp, yTmp, zTmp);
+		}
+
+		glm::vec3 getDirectionUp () const {
+			float xTmp = floor(m_UpVector.x);
+			float yTmp = floor(m_UpVector.y);
+			float zTmp = floor(m_UpVector.z);
 			return glm::vec3 (xTmp, yTmp, zTmp);
 		}
 
