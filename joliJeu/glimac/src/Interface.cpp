@@ -165,9 +165,10 @@ void Interface::collision() {
 }
 
 bool Interface::collisionMountains(float step){
-	
 	int i = floor(player.getPosition().x + step*player.getOrientation().x + 20);
-	int j = floor(player.getPosition().y + step*player.getOrientation().y + 20);
+	int j = floor(player.getPosition().y + step*player.getOrientation().z + 20);
+
+
 	if (getMap().getType(i, j) == MONTAGNE){
 
 		cout << "MONTAGNE, i:" << i << " j: " << j << endl;
@@ -227,20 +228,13 @@ void Interface::setNbMonsterStillAlive(int a){monsterStillAlive = a;}
 
 
 void Interface::updateMonster(int i, glm::vec3 position){
-	cout << "MONSTRE :" << i << endl;
-	cout << "Player X: " << player.getPosition().x + 20 << endl;
-	cout << "Player Y: " << player.getPosition().y + 20 << endl;
-	cout << "Monstre X: " << listMonsters.at(i).getPosition().x << endl;
-	cout << "Monstre Y: " << listMonsters.at(i).getPosition().y << endl;
 	if ((abs(player.getPosition().x + 20 - listMonsters.at(i).getPosition().x) > CLOSE_ENOUGH) ||
 	 (abs(player.getPosition().y + 20 - listMonsters.at(i).getPosition().y) > CLOSE_ENOUGH)) {
-	 		cout << "UPDATE" << endl;
 			listMonsters.at(i).updatePosition(position);
 	}
 	if ((abs(player.getPosition().x + 20 - listMonsters.at(i).getPosition().x) > TOO_FAR) ||
 	 (abs(player.getPosition().y + 20 - listMonsters.at(i).getPosition().y) > TOO_FAR)) {
 			listMonsters.at(i).setDetection(DISACTIVE);
-			cout << "TOO FAR" << endl;
 	}
 }
 
@@ -275,4 +269,27 @@ void Interface::attackFromPlayer(){
 			}
 	}
 	
+}
+
+std::string Interface::fromEnumToStringMenu(){
+	switch (menuState){
+		case NONE_SELECTED:
+			return "NONE_SELECTED";
+			break;
+		case PLAY:
+			return "PLAY";
+			break;
+		case QUIT:
+			return "QUIT";
+			break;
+		case GAME:
+			return "GAME";
+			break;
+		case END:
+			return "END";
+			break;
+		default:
+			return "NO_FUNCTION";
+			break;
+	}
 }

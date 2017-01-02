@@ -11,6 +11,9 @@
 #include <string>
 #include <fstream>
 
+enum MenuState { NONE_SELECTED, PLAY, QUIT, GAME, END};
+enum EndMenuState {NOT_DISPLAYED, NEW_GAME, QUIT_GAME, NOT_SELECTED};
+
 class Interface {
 
 private: 
@@ -22,8 +25,12 @@ private:
 	std::vector<Aleatoirus> listAleatoirus;
 	std::vector<Monster> listMonsters;
 
+
 public: 
 	MainCaracter player;
+	MenuState menuState;
+	EndMenuState endMenuState;
+
 	bool shot;
 	Interface();
 	~Interface();
@@ -66,6 +73,8 @@ public:
 	void updateMonster(int i, glm::vec3 position);
 
 	void attackFromPlayer();
+
+	std::string fromEnumToStringMenu();
 };
 
 #endif

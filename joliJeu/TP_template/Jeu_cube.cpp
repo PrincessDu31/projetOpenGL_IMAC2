@@ -114,14 +114,17 @@ struct MonsterProgram {
     GLint uMVPMatrix;
     GLint uMVMatrix;
     GLint uNormalMatrix;
+    GLint uTextureMonster;
     // GLint uTextureOtherTextureIfWeWant;
 
     MonsterProgram(const FilePath& applicationPath):
-        m_Program(loadProgram(applicationPath.dirPath() + "shaders/alea.vs.glsl",
-                              applicationPath.dirPath() + "shaders/alea.fs.glsl")) {    //if mutlitexturing mutli3D.fs.glsl
+        m_Program(loadProgram(applicationPath.dirPath() + "shaders/text3D.vs.glsl",
+                              applicationPath.dirPath() + "shaders/text3D.fs.glsl")) {    //if mutlitexturing mutli3D.fs.glsl
         uMVPMatrix = glGetUniformLocation(m_Program.getGLId(), "uMVPMatrix");
         uMVMatrix = glGetUniformLocation(m_Program.getGLId(), "uMVMatrix");
         uNormalMatrix = glGetUniformLocation(m_Program.getGLId(), "uNormalMatrix");
+        uTextureMonster = glGetUniformLocation(m_Program.getGLId(), "uTextureMonster");
+
         // uTextureOtherTextureIfWeWant = glGetUniformLocation(m_Program.getGLId(), "uTextureCloud");
     }
 };
@@ -151,6 +154,10 @@ int main(int argc, char** argv) {
     std::cout << "OpenGL Version : " << glGetString(GL_VERSION) << std::endl;
     std::cout << "GLEW Version : " << glewGetString(GLEW_VERSION) << std::endl;
 
+    std::unique_ptr<Image> imageTexMonster = loadImage("/home/julie/Desktop/openGL/projetOpenGL_IMAC2/joliJeu/TP_template/textures/poil_1.png");
+    if (NULL == imageTexMonster)
+        std::cout << "Image Monstre Poil not loaded" << std::endl;
+
     /*********************************
      * HERE SHOULD COME THE INITIALIZATION CODE
      *********************************/
@@ -160,11 +167,21 @@ int main(int argc, char** argv) {
     //WallProgram wallProgram(applicationPath);
     CubeProgram cubeProgram(applicationPath);
     AleatoirusProgram aleatoirusProgram(applicationPath);
-    //MonsterProgram monsterProgram(applicationPath);
+    MonsterProgram monsterProgram(applicationPath);
 
 
+    GLuint textureMonster;
+    glGenTextures(1, &textureMonster);
+    glBindTexture(GL_TEXTURE_2D, textureMonster);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, imageTexMonster->getWidth(), imageTexMonster->getHeight(), 0, GL_RGBA, GL_FLOAT, imageTexMonster->getPixels());
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    glBindTexture(GL_TEXTURE_2D, 0);
 
     glEnable(GL_DEPTH_TEST);
+
+    GLint uTextureMonster = glGetUniformLocation(monsterProgram.m_Program.getGLId(), "uTextureMonster");
+    glUniform1f(uTextureMonster, 0);
 
     glm::mat4 projMatrix, MVMatrix, NormalMatrix;
     projMatrix = glm::perspective(glm::radians(70.f), windowWidth/(float)windowHeight, 0.1f, 100.f);
@@ -179,8 +196,8 @@ int main(int argc, char** argv) {
     Vertex3DColor vertices[] = {
         //face avant
         Vertex3DColor(glm::vec3(-0.5,-0.5, 0.5), glm::vec3(0,0,1), glm::vec3(1, 0, 0)), // Sommet 0 - 0     // FACE AVANT
-        Vertex3DColor(glm::vec3( 0.5,-0.5, 0.5), glm::vec3(0,0,1), glm::vec3(0, 1, 0)), // Sommet 1 - 1
-        Vertex3DColor(glm::vec3( 0.5, 0.5, 0.5), glm::vec3(0,0,1), glm::vec3(0, 0, 1)), // Sommet 2 - 2
+        Vertex3DColor(glm::vec3( 0.5,-0.5, 0.5), glm::vec3(1,0,1), glm::vec3(0, 1, 0)), // Sommet 1 - 1
+        Vertex3DColor(glm::vec3( 0.5, 0.5, 0.5), glm::vec3(1,0,1), glm::vec3(0, 0, 1)), // Sommet 2 - 2
         Vertex3DColor(glm::vec3(-0.5, 0.5, 0.5), glm::vec3(0,0,1), glm::vec3(1, 1, 1)), // Sommet 3 - 3 
 
         Vertex3DColor(glm::vec3(-0.5,-0.5, 0.5), glm::vec3(-1,0,0), glm::vec3(1, 0, 0)), // Sommet 0 - 0        // LEFT
@@ -343,49 +360,53 @@ int main(int argc, char** argv) {
 
        
         //Monster DRAWING
-        cubeProgram.m_Program.use();
+        monsterProgram.m_Program.use();
+        glBindVertexArray(2); 
+        glBindTexture(GL_TEXTURE_2D, uTextureMonster); 
 
-        glm::mat4 cubeMVMatrix = glm::scale(globalMVMatrix, glm::vec3(1, 1, 1));
+        glm::mat4 monsterMVMatrix = glm::scale(globalMVMatrix, glm::vec3(1, 1, 1));
         float epsilon = 5;
-        if ((camera.getPosition().x > 0 - epsilon) && (camera.getPosition().x < 0 + epsilon)){
-             if ((camera.getPosition().z > 0 - epsilon) && (camera.getPosition().z < 0 + epsilon)){
+        // if ((camera.getPosition().x > 0 - epsilon) && (camera.getPosition().x < 0 + epsilon)){
+        //      if ((camera.getPosition().z > 0 - epsilon) && (camera.getPosition().z < 0 + epsilon)){
 
-                float noiseX = ((double) rand() / (RAND_MAX))*0.1;
-                float noiseY = ((double) rand() / (RAND_MAX))*0.1;
-                float noiseZ = ((double) rand() / (RAND_MAX))*0.1;
+                // float noiseX = ((double) rand() / (RAND_MAX))*0.1;
+                // float noiseY = ((double) rand() / (RAND_MAX))*0.1;
+                // float noiseZ = ((double) rand() / (RAND_MAX))*0.1;
                 // cout << "noise X " << noiseX << endl;
                 // cout << "noise Y " << noiseY << endl;
                 // cout << "noise Z " << noiseZ << endl;
-                cubeMVMatrix = glm::translate(cubeMVMatrix, glm::vec3(noiseX, noiseY, noiseZ));
-                 projMatrix = projMatrix;
-                glUniformMatrix4fv(cubeProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(cubeMVMatrix));
-                glUniformMatrix4fv(cubeProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(cubeMVMatrix))));
-                glUniformMatrix4fv(cubeProgram.uMVPMatrix, 1, GL_FALSE, glm::value_ptr(projMatrix * cubeMVMatrix));    
-                glBindVertexArray(2); 
+                //monsterMVMatrix = glm::translate(monsterMVMatrix, glm::vec3(noiseX, noiseY, noiseZ));
+                glUniformMatrix4fv(monsterProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(monsterMVMatrix));
+                glUniformMatrix4fv(monsterProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(monsterMVMatrix))));
+                glUniformMatrix4fv(monsterProgram.uMVPMatrix, 1, GL_FALSE, glm::value_ptr(projMatrix * monsterMVMatrix));    
+               
                 glDrawArrays(GL_TRIANGLES, 0, nbVertexShere);  
+                //glBindVertexArray(0);
+
+                 glBindTexture(GL_TEXTURE_2D, 0);
                 glBindVertexArray(0);
-            } else {
-                glBindVertexArray(1);
-                projMatrix = projMatrix;
-                glUniformMatrix4fv(cubeProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(cubeMVMatrix));
-                glUniformMatrix4fv(cubeProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(cubeMVMatrix))));
-                glUniformMatrix4fv(cubeProgram.uMVPMatrix, 1, GL_FALSE, glm::value_ptr(projMatrix * cubeMVMatrix));    
+            // } else {
+            //     glBindVertexArray(1);
+            //     projMatrix = projMatrix;
+            //     glUniformMatrix4fv(cubeProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(cubeMVMatrix));
+            //     glUniformMatrix4fv(cubeProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(cubeMVMatrix))));
+            //     glUniformMatrix4fv(cubeProgram.uMVPMatrix, 1, GL_FALSE, glm::value_ptr(projMatrix * cubeMVMatrix));    
 
-                glDrawElements(GL_TRIANGLES, nbTriangles*3, GL_UNSIGNED_INT, 0);
+            //     glDrawElements(GL_TRIANGLES, nbTriangles*3, GL_UNSIGNED_INT, 0);
 
-                glBindVertexArray(0);
-            }
-        }  else {
+            //     glBindVertexArray(0);
+            // }
+        // }  else {
 
-            projMatrix = projMatrix;
-            glUniformMatrix4fv(cubeProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(cubeMVMatrix));
-            glUniformMatrix4fv(cubeProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(cubeMVMatrix))));
-            glUniformMatrix4fv(cubeProgram.uMVPMatrix, 1, GL_FALSE, glm::value_ptr(projMatrix * cubeMVMatrix));    
+        //     projMatrix = projMatrix;
+        //     glUniformMatrix4fv(cubeProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(cubeMVMatrix));
+        //     glUniformMatrix4fv(cubeProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(cubeMVMatrix))));
+        //     glUniformMatrix4fv(cubeProgram.uMVPMatrix, 1, GL_FALSE, glm::value_ptr(projMatrix * cubeMVMatrix));    
 
-            glDrawElements(GL_TRIANGLES, nbTriangles*3, GL_UNSIGNED_INT, 0);
+        //     glDrawElements(GL_TRIANGLES, nbTriangles*3, GL_UNSIGNED_INT, 0);
 
-            glBindVertexArray(0);
-        }
+        //     glBindVertexArray(0);
+        // }
 
         aleatoirusProgram.m_Program.use();
 
@@ -490,6 +511,7 @@ int main(int argc, char** argv) {
         windowManager.swapBuffers();
     }
     glDeleteBuffers(1,&vbo);
+    glDeleteTextures(1, &textureMonster);
     glDeleteVertexArrays(1,&vao);
 
     return EXIT_SUCCESS;

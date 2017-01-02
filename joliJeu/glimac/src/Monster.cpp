@@ -7,6 +7,7 @@ Monster::Monster(){
 	detection = DISACTIVE;
 	lifeStatus = ALIVE;
 	setSpeed(1);
+	setOrientation(glm::vec3(0,0, 1));
 }
 
 Monster::Monster(glm::vec2 pos) {
