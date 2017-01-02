@@ -13,7 +13,7 @@ private:
 	glm::vec2 position;
 	Weapon weapon;
 	double life;
-	glm::vec2 orientation;
+	glm::vec3 orientation;
 
 public: 
 	Character();
@@ -30,7 +30,7 @@ public:
 	glm::vec2 getPosition();
 	Weapon getWeapon();
 	double getLife();
-	glm::vec2 getOrientation();
+	glm::vec3 getOrientation();
 
 	// setters
 	void setAttack(int a);
@@ -38,7 +38,7 @@ public:
 	void setPosition (glm::vec2 p);
 	void setWeapon (Weapon w);
 	void setLife (double l);
-	void setOrientation (glm::vec2 o);
+	void setOrientation (glm::vec3 o);
 	void setSpeed(float s);
 
 };

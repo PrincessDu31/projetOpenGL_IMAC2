@@ -11,7 +11,7 @@
 #include <cstdlib>
 
 #define TURNING_VAL 15
-#define STEP 0.25
+#define STEP 0.2
 #define SHOOTING_RANGE 50
 
 using namespace glimac;
@@ -310,7 +310,7 @@ int main(int argc, char** argv) {
     int turningRight = 0;
     int shift = interface.getMap().getHeight()/2;
 
-    bool shot = false;
+    interface.shot = false;
     float shooting = 0;
     MapType typeGround;
 
@@ -344,119 +344,107 @@ int main(int argc, char** argv) {
 
         glDrawElements(GL_TRIANGLES, nbTriangles*3, GL_UNSIGNED_INT, 0);
 
-        //MONTAGNES
-        // cubeProgram.m_Program.use();
-        // int i;
-        // for (i=0; i < interface.getMap().getWidth(); i++) {
-        //     int j;
-        //     for (j=0; j < interface.getMap().getHeight(); j++) {
-        //         typeGround = interface.getMap().getType(i, j);
+
+        if (interface.getNbMonsterStillAlive() != 0) {
+            //MONTAGNES
+        cubeProgram.m_Program.use();
+        int i;
+        for (i=0; i < interface.getMap().getWidth(); i++) {
+            int j;
+            for (j=0; j < interface.getMap().getHeight(); j++) {
+                typeGround = interface.getMap().getType(i, j);
                 
-        //         if (typeGround == MONTAGNE) {
-        //             glm::mat4 cubeMVMatrix = glm::translate(globalMVMatrix, glm::vec3(i-shift + 0.5, 0.5, j-shift + 0.5));
-        //             projMatrix = projMatrix;
-        //             glUniformMatrix4fv(cubeProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(cubeMVMatrix));
-        //             glUniformMatrix4fv(cubeProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(cubeMVMatrix))));
-        //             glUniformMatrix4fv(cubeProgram.uMVPMatrix, 1, GL_FALSE, glm::value_ptr(projMatrix * cubeMVMatrix));    
+                if (typeGround == MONTAGNE) {
+                    glm::mat4 cubeMVMatrix = glm::translate(globalMVMatrix, glm::vec3(i-shift + 0.5, 0.5, j-shift + 0.5));
+                    projMatrix = projMatrix;
+                    glUniformMatrix4fv(cubeProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(cubeMVMatrix));
+                    glUniformMatrix4fv(cubeProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(cubeMVMatrix))));
+                    glUniformMatrix4fv(cubeProgram.uMVPMatrix, 1, GL_FALSE, glm::value_ptr(projMatrix * cubeMVMatrix));    
 
-        //             glDrawElements(GL_TRIANGLES, nbTriangles*3, GL_UNSIGNED_INT, 0);
+                    glDrawElements(GL_TRIANGLES, nbTriangles*3, GL_UNSIGNED_INT, 0);
             
-        //         }
-        //     }
-        // }
-
-        //ALEATOIRUS
-        aleatoirusProgram.m_Program.use();
-        for (i=0; i < aleatoirusList->size(); i++){
-             glm::mat4 aleaMVMatrix;
-            if (aleatoirusList->at(i).getState() == ON){
-                aleaMVMatrix = glm::scale(globalMVMatrix, glm::vec3(1, 0.1, 1));
-            } else {
-                aleaMVMatrix = glm::scale(globalMVMatrix, glm::vec3(1, 0.001, 1));
+                }
             }
-            
-            aleaMVMatrix = glm::translate(aleaMVMatrix, glm::vec3(aleatoirusList->at(i).getPosition().x-shift + 0.5, 0.5, aleatoirusList->at(i).getPosition().y-shift + 0.5));
-            projMatrix = projMatrix;
-            glUniformMatrix4fv(aleatoirusProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(aleaMVMatrix));
-            glUniformMatrix4fv(aleatoirusProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(aleaMVMatrix))));
-            glUniformMatrix4fv(aleatoirusProgram.uMVPMatrix, 1, GL_FALSE, glm::value_ptr(projMatrix * aleaMVMatrix));    
-
-            glDrawElements(GL_TRIANGLES, nbTriangles*3, GL_UNSIGNED_INT, 0);
         }
-        glBindVertexArray(0); 
-        
-        //MONSTRES
-        monsterProgram.m_Program.use();
-
-        for (i=0; i < monsterList->size(); i++){
-            glm::mat4 monsterMVMatrix = glm::scale(globalMVMatrix, glm::vec3(1, 1, 1));
-            monsterMVMatrix = glm::translate(monsterMVMatrix, glm::vec3(monsterList->at(i).getPosition().x-shift + 0.5, 0.5, monsterList->at(i).getPosition().y-shift +0.5));
-            if (monsterList->at(i).getDetection() == ACTIVE){
-                monsterMVMatrix = glm::translate(monsterMVMatrix, -monsterList->at(i).getSpeed()*camera.getDirectionFront());
-                interface.updateMonster(i, -monsterList->at(i).getSpeed()*camera.getDirectionFront());
-                float noiseX = ((double) rand() / (RAND_MAX))*0.1;
-                float noiseY = ((double) rand() / (RAND_MAX))*0.1;
-                float noiseZ = ((double) rand() / (RAND_MAX))*0.1;
-                monsterMVMatrix = glm::translate(monsterMVMatrix, glm::vec3(noiseX, noiseY, noiseZ));
-            } 
-           
-            projMatrix = projMatrix;
-            glUniformMatrix4fv(monsterProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(monsterMVMatrix));
-            glUniformMatrix4fv(monsterProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(monsterMVMatrix))));
-            glUniformMatrix4fv(monsterProgram.uMVPMatrix, 1, GL_FALSE, glm::value_ptr(projMatrix * monsterMVMatrix));    
-            
-            glBindVertexArray(2); 
-            glDrawArrays(GL_TRIANGLES, 0, nbVertexShere);  
-            glBindVertexArray(0);
-        }
-             
-        //SHOOTING
-        wallProgram.m_Program.use();
-
-        if (shot == true){
-             cout << "SHOT" <<  endl;
-            if (shooting > 0){
-                //cout << "shooting 2: "  << shooting <<  endl;
-                glBindVertexArray(1);   
-
-                glm::mat4 wallMVMatrix = glm::translate(globalMVMatrix, glm::vec3(camera.getPosition().x , 0.2, camera.getPosition().z));
-                wallMVMatrix = glm::scale(wallMVMatrix, glm::vec3(0.1, 0.1, 0.1));
-                
-
-                if (camera.getDirectionFront().x == 1){
-                    cout << "right" << endl;
-                    wallMVMatrix = glm::translate(wallMVMatrix, (SHOOTING_RANGE - shooting)*glm::vec3(1, 0, 0));
-                } else if ((camera.getDirectionFront().x == -1) && (camera.getDirectionFront().z == 1)){
-                    cout << "back" << endl;
-                    wallMVMatrix = glm::translate(wallMVMatrix, (SHOOTING_RANGE - shooting)*glm::vec3(0, 0, 1));
-                } else if (camera.getDirectionFront().z == 0){
-                    cout << "left" << endl;
-                    wallMVMatrix = glm::translate(wallMVMatrix, (SHOOTING_RANGE - shooting)*glm::vec3(-1, 0, 0));
+            //ALEATOIRUS
+                aleatoirusProgram.m_Program.use();
+            for (i=0; i < aleatoirusList->size(); i++){
+                 glm::mat4 aleaMVMatrix;
+                if (aleatoirusList->at(i).getState() == ON){
+                    aleaMVMatrix = glm::scale(globalMVMatrix, glm::vec3(1, 0.1, 1));
                 } else {
-                    cout << "front" << endl;
-                   wallMVMatrix = glm::translate(wallMVMatrix, (SHOOTING_RANGE - shooting)*glm::vec3(0, 0, -1));
-                }       
-              
+                    aleaMVMatrix = glm::scale(globalMVMatrix, glm::vec3(1, 0.001, 1));
+                }
+                
+                aleaMVMatrix = glm::translate(aleaMVMatrix, glm::vec3(aleatoirusList->at(i).getPosition().x-shift + 0.5, 0.5, aleatoirusList->at(i).getPosition().y-shift + 0.5));
                 projMatrix = projMatrix;
-                glUniformMatrix4fv(wallProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(wallMVMatrix));
-                glUniformMatrix4fv(wallProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(wallMVMatrix))));
-                glUniformMatrix4fv(wallProgram.uMVPMatrix, 1, GL_FALSE, glm::value_ptr(projMatrix * wallMVMatrix));    
+                glUniformMatrix4fv(aleatoirusProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(aleaMVMatrix));
+                glUniformMatrix4fv(aleatoirusProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(aleaMVMatrix))));
+                glUniformMatrix4fv(aleatoirusProgram.uMVPMatrix, 1, GL_FALSE, glm::value_ptr(projMatrix * aleaMVMatrix));    
 
                 glDrawElements(GL_TRIANGLES, nbTriangles*3, GL_UNSIGNED_INT, 0);
-                glBindVertexArray(0);      
-           
-                shooting -= 1;
-            } else {
-                 shot = false;
-            }     
-           
+            }
+            glBindVertexArray(0); 
+            
+            //MONSTRES
+            monsterProgram.m_Program.use();
+
+            for (i=0; i < monsterList->size(); i++){
+
+                if (monsterList->at(i).getLifeStatus() != DEAD){
+                    glm::mat4 monsterMVMatrix = glm::scale(globalMVMatrix, glm::vec3(1, 1, 1));
+                    monsterMVMatrix = glm::translate(monsterMVMatrix, glm::vec3(monsterList->at(i).getPosition().x-shift + 0.5, 0.5, monsterList->at(i).getPosition().y-shift +0.5));
+                    if (monsterList->at(i).getDetection() == ACTIVE){
+                        monsterMVMatrix = glm::translate(monsterMVMatrix, -monsterList->at(i).getSpeed()*interface.player.getOrientation());
+                        interface.updateMonster(i, -monsterList->at(i).getSpeed()*interface.player.getOrientation());
+                        float noiseX = ((double) rand() / (RAND_MAX))*0.1;
+                        float noiseY = ((double) rand() / (RAND_MAX))*0.1;
+                        float noiseZ = ((double) rand() / (RAND_MAX))*0.1;
+                        monsterMVMatrix = glm::translate(monsterMVMatrix, glm::vec3(noiseX, noiseY, noiseZ));
+                    } 
+                   
+                    projMatrix = projMatrix;
+                    glUniformMatrix4fv(monsterProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(monsterMVMatrix));
+                    glUniformMatrix4fv(monsterProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(monsterMVMatrix))));
+                    glUniformMatrix4fv(monsterProgram.uMVPMatrix, 1, GL_FALSE, glm::value_ptr(projMatrix * monsterMVMatrix));    
+                    
+                    glBindVertexArray(2); 
+                    glDrawArrays(GL_TRIANGLES, 0, nbVertexShere);  
+                    glBindVertexArray(0);
+                }
+            }
+                 
+            //SHOOTING
+            wallProgram.m_Program.use();
+
+            if (interface.shot == true){
+                if (shooting > 0){
+                    glBindVertexArray(1);   
+                    glm::mat4 wallMVMatrix = glm::translate(globalMVMatrix, glm::vec3(camera.getPosition().x , 0.6, camera.getPosition().z));
+                    wallMVMatrix = glm::scale(wallMVMatrix, glm::vec3(0.1, 0.1, 0.1));
+
+                    wallMVMatrix = glm::translate(wallMVMatrix, (SHOOTING_RANGE - shooting)*interface.player.getOrientation());
+                    projMatrix = projMatrix;
+                    glUniformMatrix4fv(wallProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(wallMVMatrix));
+                    glUniformMatrix4fv(wallProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(glm::transpose(glm::inverse(wallMVMatrix))));
+                    glUniformMatrix4fv(wallProgram.uMVPMatrix, 1, GL_FALSE, glm::value_ptr(projMatrix * wallMVMatrix));    
+
+                    glDrawElements(GL_TRIANGLES, nbTriangles*3, GL_UNSIGNED_INT, 0);
+                    glBindVertexArray(0);      
+               
+                    interface.attackFromPlayer();
+                    shooting -= 1;
+                } else {
+                     interface.shot = false;
+                }     
+               
+            }
+
         }
-
-
 
 
         interface.player.setPosition(glm::vec2(camera.getPosition().x, camera.getPosition().z));
-        interface.player.setOrientation(glm::vec2(camera.getDirectionFront().x, camera.getDirectionFront().z));
+        interface.player.setOrientationCamera(camera.getDirectionFront());
         interface.collision();
         if (turningRight >= TURNING_VAL) {
             camera.rotateLeft(-TURNING_VAL);
@@ -530,7 +518,7 @@ int main(int argc, char** argv) {
                 else if(e.key.keysym.sym == SDLK_DOWN) {
                     movingBack = false;
                 } else if (e.key.keysym.sym == SDLK_SPACE){
-                    shot = true;
+                    interface.shot = true;
                     shooting = SHOOTING_RANGE;
                 }
                 break;

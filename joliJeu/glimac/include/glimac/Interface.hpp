@@ -18,11 +18,13 @@ private:
 	Map map;
 	unsigned int nbPink;
 	unsigned int nbBlue;
+	int monsterStillAlive;
 	std::vector<Aleatoirus> listAleatoirus;
 	std::vector<Monster> listMonsters;
 
 public: 
 	MainCaracter player;
+	bool shot;
 	Interface();
 	~Interface();
 
@@ -49,6 +51,7 @@ public:
 	std::vector<Aleatoirus> *getListAleatoirus ();
 	std::vector<Monster> *getListMonsters ();
 	MainCaracter getPlayer ();
+	int getNbMonsterStillAlive ();
 
 	// setters
 	void setMap (Map m);
@@ -57,8 +60,12 @@ public:
 	void setListAleatoirus (std::vector<Aleatoirus> list);
 	void setListMonsters (std::vector<Monster> list);
 	void setPlayer (MainCaracter m);
+	void setNbMonsterStillAlive(int a);
+
 
 	void updateMonster(int i, glm::vec3 position);
+
+	void attackFromPlayer();
 };
 
 #endif

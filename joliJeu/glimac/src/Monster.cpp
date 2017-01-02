@@ -5,17 +5,19 @@ using namespace std;
 
 Monster::Monster(){
 	detection = DISACTIVE;
+	lifeStatus = ALIVE;
 	setSpeed(1);
 }
 
 Monster::Monster(glm::vec2 pos) {
 	detection = DISACTIVE;
+	lifeStatus = ALIVE;
 	setSpeed(1);
 	setAttack(3);
 	setDefense(2);
 	setPosition(pos);
 	setLife(1);
-	setOrientation(glm::vec2(0,1));
+	setOrientation(glm::vec3(0,0, 1));
 }
 
 Monster::~Monster() {
@@ -76,12 +78,20 @@ void Monster::setDetection(Detection d){
 	detection = d;
 }
 
+void Monster::setLifeSatus(LifeStatus s){
+	lifeStatus = s;
+}
+
 void Monster::setDistanceToPlayer(float d){
 	distanceToPlayer = d;
 }
 
 Detection Monster::getDetection(){
 	return detection;
+}
+
+LifeStatus Monster::getLifeStatus(){
+	return lifeStatus;
 }
 
 float Monster::getDistanceToPlayer(){
@@ -129,4 +139,30 @@ std::string Monster::fromEnumToStringDetection(){
 			break;
 	}
 
+}
+
+std::string Monster::fromEnumToStringLifeStatus(){
+	switch (lifeStatus){
+		case ALIVE:
+			return "ALIVE";
+			break;
+		case UNDER_ATTACK:
+			return "UNDER_ATTACK";
+			break;
+		case DEAD:
+			return "DEAD";
+			break;
+		default:
+			return "NO_FUNCTION";
+			break;
+	}
+}
+
+void Monster::attacked(int attack){
+	setLife( getLife() - attack);
+	if (getLife() < 0){
+		setLifeSatus(DEAD);
+	} else {
+		setLifeSatus(UNDER_ATTACK);
+	}
 }

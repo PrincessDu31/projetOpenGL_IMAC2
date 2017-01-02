@@ -13,6 +13,7 @@ public:
 	void changeWeapon (Weapon);
 	void attack ();
 	void camera ();
+	void setOrientationCamera(glm::vec3 o);
 
 };
 

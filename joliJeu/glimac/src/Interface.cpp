@@ -61,6 +61,7 @@ void Interface::createWorld (){
 	   	myfile.close();
 		}
 	}
+	setNbMonsterStillAlive(listMonsters.size());
 }
 
 void Interface::readMap (string mapFile) {
@@ -179,7 +180,7 @@ bool Interface::collisionMountains(float step){
 bool Interface::collisionBorder(float step){
 	
 	int i = floor(player.getPosition().x + step*player.getOrientation().x + 20);
-	int j = floor(player.getPosition().y + step*player.getOrientation().y + 20);
+	int j = floor(player.getPosition().y + step*player.getOrientation().z + 20);
 	if ((i < 0) || (i > getMap().getHeight()-1) || (j < 0) || (j > getMap().getHeight()-1) ){
 		cout << "COLLISION BORDURE" << endl;
 		return true;
@@ -212,6 +213,7 @@ unsigned int Interface::getNbBlue() {return nbBlue;}
 std::vector<Aleatoirus> * Interface::getListAleatoirus () {return &listAleatoirus;}
 std::vector<Monster> * Interface::getListMonsters () {return &listMonsters;}
 MainCaracter Interface::getPlayer () {return player;}
+int Interface::getNbMonsterStillAlive () {return monsterStillAlive;}
 
 
 // setters
@@ -221,7 +223,7 @@ void Interface::setNbBlue(unsigned int b) { nbBlue = b; }
 void Interface::setListAleatoirus (std::vector<Aleatoirus> list) { listAleatoirus = list; }
 void Interface::setListMonsters (std::vector<Monster> list) { listMonsters = list; }
 void Interface::setPlayer (MainCaracter m) { player = m; }
-
+void Interface::setNbMonsterStillAlive(int a){monsterStillAlive = a;}
 
 
 void Interface::updateMonster(int i, glm::vec3 position){
@@ -242,3 +244,35 @@ void Interface::updateMonster(int i, glm::vec3 position){
 	}
 }
 
+void Interface::attackFromPlayer(){
+	glm::vec3 position = glm::vec3(floor(player.getPosition().x + 20), 0, floor(player.getPosition().y + 20));
+	glm::vec3 orientation = position*player.getOrientation();
+	int i;
+	for (i=0; i< listMonsters.size(); i++){		
+			if (listMonsters.at(i).getLifeStatus() != DEAD){
+				if (orientation.x == 0){
+					if (listMonsters.at(i).getPosition().x == abs(position.x)){
+						listMonsters.at(i).attacked(player.getAttack());
+						if (listMonsters.at(i).getLifeStatus() == DEAD){
+							setNbMonsterStillAlive(getNbMonsterStillAlive() - 1);
+						}
+						shot = false;
+						//cout << "A  Monstre : " << i << ", statut :" << listMonsters.at(i).fromEnumToStringLifeStatus() << endl;
+					
+
+					}	
+				} else {
+					if (listMonsters.at(i).getPosition().y == abs(position.z)){
+						listMonsters.at(i).attacked(player.getAttack());
+						if (listMonsters.at(i).getLifeStatus() == DEAD){
+							setNbMonsterStillAlive(getNbMonsterStillAlive() - 1);
+						}
+						shot = false;
+						//cout << " B Monstre : " << i << ", statut :" << listMonsters.at(i).fromEnumToStringLifeStatus() << endl;
+						
+					}	
+				 }
+			}
+	}
+	
+}
